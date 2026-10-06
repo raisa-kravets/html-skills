@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тема 8 — Зображення в HTML — HTML Skills</title>
+  <link rel="stylesheet" href="../assets/shared.css?v=20261006">
+</head>
+<body>
+<header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">8</span>Тема 8. Зображення в HTML</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
+<main class="lesson-layout">
+  <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#img-tag">Тег img</a><a href="#attributes">src, alt і width</a><a href="#paths">Шляхи до файлів</a><a href="#formats">Графічні формати</a><a href="#practice">Інтерактивні вправи</a><a href="#mistakes">Типові помилки</a><a href="#test">Перевір себе</a></nav>
+  <div class="lesson-content">
+    <section id="intro" class="lesson-section">
+      <article class="lesson-intro"><h2>Навчимося додавати зображення на вебсторінку</h2><p><code>&lt;img&gt;</code>, <code>src</code>, <code>alt</code>, шляхи до файлів і графічні формати.</p><p>Після теми ти зможеш самостійно написати правильний тег зображення та знайти типові помилки в ньому.</p></article>
+      <article class="lesson-card"><h3>Як браузер показує зображення</h3><p>Тег <code>&lt;img&gt;</code> можна уявити як рамку для фотографії.</p><div class="touch-grid"><div class="choice-card"><strong><code>&lt;img&gt;</code></strong><span>повідомляє: тут потрібно показати зображення</span></div><div class="choice-card"><strong><code>src</code></strong><span>повідомляє, де знайти файл</span></div><div class="choice-card"><strong><code>alt</code></strong><span>пояснює, що зображено</span></div></div><pre class="code-panel">&lt;img src="vinnytsia.jpg" alt="Вежа Артинова у Вінниці"&gt;</pre><p class="rule-callout">Браузер бачить <code>&lt;img&gt;</code> → читає <code>src</code> → знаходить файл → показує зображення.</p></article>
+    </section>
+
+    <section id="img-tag" class="lesson-section"><h2>Тег <code>&lt;img&gt;</code></h2>
+      <article class="lesson-card"><p>Для додавання зображення використовується тег <code>&lt;img&gt;</code>.</p><p class="rule-callout"><code>&lt;img&gt;</code> — одиночний тег. Йому не потрібен закривальний тег.</p><div class="comparison"><div><strong>НЕПРАВИЛЬНО</strong><pre class="code-panel">&lt;img src="photo.jpg"&gt;&lt;/img&gt;</pre></div><div><strong>ПРАВИЛЬНО</strong><pre class="code-panel">&lt;img src="photo.jpg" alt="Опис зображення"&gt;</pre></div></div></article>
+      <article class="lesson-card exercise-card" id="build-image" data-interactive><h3>Вправа 1 — «Збери тег»</h3><p>Натискай частини в правильному порядку.</p><div class="piece-bank"><button type="button" data-piece="<img">&lt;img</button><button type="button" data-piece=" src=&quot;vinnytsia.jpg&quot;">src="vinnytsia.jpg"</button><button type="button" data-piece=" alt=&quot;Вінниця&quot;">alt="Вінниця"</button><button type="button" data-piece=">">&gt;</button></div><div class="assembly-zone" aria-live="polite"></div><div class="button-row"><button type="button" class="check-build">Перевірити</button><button type="button" class="secondary reset-build">Почати знову</button></div><p class="feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="attributes" class="lesson-section"><h2>Атрибути <code>src</code>, <code>alt</code> і <code>width</code></h2>
+      <article class="lesson-card"><h3><code>src</code> — джерело файла</h3><p><code>src</code> походить від слова <em>source</em> — джерело. Він повідомляє браузеру, де знаходиться файл.</p><pre class="code-panel">&lt;img src="tower.jpg" alt="Вежа Артинова"&gt;</pre><div class="structure-panel"><strong><code>src="tower.jpg"</code></strong><p>Браузер шукає файл <code>tower.jpg</code>.</p></div></article>
+      <article class="lesson-card"><h3><code>alt</code> — текстовий опис</h3><pre class="code-panel">&lt;img src="tower.jpg" alt="Вежа Артинова у Вінниці"&gt;</pre><p><code>alt</code> допомагає, якщо файл не завантажився, робить сторінку доступнішою та пояснює зміст зображення.</p><p class="rule-callout"><code>alt</code> має відповідати на запитання: «Що важливого зображено на цій картинці?»</p><div class="comparison"><div><strong>НЕВДАЛО</strong><p><code>alt="картинка"</code><br><code>alt="фото"</code><br><code>alt="зображення"</code></p></div><div><strong>КРАЩЕ</strong><p><code>alt="Вежа Артинова у центрі Вінниці"</code></p></div></div></article>
+      <article class="lesson-card"><h3>Базова ширина зображення</h3><pre class="code-panel">&lt;img
+    src="images/tower.jpg"
+    alt="Вежа Артинова у Вінниці"
+    width="500"
+&gt;</pre><p><code>width="500"</code> задає ширину зображення приблизно 500 пікселів. Пізніше розмірами й оформленням зображень керуватимемо за допомогою CSS.</p></article>
+      <article class="lesson-card exercise-card" id="attribute-match" data-interactive><h3>Вправа 2 — «Що робить атрибут?»</h3><div class="touch-grid"><label class="choice-card"><strong><code>src</code></strong><select data-answer="file" data-reset-feedback><option value="">Обери пояснення</option><option value="description">текстовий опис</option><option value="width">ширина зображення</option><option value="file">адреса файла</option></select></label><label class="choice-card"><strong><code>alt</code></strong><select data-answer="description" data-reset-feedback><option value="">Обери пояснення</option><option value="width">ширина зображення</option><option value="file">адреса файла</option><option value="description">текстовий опис</option></select></label><label class="choice-card"><strong><code>width</code></strong><select data-answer="width" data-reset-feedback><option value="">Обери пояснення</option><option value="file">адреса файла</option><option value="description">текстовий опис</option><option value="width">ширина зображення</option></select></label></div><button type="button" class="check-attributes">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="paths" class="lesson-section"><h2>Шлях до файла</h2>
+      <article class="lesson-card"><h3>1. Зображення поруч із HTML-файлом</h3><div class="code-map"><pre class="tree">project
+├── index.html
+└── tower.jpg</pre><div class="structure-panel"><pre class="code-panel">&lt;img src="tower.jpg" alt="Вежа Артинова"&gt;</pre><p>Файли лежать в одній папці, тому достатньо написати ім’я зображення.</p></div></div></article>
+      <article class="lesson-card"><h3>2. Зображення в папці <code>images</code></h3><div class="code-map"><pre class="tree">project
+├── index.html
+└── images
+    └── tower.jpg</pre><div class="structure-panel"><pre class="code-panel">&lt;img src="images/tower.jpg" alt="Вежа Артинова"&gt;</pre><p>Читаємо так: «Зайди у папку <code>images</code> і знайди там файл <code>tower.jpg</code>».</p></div></div></article>
+      <article class="lesson-card"><h3>3. Додатково: піднятися на папку вище</h3><div class="code-map"><pre class="tree">project
+├── images
+│   └── tower.jpg
+└── pages
+    └── about.html</pre><div class="structure-panel"><pre class="code-panel">&lt;img src="../images/tower.jpg" alt="Вежа Артинова"&gt;</pre><p><code>../</code> означає «піднятися на одну папку вище».</p></div></div></article>
+      <article class="lesson-card"><h3>Назви файлів</h3><div class="comparison"><div><strong>РЕКОМЕНДОВАНО</strong><p><code>vinnytsia-tower.jpg</code><br><code>central-park.webp</code><br><code>fountain.png</code></p></div><div><strong>НЕ РЕКОМЕНДОВАНО</strong><p><code>Моя фотографія Вінниці.jpg</code><br><code>Нове фото 1.jpg</code></p></div></div><p>Використовуй латинські літери, цифри й дефіс. Уникай пробілів.</p><div class="notice"><strong>Уважно до регістру:</strong> <code>tower.jpg</code> і <code>Tower.jpg</code> сервер може сприймати як різні файли.</div></article>
+      <article class="lesson-card exercise-card" id="path-choice" data-interactive><h3>Вправа 3 — «Знайди правильний шлях»</h3><pre class="tree">my-site
+├── index.html
+└── images
+    └── fountain.jpg</pre><fieldset class="question-card" data-answer="b"><legend>Який код правильно додасть зображення?</legend><label><input type="radio" name="path-choice" value="a" data-reset-feedback> А. <code>&lt;img src="fountain.jpg" alt="Фонтан"&gt;</code></label><label><input type="radio" name="path-choice" value="b" data-reset-feedback> Б. <code>&lt;img src="images/fountain.jpg" alt="Фонтан"&gt;</code></label><label><input type="radio" name="path-choice" value="c" data-reset-feedback> В. <code>&lt;img src="image/fountain.jpg" alt="Фонтан"&gt;</code></label></fieldset><button type="button" class="check-path-choice">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="formats" class="lesson-section"><h2>Основні графічні формати</h2>
+      <article class="lesson-card"><div class="touch-grid"><div class="choice-card"><strong>JPG / JPEG</strong><span>фотографії</span></div><div class="choice-card"><strong>PNG</strong><span>графіка, прозорий фон</span></div><div class="choice-card"><strong>WebP</strong><span>сучасний формат для вебу, часто невеликий файл</span></div><div class="choice-card"><strong>SVG</strong><span>логотипи, іконки, векторна графіка</span></div><div class="choice-card"><strong>GIF</strong><span>прості анімовані зображення</span></div></div><p class="rule-callout">JPG → фото · PNG → прозорість · WebP → веб · SVG → іконки та векторна графіка</p></article>
+      <article class="lesson-card exercise-card" id="format-match" data-interactive><h3>Вправа — «Який формат обрати?»</h3><p>Це типові випадки використання, а не абсолютні правила.</p><div class="touch-grid"><label class="choice-card"><strong>Фотографія міста</strong><select data-answer="photo" data-reset-feedback><option value="">Обери формат</option><option value="svg">SVG</option><option value="png">PNG</option><option value="photo">JPG або WebP</option></select></label><label class="choice-card"><strong>Логотип із прозорим фоном</strong><select data-answer="png" data-reset-feedback><option value="">Обери формат</option><option value="photo">JPG або WebP</option><option value="png">PNG</option><option value="svg">SVG</option></select></label><label class="choice-card"><strong>Векторна іконка</strong><select data-answer="svg" data-reset-feedback><option value="">Обери формат</option><option value="png">PNG</option><option value="svg">SVG</option><option value="photo">JPG або WebP</option></select></label></div><button type="button" class="check-formats">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="practice" class="lesson-section"><h2>Інтерактивні вправи</h2>
+      <article class="lesson-card exercise-card" id="fix-path" data-interactive><h3>Вправа 4 — «Чому картинка не з’явилася?»</h3><pre class="tree">images
+└── tower.jpg</pre><textarea class="code-editor" rows="4" data-reset-feedback>&lt;img src="images/touer.jpg" alt="Вежа Артинова"&gt;</textarea><button type="button" class="check-fix-path">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card" id="best-alt" data-interactive><h3>Вправа 5 — «Обери хороший alt»</h3><fieldset class="question-card" data-answer="c"><legend>Який alt найкраще описує фотографію Вежі Артинова?</legend><label><input type="radio" name="best-alt" value="a" data-reset-feedback> А. <code>alt="фото"</code></label><label><input type="radio" name="best-alt" value="b" data-reset-feedback> Б. <code>alt="картинка"</code></label><label><input type="radio" name="best-alt" value="c" data-reset-feedback> В. <code>alt="Вежа Артинова у центрі Вінниці"</code></label></fieldset><button type="button" class="check-alt">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card" id="fix-src" data-interactive><h3>Вправа 6 — «Виправ код»</h3><textarea class="code-editor" rows="9" data-reset-feedback>&lt;h2&gt;Центральний парк Вінниці&lt;/h2&gt;
+
+&lt;img
+    scr="images/park.jpg"
+    alt="Центральний парк Вінниці"
+&gt;
+
+&lt;p&gt;Одне з популярних місць відпочинку містян.&lt;/p&gt;</textarea><button type="button" class="check-fix-src">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card code-task" id="complete-image" data-interactive><h3>Вправа 7 — «Допиши &lt;img&gt;»</h3><p>Між <code>&lt;h2&gt;</code> і абзацом додай зображення з <code>src="images/place.jpg"</code>, <code>alt="Моє улюблене місце"</code> і <code>width="500"</code>.</p><pre class="tree">images
+└── place.jpg</pre><textarea class="code-editor" rows="11" data-reset-feedback>&lt;h1&gt;Моя вебсторінка&lt;/h1&gt;
+
+&lt;h2&gt;Моє улюблене місце&lt;/h2&gt;
+
+&lt;p&gt;
+  Тут я люблю проводити вільний час.
+&lt;/p&gt;</textarea><button type="button" class="check-complete-image">Перевірити</button><iframe class="preview-frame" sandbox title="Попередній перегляд коду"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card" id="path-lab"><h3>Інтерактив — «Шлях до картинки»</h3><pre class="tree">my-site
+├── index.html
+├── images
+│   ├── tower.jpg
+│   └── fountain.webp
+└── icons
+    └── location.svg</pre><div class="path-questions"><div class="task-row" data-answer="images/tower.jpg" data-interactive><p><strong>1. Який src веде до tower.jpg?</strong></p><input class="code-editor" aria-label="Шлях до tower.jpg" data-reset-feedback><button type="button" class="check-path-input">Перевірити</button><p class="feedback"></p></div><div class="task-row" data-answer="images/fountain.webp" data-interactive><p><strong>2. Який src веде до fountain.webp?</strong></p><input class="code-editor" aria-label="Шлях до fountain.webp" data-reset-feedback><button type="button" class="check-path-input">Перевірити</button><p class="feedback"></p></div><div class="task-row" data-answer="icons/location.svg" data-interactive><p><strong>3. Який src веде до location.svg?</strong></p><input class="code-editor" aria-label="Шлях до location.svg" data-reset-feedback><button type="button" class="check-path-input">Перевірити</button><p class="feedback"></p></div></div></article>
+    </section>
+
+    <section id="mistakes" class="lesson-section"><h2>Типові помилки</h2>
+      <article class="lesson-card"><div class="comparison"><div><strong>НЕПРАВИЛЬНО</strong><pre class="code-panel">&lt;img scr="photo.jpg" alt="Вінниця"&gt;</pre></div><div><strong>ПРАВИЛЬНО</strong><pre class="code-panel">&lt;img src="photo.jpg" alt="Вінниця"&gt;</pre></div></div><div class="comparison"><div><strong>НЕПРАВИЛЬНИЙ ШЛЯХ</strong><pre class="code-panel">&lt;img src="photo.jpg" alt="Вінниця"&gt;</pre></div><div><strong>ФАЙЛ У ПАПЦІ images</strong><pre class="code-panel">&lt;img src="images/photo.jpg" alt="Вінниця"&gt;</pre></div></div><div class="comparison"><div><strong>НЕПРАВИЛЬНЕ ІМ’Я</strong><pre class="code-panel">&lt;img src="images/towers.jpg" alt="Вежа"&gt;</pre></div><div><strong>ПРАВИЛЬНЕ ІМ’Я</strong><pre class="code-panel">&lt;img src="images/tower.jpg" alt="Вежа"&gt;</pre></div></div><div class="comparison"><div><strong>НЕВДАЛИЙ alt</strong><p><code>alt="картинка"</code></p></div><div><strong>КРАЩИЙ alt</strong><p><code>alt="Вежа Артинова у Вінниці"</code></p></div></div><div class="comparison"><div><strong>НЕПРАВИЛЬНО</strong><pre class="code-panel">&lt;img src="tower.jpg" alt="Вежа"&gt;&lt;/img&gt;</pre></div><div><strong>ПРАВИЛЬНО</strong><pre class="code-panel">&lt;img src="tower.jpg" alt="Вежа"&gt;</pre></div></div></article>
+      <article class="lesson-card"><h3>Мінішпаргалка</h3><pre class="code-panel">&lt;img
+    src="шлях-до-файлу.jpg"
+    alt="опис зображення"
+&gt;</pre><div class="touch-grid"><div class="choice-card"><strong>img</strong><span>зображення</span></div><div class="choice-card"><strong>src</strong><span>де файл</span></div><div class="choice-card"><strong>alt</strong><span>що зображено</span></div></div><p class="rule-callout"><code>images/photo.jpg</code> читаємо як: папка <code>images</code> → файл <code>photo.jpg</code>.</p></article>
+      <article class="lesson-card"><h3>Зображення серед інших HTML-елементів</h3><pre class="code-panel">&lt;h1&gt;Вінниця&lt;/h1&gt;
+
+&lt;p&gt;Вінниця — місто на берегах Південного Бугу.&lt;/p&gt;
+
+&lt;h2&gt;Вежа Артинова&lt;/h2&gt;
+
+&lt;img src="images/tower.jpg"
+     alt="Вежа Артинова у центрі Вінниці"
+     width="500"&gt;
+
+&lt;p&gt;Вежа є одним із найвідоміших символів міста.&lt;/p&gt;</pre><p><code>&lt;img&gt;</code> можна використовувати разом з уже знайомими HTML-елементами.</p></article>
+    </section>
+
+    <section id="test" class="lesson-section"><h2>Фінальна перевірка теми</h2><article class="lesson-card exercise-card" id="final-test">
+      <div class="task-row" data-test="tag" data-answer="img" data-interactive><p><strong>1. Який HTML-тег використовується для зображення?</strong></p><input class="code-editor" aria-label="Тег зображення" data-reset-feedback><button type="button" class="check-final-text">Перевірити</button><p class="feedback"></p></div>
+      <fieldset class="question-card" data-test="src" data-answer="path" data-interactive><legend>2. Що містить атрибут src?</legend><label><input type="radio" name="final-src" value="description" data-reset-feedback> Текстовий опис зображення.</label><label><input type="radio" name="final-src" value="path" data-reset-feedback> Шлях або адресу файла зображення.</label><label><input type="radio" name="final-src" value="width" data-reset-feedback> Ширину зображення.</label><button type="button" class="check-final-radio">Перевірити</button><p class="feedback"></p></fieldset>
+      <fieldset class="question-card" data-test="alt" data-answer="description" data-interactive><legend>3. Для чого потрібен alt?</legend><label><input type="radio" name="final-alt" value="file" data-reset-feedback> Щоб перейменувати файл.</label><label><input type="radio" name="final-alt" value="description" data-reset-feedback> Для текстового опису зображення.</label><label><input type="radio" name="final-alt" value="folder" data-reset-feedback> Щоб створити папку.</label><button type="button" class="check-final-radio">Перевірити</button><p class="feedback"></p></fieldset>
+      <div class="task-row" data-test="path" data-answer="images/photo.jpg" data-interactive><p><strong>4. Файл photo.jpg знаходиться у папці images. Який шлях правильний?</strong></p><input class="code-editor" aria-label="Шлях до photo.jpg" data-reset-feedback><button type="button" class="check-final-text">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-test="error" data-answer="src" data-interactive><p><strong>5. Знайди помилку: <code>&lt;img scr="images/city.jpg" alt="Вінниця"&gt;</code></strong></p><input class="code-editor" aria-label="Правильна назва атрибута" data-reset-feedback><button type="button" class="check-final-text">Перевірити</button><p class="feedback"></p></div>
+      <p class="score" aria-live="polite"></p>
+    </article></section>
+    <div class="lesson-actions"><a href="topic-07.html">← Тема 7. Списки</a><a href="../index.html">Усі теми →</a></div>
+  </div>
+</main>
+<script src="../assets/trainer.js?v=20261006"></script>
+<script src="topic-08.js?v=20261006"></script>
+</body>
+</html>

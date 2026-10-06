@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тема 3 — Заголовки та абзаци — HTML Skills</title>
+  <link rel="stylesheet" href="../assets/shared.css">
+</head>
+<body>
+  <header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">3</span>Тема 3. Заголовки та абзаци</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
+  <main class="lesson-layout">
+    <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#headings">Заголовки</a><a href="#paragraphs">Абзаци, br і hr</a><a href="#example">Комплексний приклад</a><a href="#exercises">Вправи</a><a href="#self-check">Перевір себе</a><a href="#cheatsheet">Шпаргалка</a><a href="#project">Наскрізний проєкт</a></nav>
+    <div class="lesson-content">
+      <section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Текст має структуру</h2><p>На вебсторінці текст складається не просто з рядків. У ньому є головна тема, розділи, підрозділи та звичайний текст.</p><div class="tree">Моя сторінка                 головна тема
+├── Перший розділ            розділ
+│   └── Частина розділу      підрозділ
+│       └── Текст            звичайний текст
+└── Другий розділ            розділ</div><p><strong>HTML допомагає організувати текст вебсторінки та позначити роль кожної його частини.</strong></p></article></section>
+
+      <section id="headings" class="lesson-section"><h2>Заголовки <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code></h2>
+        <article class="lesson-card"><p><code>h</code> — heading, тобто заголовок. HTML має шість рівнів заголовків:</p><pre class="code-panel">&lt;h1&gt;Заголовок 1 рівня&lt;/h1&gt;
+&lt;h2&gt;Заголовок 2 рівня&lt;/h2&gt;
+&lt;h3&gt;Заголовок 3 рівня&lt;/h3&gt;
+&lt;h4&gt;Заголовок 4 рівня&lt;/h4&gt;
+&lt;h5&gt;Заголовок 5 рівня&lt;/h5&gt;
+&lt;h6&gt;Заголовок 6 рівня&lt;/h6&gt;</pre><div class="rule-callout">Число визначає рівень заголовка в структурі сторінки, а не просто його розмір.</div><p>Уяви зміст книги: <code>&lt;h1&gt;</code> — назва книги або головна тема; <code>&lt;h2&gt;</code> — розділ; <code>&lt;h3&gt;</code> — підрозділ; <code>&lt;h4&gt;</code> — частина підрозділу. Нижчі рівні використовуються лише за необхідності.</p><p>Для навчального курсу використовуємо правило: <strong>одна сторінка — один головний <code>&lt;h1&gt;</code>.</strong> Не потрібно обов'язково використовувати всі шість рівнів.</p></article>
+        <article class="lesson-card"><h3>Ієрархія заголовків HTML</h3><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про ієрархію заголовків HTML"><img src="../assets/html-heading-hierarchy.png" alt="Інфографіка про ієрархію заголовків HTML від h1 до h6"></button><figcaption>Заголовки показують структуру сторінки, а не бажаний розмір тексту.</figcaption></figure></article>
+      </section>
+
+      <section id="paragraphs" class="lesson-section"><h2>Абзаци, перенесення та тематичне розділення</h2>
+        <article class="lesson-card"><h3><code>&lt;p&gt;</code> — абзац</h3><p><code>p</code> — paragraph. Абзац використовується для окремої думки або смислового фрагмента тексту.</p><pre class="code-panel">&lt;p&gt;Кити живуть у морях та океанах.&lt;/p&gt;
+
+&lt;p&gt;Вони дихають атмосферним повітрям.&lt;/p&gt;</pre><p>Дві окремі думки краще оформити двома <code>&lt;p&gt;</code>.</p></article>
+        <article class="lesson-card"><h3><code>&lt;br&gt;</code> — перенесення рядка</h3><p><code>&lt;br&gt;</code> переносить текст на новий рядок, але <strong>не створює нового абзацу</strong>.</p><pre class="code-panel">&lt;p&gt;
+Понеділок — 15:00&lt;br&gt;
+Середа — 16:00&lt;br&gt;
+П'ятниця — 15:00
+&lt;/p&gt;</pre><p><code>&lt;br&gt;</code> доречний для адреси, розкладу, коротких записів із рядками або вірша.</p><p><strong>Неправильно:</strong></p><pre class="code-panel">&lt;p&gt;Перший абзац.&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;Другий абзац.&lt;/p&gt;</pre><p>Не використовуємо <code>&lt;br&gt;</code> для створення великих відступів між елементами.</p></article>
+        <article class="lesson-card"><h3><code>&lt;hr&gt;</code> — тематичне розділення</h3><p><code>&lt;hr&gt;</code> використовується для тематичного розділення частин вмісту.</p><pre class="code-panel">&lt;h2&gt;Про планету&lt;/h2&gt;
+&lt;p&gt;Марс — четверта планета від Сонця.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h2&gt;Цікавий факт&lt;/h2&gt;
+&lt;p&gt;На Марсі розташована гора Олімп.&lt;/p&gt;</pre><p>Використовуємо його лише тоді, коли тематичне розділення виправдане змістом, а не після кожного розділу.</p></article>
+        <article class="lesson-card"><h3>Особливість <code>&lt;br&gt;</code> та <code>&lt;hr&gt;</code></h3><p><code>&lt;br&gt;</code> і <code>&lt;hr&gt;</code> не мають парних закривальних тегів.</p><div class="comparison"><div><strong>Використовуємо</strong><pre class="code-panel">&lt;br&gt;
+&lt;hr&gt;</pre></div><div><strong>Не використовуємо</strong><pre class="code-panel">&lt;/br&gt;
+&lt;/hr&gt;</pre></div></div></article>
+      </section>
+
+      <section id="example" class="lesson-section"><h2>Комплексний приклад</h2><article class="lesson-card"><div class="code-map"><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Світ океану&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h1&gt;Світ океану&lt;/h1&gt;
+
+    &lt;p&gt;Океани займають більшу частину поверхні Землі.&lt;/p&gt;
+
+    &lt;h2&gt;Мешканці океану&lt;/h2&gt;
+
+    &lt;p&gt;В океані живуть мільйони різних організмів.&lt;/p&gt;
+
+    &lt;h3&gt;Кити&lt;/h3&gt;
+
+    &lt;p&gt;Кити — найбільші тварини нашої планети.&lt;/p&gt;
+
+    &lt;hr&gt;
+
+    &lt;h2&gt;Глибини океану&lt;/h2&gt;
+
+    &lt;p&gt;
+        Сонячна зона — до 200 м&lt;br&gt;
+        Сутінкова зона — до 1000 м&lt;br&gt;
+        Глибоководна зона — понад 1000 м
+    &lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><div class="structure-panel"><p><strong>Структура документа:</strong> <code>html</code>, <code>head</code>, <code>title</code>, <code>body</code></p><p><strong>Головна тема:</strong> <code>h1</code></p><p><strong>Розділи:</strong> <code>h2</code></p><p><strong>Підрозділ:</strong> <code>h3</code></p><p><strong>Окремі думки:</strong> <code>p</code></p><p><strong>Рядки розкладу:</strong> <code>br</code></p><p><strong>Нова тематична частина:</strong> <code>hr</code></p></div></div></article></section>
+
+      <section id="exercises" class="lesson-section"><h2>Інтерактивні вправи</h2>
+        <article class="lesson-card exercise-card" id="exercise-1"><h3>Вправа 1 — «Який тег потрібен?»</h3><p>Обери тег для кожної ситуації. Кожна відповідь перевіряється окремо.</p><div id="tag-situations"></div></article>
+        <article class="lesson-card exercise-card" id="exercise-2"><h3>Вправа 2 — «Побудуй ієрархію»</h3><div class="tree">Світ космосу
+    Планети
+        Планети земної групи
+        Планети-гіганти
+    Зорі</div><p>Визнач рівень кожного заголовка за його місцем у структурі.</p><div id="hierarchy-tasks"></div></article>
+        <article class="lesson-card exercise-card" id="exercise-3"><h3>Вправа 3 — «Абзац чи перенесення?»</h3><p><strong>Ключове питання:</strong> це нова думка чи лише новий рядок?</p><div class="task-row" data-interactive><p><strong>Ситуація 1.</strong> Адреса:</p><pre class="code-panel">вул. Сонячна, 12
+2 поверх</pre><select class="answer-select" data-reset-feedback data-answer="br" aria-label="Вибір для адреси"><option value="">Обери</option><option value="br">Один p та br</option><option value="p">Два окремі p</option></select><button class="check-select">Перевірити</button><p class="feedback" aria-live="polite"></p></div><div class="task-row" data-interactive><p><strong>Ситуація 2.</strong></p><pre class="code-panel">Музей відкрився у 1998 році.
+
+Сьогодні в ньому працює п'ять виставкових залів.</pre><select class="answer-select" data-reset-feedback data-answer="p" aria-label="Вибір для двох думок"><option value="">Обери</option><option value="br">Один p та br</option><option value="p">Два окремі p</option></select><button class="check-select">Перевірити</button><p class="feedback" aria-live="polite"></p></div></article>
+        <article class="lesson-card exercise-card" id="exercise-4"><h3>Вправа 4 — «Знайди помилки»</h3><pre class="code-panel">&lt;h1&gt;Мій день&lt;/h1&gt;
+
+&lt;h4&gt;Ранок&lt;/h4&gt;
+
+&lt;p&gt;Я прокидаюся о сьомій годині.
+
+&lt;h2&gt;Навчання&lt;/h2&gt;
+
+&lt;p&gt;Заняття починаються о дев'ятій.&lt;/p&gt;
+
+&lt;/hr&gt;</pre><div class="task-row" data-interactive data-fix="heading"><label><strong>Помилка 1. Виправ заголовок «Ранок»:</strong><textarea class="code-editor" rows="2" data-reset-feedback>&lt;h4&gt;Ранок&lt;/h4&gt;</textarea></label><button class="check-fix">Перевірити</button><p class="feedback" aria-live="polite"></p></div><div class="task-row" data-interactive data-fix="paragraph"><label><strong>Помилка 2. Закрий абзац:</strong><textarea class="code-editor" rows="2" data-reset-feedback>&lt;p&gt;Я прокидаюся о сьомій годині.</textarea></label><button class="check-fix">Перевірити</button><p class="feedback" aria-live="polite"></p></div><div class="task-row" data-interactive data-fix="hr"><label><strong>Помилка 3. Виправ тематичне розділення:</strong><textarea class="code-editor" rows="2" data-reset-feedback>&lt;/hr&gt;</textarea></label><button class="check-fix">Перевірити</button><p class="feedback" aria-live="polite"></p></div></article>
+        <article class="lesson-card exercise-card" id="exercise-5" data-interactive><h3>Вправа 5 — «Віднови HTML»</h3><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Мій улюблений сезон&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    ___Весна___
+
+    ___Весна — пора пробудження природи.___
+
+    ___Що змінюється навесні___
+
+    ___Дні стають довшими, а погода — теплішою.___
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><textarea class="code-editor" rows="18" data-reset-feedback aria-label="Відновлений HTML-документ"></textarea><button data-check-code="restore">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+        <article class="lesson-card exercise-card" id="exercise-6" data-interactive><h3>Вправа 6 — «Напиши код за результатом»</h3><div class="result-panel"><h1>Клуб робототехніки</h1><p>У клубі учасники створюють і програмують роботів.</p><h2>Розклад занять</h2><p>Вівторок — 16:00<br>Четвер — 16:00</p></div><p><strong>Напиши HTML-код лише для вмісту <code>&lt;body&gt;</code>.</strong></p><textarea class="code-editor" rows="11" data-reset-feedback aria-label="Код вмісту body"></textarea><button data-check-code="robotics">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+        <article class="lesson-card exercise-card" id="exercise-7" data-interactive><h3>Вправа 7 — «Створи структуру сторінки»</h3><div class="structure-panel"><p><strong>Заголовок вкладки браузера:</strong> Світ динозаврів</p><p><strong>Головна назва:</strong> Світ динозаврів</p><p><strong>Вступ:</strong> Динозаври жили на Землі мільйони років тому.</p><p><strong>Розділ:</strong> Хижі динозаври</p><p>Тиранозавр був одним із найбільших наземних хижаків.</p><p><strong>Підрозділ:</strong> Тиранозавр</p><p>Він мав потужні щелепи та гострі зуби.</p><p>Після цього починається нова тематична частина.</p><p><strong>Розділ:</strong> Травоїдні динозаври</p><p>Багато динозаврів харчувалися рослинами.</p></div><p>Створи повний HTML-документ.</p><textarea class="code-editor" rows="22" data-reset-feedback aria-label="Повний HTML-документ про динозаврів"></textarea><button data-check-code="dinosaurs">Перевірити</button><ul class="check-list" aria-live="polite"></ul><p class="feedback" aria-live="polite"></p></article>
+      </section>
+
+      <section id="self-check" class="lesson-section"><h2>Перевірка розуміння</h2><article class="lesson-card" id="quiz"><div id="quiz-questions"></div></article></section>
+
+      <section id="cheatsheet" class="lesson-section"><h2>Шпаргалка</h2><article class="lesson-card"><table><thead><tr><th>Тег</th><th>Значення</th><th>Використання</th></tr></thead><tbody><tr><td><code>&lt;h1&gt;</code></td><td>головний заголовок</td><td>головна тема сторінки</td></tr><tr><td><code>&lt;h2&gt;</code></td><td>заголовок розділу</td><td>основні частини</td></tr><tr><td><code>&lt;h3&gt;</code></td><td>підзаголовок</td><td>частина розділу</td></tr><tr><td><code>&lt;h4&gt;</code>–<code>&lt;h6&gt;</code></td><td>нижчі рівні</td><td>складніша структура</td></tr><tr><td><code>&lt;p&gt;</code></td><td>абзац</td><td>окрема думка або фрагмент тексту</td></tr><tr><td><code>&lt;br&gt;</code></td><td>перенесення рядка</td><td>новий рядок без нового абзацу</td></tr><tr><td><code>&lt;hr&gt;</code></td><td>тематичне розділення</td><td>перехід між частинами змісту</td></tr></tbody></table><div class="rule-callout">Не вибирай <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code> за розміром тексту. Спочатку визнач місце заголовка у структурі сторінки.</div></article></section>
+
+      <section id="project" class="lesson-section"><h2>🚀 Продовжуємо проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Працюй у VS Code</h3><p>Відкрий у VS Code:</p><p><strong>папку:</strong><br><code>moie-misto-vinnytsia</code></p><p><strong>файл:</strong><br><code>index.html</code></p><p><strong>Не створюй нову сторінку.<br>Існуючий код не видаляй.</strong></p><p>Після двох уже створених абзаців продовж сторінку.</p><h3>Додай новий розділ</h3><div class="structure-panel"><p><strong>Назва розділу:</strong><br>Коротко про Вінницю</p><p><strong>Текст:</strong><br>Вінниця — адміністративний центр Вінницької області. Місто має давню історію та поєднує історичну забудову із сучасними громадськими просторами.</p></div><h3>Далі створи підрозділ</h3><div class="structure-panel"><p><strong>Розташування</strong></p><p><strong>Текст:</strong><br>Місто розташоване на берегах річки Південний Буг.</p></div><h3>Далі створи ще один підрозділ</h3><div class="structure-panel"><p><strong>Кілька фактів</strong></p><p>У ньому потрібно показати:</p><p>Річка — Південний Буг<br>Область — Вінницька<br>Країна — Україна</p><p>Ці три факти повинні бути одним абзацом, але кожен факт має починатися з нового рядка.</p></div><h3>Що потрібно вирішити самостійно</h3><p class="rule-callout">Для виконання тобі знадобляться теги: <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>.<br><br>Самостійно визнач, який тег потрібен для кожної частини сторінки.</p><h3>Очікуваний результат у браузері</h3><p><strong>Після збереження <code>index.html</code> відкрий або онови сторінку в браузері. Порівняй свій результат із прикладом.</strong></p><p class="muted">Не потрібно досягати повної піксельної відповідності — насамперед перевір структуру тексту.</p><div class="browser-mock" aria-label="Приклад очікуваного вигляду сторінки у браузері"><div class="browser-tab">Моє місто — Вінниця</div><div class="browser-page"><h1>Моє місто — Вінниця</h1><p>Вінниця — місто в Україні, розташоване на берегах Південного Бугу.</p><p>На цьому сайті я розповім про цікаві місця Вінниці та поділюся маршрутом для знайомства з містом.</p><h2>Коротко про Вінницю</h2><p>Вінниця — адміністративний центр Вінницької області. Місто має давню історію та поєднує історичну забудову із сучасними громадськими просторами.</p><h3>Розташування</h3><p>Місто розташоване на берегах річки Південний Буг.</p><h3>Кілька фактів</h3><p>Річка — Південний Буг<br>Область — Вінницька<br>Країна — Україна</p></div></div></article></section>
+      <div class="lesson-actions"><a class="bottom-link" href="topic-02.html">← Тема 2</a><a class="bottom-link" href="topic-04.html">Тема 4 →</a></div>
+    </div>
+  </main>
+  <script src="../assets/trainer.js"></script>
+  <script src="topic-03.js"></script>
+</body>
+</html>

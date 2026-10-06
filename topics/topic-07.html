@@ -1,0 +1,123 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Тема 7 — Списки в HTML — HTML Skills</title><link rel="stylesheet" href="../assets/shared.css?v=20261005"></head><body>
+<header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">7</span>Тема 7. Списки в HTML</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
+<main class="lesson-layout"><nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#ul">ul і li</a><a href="#ol">ul чи ol</a><a href="#nested">Вкладені списки</a><a href="#dl">Список описів</a><a href="#practice">Практика</a><a href="#test">Перевір себе</a><a href="#project">Наскрізний проєкт</a></nav><div class="lesson-content">
+<section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Навчимося створювати переліки, послідовності та вкладені списки</h2><p>Коли потрібно записати кілька пов’язаних пунктів, їх зручно оформити списком.</p><p>У HTML вибір типу списку залежить не від того, як він виглядає, а від змісту інформації.</p></article>
+<article class="lesson-card exercise-card" id="list-or-not"><h3>Вступна вправа — «Список чи не список?»</h3><p>У яких випадках інформацію доцільно подати списком? <strong>Вибери всі правильні картки — можна вибрати кілька варіантів.</strong></p><div class="selectable-grid" data-multi-choice><button type="button" data-value="a" aria-pressed="false">А. Мене звати Максим. Я навчаюся у 8 класі.</button><button type="button" data-value="b" aria-pressed="false">Б. HTML<br>CSS<br>JavaScript</button><button type="button" data-value="c" aria-pressed="false">В. Відкрий редактор.<br>Створи файл.<br>Збережи його.</button><button type="button" data-value="d" aria-pressed="false">Г. Сьогодні сонячна погода.</button></div><button type="button" class="check-multi">Перевірити</button><p class="feedback" aria-live="polite"></p></article></section>
+
+<section id="ul" class="lesson-section"><h2>Невпорядкований список <code>&lt;ul&gt;</code></h2><article class="lesson-card"><p>Якщо порядок пунктів не має значення, використовуємо невпорядкований список <code>&lt;ul&gt;</code>.</p><div class="comparison"><div><strong>HTML-код</strong><pre class="code-panel">&lt;ul&gt;
+    &lt;li&gt;Ноутбук&lt;/li&gt;
+    &lt;li&gt;Навушники&lt;/li&gt;
+    &lt;li&gt;Мишка&lt;/li&gt;
+&lt;/ul&gt;</pre></div><div><strong>Результат у браузері</strong><ul><li>Ноутбук</li><li>Навушники</li><li>Мишка</li></ul></div></div><p><code>&lt;ul&gt;</code> — створює весь невпорядкований список.<br><code>&lt;li&gt;</code> — створює окремий пункт списку.</p><div class="structure-panel"><strong>Усі <code>&lt;li&gt;</code> знаходяться ВСЕРЕДИНІ <code>&lt;ul&gt;</code>:</strong><pre class="code-panel">&lt;ul&gt;
+    &lt;li&gt;Пункт 1&lt;/li&gt;
+    &lt;li&gt;Пункт 2&lt;/li&gt;
+    &lt;li&gt;Пункт 3&lt;/li&gt;
+&lt;/ul&gt;</pre></div></article>
+<article class="lesson-card exercise-card" id="exercise-1"><h3>Вправа 1 — «Збери список»</h3><p>Розташуй рядки у правильному порядку. Використовуй перетягування або кнопки ↑ і ↓.</p><div class="reorder-list" aria-label="Рядки HTML-коду"></div><button type="button" class="check-order">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+<article class="lesson-card"><h3>Пункт списку <code>&lt;li&gt;</code></h3><div class="comparison"><div><strong>НЕПРАВИЛЬНО</strong><pre class="code-panel">&lt;ul&gt;
+    HTML
+    CSS
+    JavaScript
+&lt;/ul&gt;</pre></div><div><strong>ПРАВИЛЬНО</strong><pre class="code-panel">&lt;ul&gt;
+    &lt;li&gt;HTML&lt;/li&gt;
+    &lt;li&gt;CSS&lt;/li&gt;
+    &lt;li&gt;JavaScript&lt;/li&gt;
+&lt;/ul&gt;</pre></div></div><p>Кожен пункт списку потрібно оформити тегом <code>&lt;li&gt;</code>.</p></article>
+<article class="lesson-card exercise-card" id="exercise-3"><h3>Вправа 3 — «Знайди і виправ помилку»</h3><pre class="code-panel">&lt;h2&gt;Мої захоплення&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Малювання&lt;/li&gt;
+    Фотографія
+    &lt;li&gt;Подорожі&lt;/li&gt;
+&lt;/ul&gt;</pre><fieldset class="question-card" data-answer="li"><legend>Чому «Фотографія» оформлена неправильно?</legend><label><input type="radio" name="photo-reason" value="p"> А. Потрібен тег &lt;p&gt;</label><label><input type="radio" name="photo-reason" value="li"> Б. Потрібен тег &lt;li&gt;</label><label><input type="radio" name="photo-reason" value="ol"> В. Потрібно замінити &lt;ul&gt; на &lt;ol&gt;</label><label><input type="radio" name="photo-reason" value="br"> Г. Потрібно використати &lt;br&gt;</label><button type="button" class="check-reason">Перевірити відповідь</button><p class="feedback"></p></fieldset><p>Тепер виправ HTML-код:</p><textarea class="code-editor" rows="8">&lt;h2&gt;Мої захоплення&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Малювання&lt;/li&gt;
+    Фотографія
+    &lt;li&gt;Подорожі&lt;/li&gt;
+&lt;/ul&gt;</textarea><button type="button" class="check-fix">Перевірити код</button><p class="feedback code-feedback"></p></article></section>
+
+<section id="ol" class="lesson-section"><h2>Впорядкований список <code>&lt;ol&gt;</code></h2><article class="lesson-card"><p>Якщо порядок пунктів важливий, використовуємо впорядкований список <code>&lt;ol&gt;</code>.</p><div class="comparison"><div><strong>HTML-код</strong><pre class="code-panel">&lt;h2&gt;Як створити HTML-файл&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;Відкрити редактор коду&lt;/li&gt;
+    &lt;li&gt;Створити новий файл&lt;/li&gt;
+    &lt;li&gt;Зберегти його як index.html&lt;/li&gt;
+    &lt;li&gt;Відкрити файл у браузері&lt;/li&gt;
+&lt;/ol&gt;</pre></div><div><strong>Результат у браузері</strong><h2>Як створити HTML-файл</h2><ol><li>Відкрити редактор коду</li><li>Створити новий файл</li><li>Зберегти його як index.html</li><li>Відкрити файл у браузері</li></ol></div></div><div class="semantic-compare"><p><code>&lt;ul&gt;</code><br>порядок пунктів <strong>НЕ має значення</strong></p><p><code>&lt;ol&gt;</code><br>порядок пунктів <strong>МАЄ значення</strong></p></div></article>
+<article class="lesson-card exercise-card" id="exercise-2"><h3>Вправа 2 — «UL чи OL?»</h3><div id="type-situations"></div><p class="score" aria-live="polite"></p></article>
+<article class="lesson-card"><h3>Списки + раніше вивчені теги</h3><pre class="code-panel">&lt;h2&gt;План на суботу&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;09:00&lt;/strong&gt; — тренування&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;12:00&lt;/strong&gt; — зустріч із друзями&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;16:00&lt;/strong&gt; — виконати домашнє завдання&lt;/li&gt;
+&lt;/ul&gt;</pre><pre class="code-panel">&lt;h2&gt;Три важливі правила&lt;/h2&gt;
+&lt;ol&gt;
+    &lt;li&gt;&lt;strong&gt;Зберігай&lt;/strong&gt; файл перед перевіркою.&lt;/li&gt;
+    &lt;li&gt;Перевіряй &lt;em&gt;відкривальні та закривальні&lt;/em&gt; теги.&lt;/li&gt;
+    &lt;li&gt;Не забувай про атрибут &lt;strong&gt;lang&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ol&gt;</pre></article></section>
+
+<section id="nested" class="lesson-section"><h2>Вкладені списки</h2><article class="lesson-card"><p>Один список може міститися всередині пункту іншого списку. Такий список називається вкладеним.</p><div class="comparison"><div><strong>HTML-код</strong><pre class="code-panel">&lt;ul&gt;
+    &lt;li&gt;Фрукти
+        &lt;ul&gt;
+            &lt;li&gt;Яблука&lt;/li&gt;
+            &lt;li&gt;Груші&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Овочі
+        &lt;ul&gt;
+            &lt;li&gt;Морква&lt;/li&gt;
+            &lt;li&gt;Помідори&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</pre></div><div><strong>Результат у браузері</strong><ul><li>Фрукти<ul><li>Яблука</li><li>Груші</li></ul></li><li>Овочі<ul><li>Морква</li><li>Помідори</li></ul></li></ul><pre class="tree">Фрукти
+  ↳ Яблука
+  ↳ Груші
+Овочі
+  ↳ Морква
+  ↳ Помідори</pre></div></div><p class="rule-callout">ВАЖЛИВО: вкладений список розміщуємо всередині <code>&lt;li&gt;</code> батьківського списку.</p></article>
+<article class="lesson-card exercise-card" id="exercise-4"><h3>Вправа 4 — «Віднови вкладеність»</h3><p><strong>Очікуваний результат:</strong></p><ul><li>Комп’ютер<ul><li>Монітор</li><li>Клавіатура</li><li>Мишка</li></ul></li><li>Смартфон<ul><li>Навушники</li><li>Зарядний пристрій</li></ul></li></ul><p>Обери тег для кожного пропуску:</p><div class="slot-code"><code>&lt;ul&gt;<br> &lt;li&gt;Комп’ютер</code><select aria-label="Перший пропуск"><option value="">_____</option><option>&lt;ul&gt;</option><option>&lt;/ul&gt;</option></select><code>&lt;li&gt;Монітор&lt;/li&gt;<br>&lt;li&gt;Клавіатура&lt;/li&gt;<br>&lt;li&gt;Мишка&lt;/li&gt;</code><select aria-label="Другий пропуск"><option value="">_____</option><option>&lt;ul&gt;</option><option>&lt;/ul&gt;</option></select><code>&lt;/li&gt;<br>&lt;li&gt;Смартфон</code><select aria-label="Третій пропуск"><option value="">_____</option><option>&lt;ul&gt;</option><option>&lt;/ul&gt;</option></select><code>&lt;li&gt;Навушники&lt;/li&gt;<br>&lt;li&gt;Зарядний пристрій&lt;/li&gt;</code><select aria-label="Четвертий пропуск"><option value="">_____</option><option>&lt;ul&gt;</option><option>&lt;/ul&gt;</option></select><code>&lt;/li&gt;<br>&lt;/ul&gt;</code></div><button type="button" class="check-nesting">Перевірити</button><ul class="check-list"></ul><p class="feedback"></p></article></section>
+
+<section id="dl" class="lesson-section"><h2>Список описів <code>&lt;dl&gt;</code></h2><article class="lesson-card"><p>Якщо потрібно подати термін і його пояснення, використовуємо список описів.</p><div class="comparison"><div><strong>HTML-код</strong><pre class="code-panel">&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;Мова розмітки вебсторінок.&lt;/dd&gt;
+    &lt;dt&gt;Тег&lt;/dt&gt;
+    &lt;dd&gt;Спеціальна конструкція HTML.&lt;/dd&gt;
+&lt;/dl&gt;</pre></div><div><strong>Результат</strong><dl><dt>HTML</dt><dd>Мова розмітки вебсторінок.</dd><dt>Тег</dt><dd>Спеціальна конструкція HTML.</dd></dl></div></div><p><code>&lt;dl&gt;</code> — список описів.<br><code>&lt;dt&gt;</code> — термін.<br><code>&lt;dd&gt;</code> — опис або пояснення терміна.</p><pre class="tree">&lt;dl&gt;
+    &lt;dt&gt;ТЕРМІН&lt;/dt&gt;
+    &lt;dd&gt;ПОЯСНЕННЯ&lt;/dd&gt;
+&lt;/dl&gt;</pre></article>
+<article class="lesson-card exercise-card" id="exercise-5"><h3>Вправа 5 — «Термін + пояснення»</h3><p>Доповни HTML-код: оформи назви <strong>HTML</strong>, <strong>Тег</strong> і <strong>Атрибут</strong> як терміни, а тексти після них — як відповідні пояснення. Використай теги <code>&lt;dt&gt;</code>, <code>&lt;/dt&gt;</code>, <code>&lt;dd&gt;</code> і <code>&lt;/dd&gt;</code>.</p><textarea class="code-editor" rows="15" data-reset-feedback>&lt;dl&gt;
+    &lt;___&gt;HTML&lt;/___&gt;
+    &lt;___&gt;Мова розмітки вебсторінок.&lt;/___&gt;
+
+    &lt;___&gt;Тег&lt;/___&gt;
+    &lt;___&gt;Спеціальна конструкція HTML.&lt;/___&gt;
+
+    &lt;___&gt;Атрибут&lt;/___&gt;
+    &lt;___&gt;Додаткова характеристика HTML-елемента.&lt;/___&gt;
+&lt;/dl&gt;</textarea><div class="button-row"><button type="button" class="check-descriptions">Перевірити</button><button type="button" class="reset-descriptions secondary">Почати знову</button></div><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article>
+<article class="lesson-card"><h3>Навчальна інфографіка «Списки в HTML»</h3><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про списки в HTML"><img class="responsive-image" src="../assets/html-lists-infographic.png" alt="Інфографіка про невпорядковані, впорядковані, вкладені списки та списки описів у HTML"></button><figcaption>Інфографіка узагальнює структуру та призначення списків. Натисни на зображення, щоб розглянути його детальніше.</figcaption></figure></article>
+<article class="lesson-card"><h3>ЗАПАМ’ЯТАЙ</h3><ul><li><code>&lt;ul&gt;</code> — список, у якому порядок пунктів не має значення.</li><li><code>&lt;ol&gt;</code> — список, у якому порядок пунктів має значення.</li><li><code>&lt;li&gt;</code> — окремий пункт списку.</li><li>Вкладений список розміщуємо всередині <code>&lt;li&gt;</code>.</li><li><code>&lt;dl&gt;</code> — список описів.</li><li><code>&lt;dt&gt;</code> — термін.</li><li><code>&lt;dd&gt;</code> — пояснення терміна.</li></ul></article></section>
+
+<section id="practice" class="lesson-section"><h2>Комплексна практична вправа «Мої цифрові інструменти»</h2><article class="lesson-card exercise-card code-task" id="complex-practice"><p>Створи фрагмент сторінки «Мої цифрові інструменти».</p><ol><li>Заголовок першого рівня.</li><li>Вступний абзац.</li><li>Заголовок другого рівня «Що я використовую».</li><li>Невпорядкований список щонайменше з трьох пунктів.</li><li>В одному з пунктів використай <code>&lt;strong&gt;</code>.</li><li>Заголовок другого рівня «Як я створюю вебсторінку».</li><li>Впорядкований список щонайменше з чотирьох пунктів.</li><li>В одному з пунктів використай <code>&lt;em&gt;</code>.</li></ol><textarea class="code-editor" rows="18" data-reset-feedback>&lt;h1&gt;Мої цифрові інструменти&lt;/h1&gt;
+&lt;p&gt;Тут я розповім про свої інструменти.&lt;/p&gt;
+
+&lt;h2&gt;Що я використовую&lt;/h2&gt;
+
+&lt;h2&gt;Як я створюю вебсторінку&lt;/h2&gt;</textarea><div class="button-row"><button type="button" class="check-complex">Перевірити</button><button type="button" class="reset-complex secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд комплексної вправи"></iframe><ul class="check-list"></ul><p class="feedback"></p></article></section>
+
+<section id="test" class="lesson-section"><h2>Перевір себе</h2><article class="lesson-card exercise-card" id="final-test"><div id="quiz-questions"></div><button type="button" class="check-quiz">Перевірити</button><p class="score" aria-live="polite"></p></article></section>
+
+<section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Продовжуємо двосторінковий сайт</h3><p>У Темі 6 ти створив дві пов’язані сторінки: <code>index.html</code> і <code>about.html</code>. Тепер додай до них списки.</p><p><strong>Не створюй нових сторінок і не видаляй виконане раніше.</strong> Збережи меню «Головна | Про місто», переходи між сторінками, якорі, зовнішнє посилання та email-посилання.</p>
+<div class="project-step"><h3>Етап 1. Онови «Кілька фактів» на головній сторінці</h3><p>Відкрий <code>index.html</code>. Збережи заголовок <strong>«Кілька фактів»</strong>, але замість абзацу з переносами рядків подай факти як маркований список:</p><ul><li>Річка — Південний Буг</li><li>Область — Вінницька</li><li>Країна — Україна</li></ul><p>Тут порядок пунктів не змінює зміст, тому використовуй невпорядкований список.</p></div>
+<div class="project-step"><h3>Етап 2. Додай на index.html список місць</h3><p>Перед датою оновлення та контактами створи розділ <strong>«Що варто побачити у Вінниці»</strong>. Подай місця маркованим списком:</p><ul><li>Вежа Артинова</li><li>Європейська площа</li><li>Національний музей-садиба М. І. Пирогова</li><li>Вінницькі мури</li></ul></div>
+<div class="project-step"><h3>Етап 3. Додай на index.html маршрут</h3><p>Після переліку місць створи розділ <strong>«Маршрут прогулянки містом»</strong>. Зупинки потрібно пройти саме в заданому порядку, тому подай їх нумерованим списком:</p><ol><li>Європейська площа</li><li>Вежа Артинова</li><li>Вулиця Соборна</li><li>Майдан Незалежності</li></ol></div>
+<div class="project-step"><h3>Етап 4. Згрупуй цікаві місця</h3><p>Після маршруту створи розділ <strong>«Цікаві місця»</strong>. Зроби головний маркований список із двома пунктами: <strong>«У центрі міста»</strong> і <strong>«Музеї»</strong>. Усередині кожного пункту розмісти вкладений маркований список.</p><div class="structure-panel"><p><strong>У центрі міста:</strong><br>Вежа Артинова<br>Європейська площа<br>Вінницькі мури</p><p><strong>Музеї:</strong><br>Музей-садиба М. І. Пирогова<br>Вінницький обласний краєзнавчий музей</p></div><p class="rule-callout">Вкладений список має знаходитися всередині відповідного батьківського пункту <code>&lt;li&gt;</code>.</p></div>
+<div class="project-step"><h3>Етап 5. Додай список на сторінку about.html</h3><p>Відкрий <code>about.html</code>. У розділі <strong>«Походження назви»</strong> після наявного абзацу додай підзаголовок <strong>«Як досліджувати історію назви»</strong> і нумерований список:</p><ol><li>Знайти історичне джерело</li><li>Порівняти пояснення</li><li>Зазначити джерело інформації</li></ol><p>Послідовність дій важлива, тому список має бути впорядкованим.</p></div>
+<div class="project-step"><h3>Етап 6. Додай ще один список на about.html</h3><p>У розділі <strong>«Сучасна Вінниця»</strong>, після трьох підрозділів, додай підзаголовок <strong>«Що можна дослідити»</strong> і маркований список:</p><ul><li>Міські культурні події</li><li>Освітні ініціативи</li><li>Громадські простори</li></ul></div>
+<div class="project-step"><h3>Етап 7. Перевір розташування завершальних блоків</h3><p>На обох сторінках дата оновлення та контакти автора повинні залишатися після всього основного вмісту — у самому кінці <code>body</code>. Не створюй їх повторно.</p><p>Переконайся, що email <code>student@example.com</code> на обох сторінках досі працює як посилання <code>mailto:</code>.</p></div>
+<div class="project-step"><h3>Етап 8. Перевір результат</h3><div class="task-checklist"><label><input type="checkbox"> На головній сторінці збережено весь попередній матеріал.</label><label><input type="checkbox"> «Кілька фактів» оформлено маркованим списком.</label><label><input type="checkbox"> Перелік місць є маркованим, а маршрут — нумерованим списком.</label><label><input type="checkbox"> Вкладені списки розміщено всередині відповідних пунктів.</label><label><input type="checkbox"> На about.html додано два списки у відповідних розділах.</label><label><input type="checkbox"> Меню, якорі, зовнішнє посилання й mailto з Теми 6 продовжують працювати.</label><label><input type="checkbox"> Дата й контакти залишаються останніми на обох сторінках.</label><label><input type="checkbox"> Нових HTML-сторінок не створено.</label></div></div>
+<p class="rule-callout">Самостійно визнач, де потрібні <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code> і <code>&lt;li&gt;</code>. Не показуй списки звичайними абзацами з переносами рядків.</p>
+<h3>Очікуваний результат у браузері</h3><p><strong>Збережи обидва файли й по черзі переглянь <code>index.html</code> та <code>about.html</code>.</strong></p><p class="muted">Це приблизний вигляд результату, а не готовий HTML-код. Тут показано насамперед нові списки. Усі тексти й посилання з попередніх тем мають залишитися на своїх місцях.</p>
+<h4>Головна сторінка — index.html</h4><div class="browser-mock project-browser-result" aria-label="Очікуваний вигляд головної сторінки після Теми 7"><div class="browser-tab">Моє місто — Вінниця</div><div class="browser-page"><p><a href="#project">Головна</a> | <a href="#project">Про місто</a></p><h1>Моє місто — Вінниця</h1><p class="muted">…вміст головної сторінки з попередніх тем…</p><h3>Кілька фактів</h3><ul><li>Річка — Південний Буг</li><li>Область — Вінницька</li><li>Країна — Україна</li></ul><h2>Що варто побачити у Вінниці</h2><ul><li>Вежа Артинова</li><li>Європейська площа</li><li>Національний музей-садиба М. І. Пирогова</li><li>Вінницькі мури</li></ul><h2>Маршрут прогулянки містом</h2><ol><li>Європейська площа</li><li>Вежа Артинова</li><li>Вулиця Соборна</li><li>Майдан Незалежності</li></ol><h2>Цікаві місця</h2><ul><li>У центрі міста<ul><li>Вежа Артинова</li><li>Європейська площа</li><li>Вінницькі мури</li></ul></li><li>Музеї<ul><li>Музей-садиба М. І. Пирогова</li><li>Вінницький обласний краєзнавчий музей</li></ul></li></ul><p class="muted">…дата оновлення й контакти автора…</p></div></div>
+<h4>Сторінка про місто — about.html</h4><div class="browser-mock project-browser-result" aria-label="Очікуваний вигляд сторінки про місто після Теми 7"><div class="browser-tab">Знайомство з Вінницею — Моє місто</div><div class="browser-page"><p><a href="#project">Головна</a> | <a href="#project">Про місто</a></p><h1>Знайомство з Вінницею</h1><p class="muted">…розділ «Історія міста» з Теми 6…</p><h2>Походження назви</h2><p>Походження назви міста має кілька пояснень. Досліджуючи їх, важливо звертатися до історичних джерел.</p><h3>Як досліджувати історію назви</h3><ol><li>Знайти історичне джерело</li><li>Порівняти пояснення</li><li>Зазначити джерело інформації</li></ol><h2>Сучасна Вінниця</h2><p class="muted">…три підрозділи з Теми 6…</p><h3>Що можна дослідити</h3><ul><li>Міські культурні події</li><li>Освітні ініціативи</li><li>Громадські простори</li></ul><p class="muted">…джерела, повернення, дата й контакти автора…</p></div></div></article></section>
+<div class="lesson-actions"><a class="bottom-link" href="topic-06.html">← Тема 6</a><a class="bottom-link" href="../index.html">Усі теми →</a></div></div></main><script src="../assets/trainer.js?v=20261005"></script><script src="topic-07.js?v=20261005d"></script></body></html>

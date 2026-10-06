@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тема 2. Структура HTML-документа — HTML Skills</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/shared.css">
+</head>
+<body>
+  <header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">2</span>Тема 2. Структура HTML-документа</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
+  <main class="lesson-layout">
+    <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#theory">Теорія</a><a href="#structure">Розбір структури</a><a href="#examples">Приклади</a><a href="#exercises">Інтерактивні вправи</a><a href="#coding">Робота з кодом</a><a href="#self-check">Перевір себе</a><a href="#project">Наскрізний проєкт</a></nav>
+    <div class="lesson-content">
+      <section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Тема 2. Структура HTML-документа</h2><p>HTML-сторінка — це не просто набір тегів. Вона має визначену структуру, яка допомагає браузеру правильно зрозуміти документ.</p><p>Учень уже міг написати:</p><pre class="code-panel">&lt;h1 title="Головний заголовок"&gt;Моя сторінка&lt;/h1&gt;
+&lt;p&gt;Це моя перша вебсторінка.&lt;/p&gt;</pre><p>Браузер може показати такий фрагмент. Але повний HTML-документ має власний каркас.</p><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя перша сторінка&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Моя сторінка&lt;/h1&gt;
+    &lt;p&gt;Це моя перша вебсторінка.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre></article></section>
+
+      <section id="theory" class="lesson-section"><h2>Теорія</h2>
+        <article class="lesson-card"><h3>З чого починається HTML-документ?</h3><pre class="code-panel">&lt;!DOCTYPE html&gt;</pre><p>Цей запис повідомляє браузеру, що перед ним сучасний HTML-документ — HTML5.</p><p><strong><code>&lt;!DOCTYPE html&gt;</code> — не HTML-тег.</strong></p><p>Це ніби позначка на документі, яка повідомляє браузеру, за якими правилами його читати.</p></article>
+        <article class="lesson-card"><h3><code>&lt;html&gt;</code> та <code>lang</code></h3><pre class="code-panel">&lt;html lang="uk"&gt;
+
+&lt;/html&gt;</pre><p>Елемент <code>&lt;html&gt;</code> містить HTML-код документа.</p><div class="structure-panel"><p><code>lang</code> — назва атрибута;</p><p><code>"uk"</code> — значення атрибута.</p></div><p>Значення <code>uk</code> повідомляє, що основна мова документа — українська.</p><p>Інформацію про мову можуть використовувати браузери, пошукові системи та допоміжні технології, зокрема програми екранного доступу.</p></article>
+        <article class="lesson-card"><h3><code>&lt;head&gt;</code> і <code>&lt;body&gt;</code></h3><div class="tree">&lt;html&gt;
+│
+├── &lt;head&gt;
+│   інформація ПРО сторінку
+│
+└── &lt;body&gt;
+    те, що бачимо НА сторінці</div><div class="comparison"><div><h4>HEAD = інформація ПРО сторінку</h4><p><code>&lt;head&gt;</code> містить службову інформацію про вебсторінку.</p><pre class="code-panel">&lt;head&gt;
+    &lt;title&gt;Моя перша сторінка&lt;/title&gt;
+&lt;/head&gt;</pre></div><div><h4>BODY = вміст НА сторінці</h4><p>У <code>&lt;body&gt;</code> розміщуємо основний вміст, який браузер показує на вебсторінці.</p><pre class="code-panel">&lt;body&gt;
+    &lt;h1&gt;Моя сторінка&lt;/h1&gt;
+    &lt;p&gt;Вітаю на моїй сторінці!&lt;/p&gt;
+&lt;/body&gt;</pre></div></div></article>
+        <article class="lesson-card"><h3>Як влаштований HTML-документ</h3><p>Подивись на схему: весь HTML-документ знаходиться всередині <code>&lt;html&gt;</code>, а його дві основні частини — <code>&lt;head&gt;</code> і <code>&lt;body&gt;</code>. Простеж, де розміщуються службова інформація та видимий вміст сторінки.</p><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про структуру HTML-документа"><img src="../assets/html-document-structure.png" alt="Схема структури HTML-документа: html, head, title, meta, body, h1 і p"></button><figcaption>Схема показує загальну будову HTML-документа. Далі розберемо його частини окремо.</figcaption></figure></article>
+        <article class="lesson-card"><h3><code>&lt;title&gt;</code> — назва HTML-документа</h3><pre class="code-panel">&lt;head&gt;
+    &lt;title&gt;Світ океанів&lt;/title&gt;
+&lt;/head&gt;</pre><p><code>&lt;title&gt;</code> задає назву HTML-документа. Вона, зокрема, відображається на вкладці браузера.</p><div class="browser-mock"><div class="browser-tab">вкладка: Світ океанів</div><div class="browser-page"><h1>Світ океанів</h1><p>Океани займають...</p></div></div><p><code>&lt;title&gt;</code> → назва документа / вкладка браузера.</p><p><code>&lt;h1&gt;</code> → головний заголовок у вмісті вебсторінки.</p></article>
+        <article class="lesson-card"><h3>Що таке метадані?</h3><p>Метадані — це інформація про HTML-документ.</p><p>Прості приклади інформації: мова документа; назва документа; кодування символів.</p><pre class="code-panel">&lt;meta charset="UTF-8"&gt;</pre><p><code>&lt;meta charset="UTF-8"&gt;</code> задає кодування символів. UTF-8 допомагає браузеру правильно відображати українські літери та багато інших символів.</p></article>
+      </section>
+
+      <section id="structure" class="lesson-section"><h2>Розбір структури HTML-документа</h2><article class="lesson-card"><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Світ океанів&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Світ океанів&lt;/h1&gt;
+    &lt;p&gt;Океани займають більшу частину поверхні Землі.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre><ul><li><code>&lt;!DOCTYPE html&gt;</code> → тип документа</li><li><code>&lt;html lang="uk"&gt;</code> → HTML-документ, основна мова — українська</li><li><code>&lt;head&gt;</code> → інформація про документ</li><li><code>&lt;meta charset="UTF-8"&gt;</code> → кодування символів</li><li><code>&lt;title&gt;</code> → назва документа</li><li><code>&lt;body&gt;</code> → видимий вміст сторінки</li><li><code>&lt;h1&gt;</code> → головний заголовок</li><li><code>&lt;p&gt;</code> → абзац</li></ul></article></section>
+
+      <section id="examples" class="lesson-section"><h2>Приклади</h2><article class="lesson-card"><div class="comparison"><div><h3>Інформація про документ</h3><pre class="code-panel">&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Світ океанів&lt;/title&gt;
+&lt;/head&gt;</pre></div><div><h3>Вміст сторінки</h3><pre class="code-panel">&lt;body&gt;
+    &lt;h1&gt;Світ океанів&lt;/h1&gt;
+    &lt;p&gt;Океани займають більшу частину поверхні Землі.&lt;/p&gt;
+&lt;/body&gt;</pre></div></div></article></section>
+
+      <section id="exercises" class="lesson-section"><h2>Інтерактивні вправи</h2>
+        <article class="lesson-card exercise-card" id="exercise-1"><h3>Вправа 1 — «Хто за що відповідає?»</h3><div class="touch-grid">
+          <label class="choice-card"><code>&lt;!DOCTYPE html&gt;</code><select data-match="doctype"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>&lt;html&gt;</code><select data-match="html"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>&lt;head&gt;</code><select data-match="head"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>&lt;body&gt;</code><select data-match="body"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>&lt;title&gt;</code><select data-match="title"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>lang="uk"</code><select data-match="lang"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+          <label class="choice-card"><code>&lt;meta charset="UTF-8"&gt;</code><select data-match="charset"><option value="">Обери відповідність</option><option value="doctype">повідомляє тип документа</option><option value="html">містить HTML-документ</option><option value="head">містить інформацію про документ</option><option value="body">містить основний вміст сторінки</option><option value="title">задає назву HTML-документа</option><option value="lang">указує, що основна мова документа — українська</option><option value="charset">задає кодування символів</option></select></label>
+        </div><button data-check-exercise="1">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+
+        <article class="lesson-card exercise-card" id="exercise-2"><h3>Вправа 2 — «HEAD чи BODY?»</h3><p>Для кожного фрагмента обери правильне місце.</p><div class="touch-grid">
+          <label class="choice-card"><code>&lt;title&gt;Подорожі&lt;/title&gt;</code><select data-place="head"><option value="">Обери місце</option><option value="head">HEAD</option><option value="body">BODY</option></select></label>
+          <label class="choice-card"><code>&lt;meta charset="UTF-8"&gt;</code><select data-place="head"><option value="">Обери місце</option><option value="head">HEAD</option><option value="body">BODY</option></select></label>
+          <label class="choice-card"><code>&lt;h1&gt;Мої подорожі&lt;/h1&gt;</code><select data-place="body"><option value="">Обери місце</option><option value="head">HEAD</option><option value="body">BODY</option></select></label>
+          <label class="choice-card"><code>&lt;p&gt;Тут я розповідаю про цікаві місця.&lt;/p&gt;</code><select data-place="body"><option value="">Обери місце</option><option value="head">HEAD</option><option value="body">BODY</option></select></label>
+        </div><button data-check-exercise="2">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+
+        <article class="lesson-card exercise-card" id="exercise-3"><h3>Вправа 3 — «Збери HTML-документ»</h3><p>Розташуй рядки так, щоб утворився правильний HTML-документ. Обери рядок, потім переміщуй його кнопками.</p><div id="order-list" class="line-order" aria-label="Рядки HTML-коду"></div><div class="button-row"><button id="move-up" class="secondary">↑ Вище</button><button id="move-down" class="secondary">↓ Нижче</button><button data-check-exercise="3">Перевірити</button></div><p class="feedback" aria-live="polite"></p></article>
+      </section>
+
+      <section id="coding" class="lesson-section"><h2>Тепер працюємо з кодом</h2>
+        <article class="lesson-card exercise-card" id="exercise-4"><h3>Вправа 4 — «Знайди і виправ помилки»</h3><p>У документі переплутано місця двох елементів. Виправ код.</p><textarea class="code-editor" rows="14" aria-label="Код вправи 4">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;h1&gt;Домашні улюбленці&lt;/h1&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;title&gt;Мої домашні улюбленці&lt;/title&gt;
+    &lt;p&gt;На цій сторінці я розповідаю про домашніх тварин.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea><button data-check-exercise="4">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+
+        <article class="lesson-card exercise-card" id="exercise-5"><h3>Вправа 5 — «Доповни каркас»</h3><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    __________
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Моя бібліотека&lt;/h1&gt;
+    &lt;p&gt;Тут я розповім про книги, які мені сподобалися.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre><p>Додай назву HTML-документа: Моя бібліотека.</p><textarea class="code-editor" rows="4" aria-label="Відповідь до вправи 5"></textarea><button data-check-exercise="5">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+
+        <article class="lesson-card exercise-card" id="exercise-6"><h3>Вправа 6 — «Створи структуру»</h3><div class="structure-panel"><p><strong>Мова документа:</strong> українська</p><p><strong>Назва HTML-документа:</strong> Планети</p><p><strong>Головний заголовок:</strong> Планети Сонячної системи</p><p><strong>Абзац:</strong> Земля є третьою планетою від Сонця.</p></div><p>Створи повний HTML-документ із цих даних.</p><textarea class="code-editor" rows="16" aria-label="Код повного HTML-документа"></textarea><button data-check-exercise="6">Перевірити</button><ul class="check-list" aria-live="polite"></ul><p class="feedback" aria-live="polite"></p></article>
+      </section>
+
+      <section id="self-check" class="lesson-section"><h2>Перевір себе</h2><article class="lesson-card">
+        <fieldset class="question-card" data-answer="body"><legend>1. Де розміщують основний вміст вебсторінки?</legend><label><input type="radio" name="q1" value="head"> <code>&lt;head&gt;</code></label><label><input type="radio" name="q1" value="body"> <code>&lt;body&gt;</code></label><label><input type="radio" name="q1" value="title"> <code>&lt;title&gt;</code></label><label><input type="radio" name="q1" value="doctype"> <code>&lt;!DOCTYPE html&gt;</code></label><button class="check-question">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset>
+        <fieldset class="question-card" data-answer="doctype"><legend>2. Яка конструкція повідомляє браузеру, що документ використовує HTML5?</legend><label><input type="radio" name="q2" value="html"> <code>&lt;html&gt;</code></label><label><input type="radio" name="q2" value="doctype"> <code>&lt;!DOCTYPE html&gt;</code></label><label><input type="radio" name="q2" value="meta"> <code>&lt;meta charset="UTF-8"&gt;</code></label><button class="check-question">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset>
+        <fieldset class="question-card" data-answer="Мандрівка Україною"><legend>3. <code>&lt;title&gt;Мандрівка Україною&lt;/title&gt;</code><br>Який текст буде назвою HTML-документа і, зокрема, відображатиметься на вкладці браузера?</legend><input class="code-editor text-answer" aria-label="Відповідь на питання 3"><button class="check-question">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset>
+        <fieldset class="question-card" data-answer="no"><legend>4. Чи однакове призначення <code>&lt;title&gt;</code> і <code>&lt;h1&gt;</code>?</legend><label><input type="radio" name="q4" value="yes"> Так</label><label><input type="radio" name="q4" value="no"> Ні</label><button class="check-question">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset>
+        <fieldset class="question-card" data-answer="ukrainian"><legend>5. Що означає <code>uk</code> у коді <code>&lt;html lang="uk"&gt;</code>?</legend><label><input type="radio" name="q5" value="ukrainian"> Основна мова документа — українська.</label><label><input type="radio" name="q5" value="country"> Документ можна відкрити лише в Україні.</label><label><input type="radio" name="q5" value="encoding"> Документ використовує кодування UTF-8.</label><button class="check-question">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset>
+      </article></section>
+
+      <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><p><strong>У попередній темі ти створив перший вміст своєї сторінки. Тепер перетвори його на правильно структурований HTML-документ.</strong></p><p>Ти не створюєш новий проєкт. Працюй у VS Code з уже створеною папкою <code>moie-misto-vinnytsia</code> і файлом <code>index.html</code>.</p><ol><li>Відкрий у VS Code папку <code>moie-misto-vinnytsia</code>.</li><li>Відкрий файл <code>index.html</code>.</li><li>Додай на початку документа <code>&lt;!DOCTYPE html&gt;</code>.</li><li>Створи елемент <code>&lt;html&gt;</code> та вкажи українську мову документа: <code>&lt;html lang="uk"&gt;</code>.</li><li>Усередині <code>&lt;html&gt;</code> створи <code>&lt;head&gt;</code> та <code>&lt;body&gt;</code>.</li><li>У <code>&lt;head&gt;</code> додай <code>&lt;meta charset="UTF-8"&gt;</code>.</li><li>Додай назву HTML-документа: <code>&lt;title&gt;Моє місто — Вінниця&lt;/title&gt;</code>.</li><li>Уже створений заголовок <code>&lt;h1&gt;</code> та два абзаци <code>&lt;p&gt;</code> НЕ переписуй і НЕ видаляй. Перемісти їх усередину <code>&lt;body&gt;</code>.</li><li>Закрий усі елементи, які потребують закривальних тегів.</li><li>Збережи <code>index.html</code>.</li><li>Відкрий сторінку в браузері.</li><li>Перевір: чи відображається головний заголовок; чи відображаються два абзаци; чи на вкладці браузера є назва «Моє місто — Вінниця».</li></ol><button id="project-guide" class="secondary" aria-expanded="false">Перевір структуру</button><div id="project-structure" hidden><pre class="code-panel">&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моє місто — Вінниця&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- тут залишається h1, створений у Темі 1 --&gt;
+
+    &lt;p&gt;Вінниця — місто в Україні, розташоване на берегах Південного Бугу.&lt;/p&gt;
+
+    &lt;p&gt;На цьому сайті я розповім про цікаві місця Вінниці та поділюся маршрутом для знайомства з містом.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</pre><p><code>&lt;h1&gt;</code> потрібно зберегти без змін.</p></div></article></section>
+      <div class="lesson-actions"><a class="bottom-link" href="../index.html">← Усі теми</a><a class="bottom-link" href="topic-03.html">Тема 3 →</a></div>
+    </div>
+  </main>
+  <script src="../assets/trainer.js"></script>
+  <script src="topic-02.js"></script>
+</body>
+</html>

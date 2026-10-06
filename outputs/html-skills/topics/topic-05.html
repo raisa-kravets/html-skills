@@ -1,0 +1,102 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Тема 5 — Спеціальні елементи тексту — HTML Skills</title><link rel="stylesheet" href="../assets/shared.css"></head><body>
+<header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">5</span>Тема 5. Спеціальні елементи тексту</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
+<main class="lesson-layout"><nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#indices">Індекси</a><a href="#span-pre">span і pre</a><a href="#time-address">time і address</a><a href="#entities">Символи</a><a href="#combined">Комбіновані вправи</a><a href="#project">Наскрізний проєкт</a><a href="#summary">Підсумок</a></nav><div class="lesson-content">
+<section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Коли звичайного тексту недостатньо</h2><p>Ми вже вміємо створювати структуру HTML-документа, заголовки й абзаци. Але як записати м² та H₂O, зберегти відступи, позначити дату або показати HTML-тег як текст? Для таких ситуацій HTML має спеціальні елементи.</p><div class="touch-grid"><div class="choice-card"><strong>25 м<sup>2</sup></strong></div><div class="choice-card"><strong>H<sub>2</sub>O</strong></div><div class="choice-card"><strong><time datetime="2026-10-15">15 жовтня 2026 року</time></strong></div><div class="choice-card"><strong><code>&lt;h1&gt;</code> як звичайний текст</strong></div></div></article><article class="lesson-card"><h3>Спеціальні елементи тексту</h3><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про спеціальні елементи тексту HTML"><img src="../assets/html-special-text-elements.png" alt="Спеціальні елементи тексту HTML: приклади коду та їх відображення у браузері"></button><figcaption>Інфографіка показує код і приблизний результат у браузері. Далі розберемо кожний засіб окремо.</figcaption></figure></article></section>
+
+<section id="indices" class="lesson-section"><h2>Верхній і нижній індекси</h2><article class="lesson-card"><h3><code>&lt;sup&gt;</code> — верхній індекс</h3><p><code>&lt;sup&gt;</code> створює верхній індекс. Усередині елемента розміщуємо лише символи, які потрібно підняти над основним рядком.</p><pre class="code-panel">&lt;p&gt;Площа кімнати — 18 м&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;5&lt;sup&gt;2&lt;/sup&gt; = 25&lt;/p&gt;
+&lt;p&gt;Об’єм коробки — 2 м&lt;sup&gt;3&lt;/sup&gt;.&lt;/p&gt;</pre><div class="comparison"><div><strong>Неправильно</strong><pre class="code-panel">&lt;p&gt;18 &lt;sup&gt;м2&lt;/sup&gt;&lt;/p&gt;</pre></div><div><strong>Правильно</strong><pre class="code-panel">&lt;p&gt;18 м&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;</pre></div></div></article>
+<article class="lesson-card exercise-card code-task" id="exercise-1" data-kind="room"><h3>Вправа 1 — «Виправ записи»</h3><p>Зроби цифри 2 і 3 верхніми індексами. Збережи заголовок та обидва абзаци.</p><textarea class="code-editor" rows="6" data-reset-feedback>&lt;h2&gt;Розміри кімнати&lt;/h2&gt;
+&lt;p&gt;Площа — 24 м2.&lt;/p&gt;
+&lt;p&gt;Об’єм — 60 м3.&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 1"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article>
+<article class="lesson-card"><h3><code>&lt;sub&gt;</code> — нижній індекс</h3><p><code>&lt;sub&gt;</code> створює нижній індекс. Наприклад, цифру у хімічній формулі.</p><pre class="code-panel">&lt;p&gt;Формула води — H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+&lt;p&gt;Кисень — O&lt;sub&gt;2&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;Вуглекислий газ — CO&lt;sub&gt;2&lt;/sub&gt;.&lt;/p&gt;</pre><p class="rule-callout"><code>&lt;sup&gt;</code> — угору; <code>&lt;sub&gt;</code> — униз.</p></article>
+<article class="lesson-card exercise-card" id="exercise-2"><h3>Вправа 2 — «Верх чи низ?»</h3><div id="index-choices"></div></article>
+<article class="lesson-card exercise-card code-task" id="exercise-3" data-kind="handbook"><h3>Вправа 3 — «Мій навчальний довідник»</h3><p>Заміни «10 у квадраті» записом 10², виправ H₂O та CO₂. Збережи заголовки й абзаци.</p><textarea class="code-editor" rows="10" data-reset-feedback>&lt;h1&gt;Мій навчальний довідник&lt;/h1&gt;
+&lt;h2&gt;Математика&lt;/h2&gt;
+&lt;p&gt;10 у квадраті дорівнює 100.&lt;/p&gt;
+&lt;h2&gt;Хімія&lt;/h2&gt;
+&lt;p&gt;Формула води — H2O.&lt;/p&gt;
+&lt;p&gt;Формула вуглекислого газу — CO2.&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 3"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article></section>
+
+<section id="span-pre" class="lesson-section"><h2>Частина тексту та збережені відступи</h2><article class="lesson-card"><h3><code>&lt;span&gt;</code> — частина тексту</h3><p><code>&lt;span&gt;</code> робить частину тексту окремим HTML-елементом усередині іншого елемента. Сам по собі він не змінює колір, не робить текст жирним і не створює нового абзацу. Його можливості використаємо під час вивчення CSS.</p><div class="comparison"><div><strong>Зі span</strong><pre class="code-panel">&lt;p&gt;Моя улюблена пора року — &lt;span&gt;весна&lt;/span&gt;.&lt;/p&gt;</pre><p>Моя улюблена пора року — <span>весна</span>.</p></div><div><strong>Без span</strong><pre class="code-panel">&lt;p&gt;Моя улюблена пора року — весна.&lt;/p&gt;</pre><p>Моя улюблена пора року — весна.</p></div></div><p>Без додаткових стилів обидва результати виглядають однаково.</p></article>
+<article class="lesson-card exercise-card code-task" id="exercise-4" data-kind="span"><h3>Вправа 4 — «Обгорни потрібне слово»</h3><p>Обгорни лише слово Python у <code>span</code>. Збережи решту абзацу.</p><textarea class="code-editor" rows="3" data-reset-feedback>&lt;p&gt;Моя улюблена мова програмування — Python.&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 4"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article>
+<article class="lesson-card"><h3><code>&lt;pre&gt;</code> — збережені відступи</h3><div class="comparison"><div><strong>Код А</strong><pre class="code-panel">&lt;p&gt;
+Понеділок
+    HTML
+        16:00
+&lt;/p&gt;</pre></div><div><strong>Код Б</strong><pre class="code-panel">&lt;pre&gt;
+Понеділок
+    HTML
+        16:00
+&lt;/pre&gt;</pre></div></div><p>У звичайному абзаці кілька пробілів зазвичай відображаються як один, а перенесення рядка в коді не створює переносу на сторінці. <code>&lt;pre&gt;</code> зберігає пробіли, відступи та переноси рядків.</p></article>
+<article class="lesson-card exercise-card" id="exercise-5"><h3>Вправа 5 — «Передбач результат»</h3><p>Прочитай обидва фрагменти. Обери, як браузер покаже текст у кожному випадку.</p><div id="pre-predictions"></div></article>
+<article class="lesson-card exercise-card" id="exercise-6"><h3>Вправа 6 — «Обери елемент»</h3><pre class="tree">План:
+    1. HTML
+    2. CSS
+    3. Проєкт</pre><fieldset class="question-card" data-interactive data-answer="pre"><legend>Який елемент збереже такий вигляд?</legend><label><input type="radio" name="pre-choice" value="p" data-reset-feedback> &lt;p&gt;</label><label><input type="radio" name="pre-choice" value="h2" data-reset-feedback> &lt;h2&gt;</label><label><input type="radio" name="pre-choice" value="pre" data-reset-feedback> &lt;pre&gt;</label><label><input type="radio" name="pre-choice" value="span" data-reset-feedback> &lt;span&gt;</label><button class="check-choice">Перевірити</button><div class="result-panel" hidden><p><strong>Повний приклад:</strong></p><pre class="code-panel">&lt;pre&gt;
+План:
+    1. HTML
+    2. CSS
+    3. Проєкт
+&lt;/pre&gt;</pre></div><p class="feedback"></p></fieldset></article></section>
+
+<section id="time-address" class="lesson-section"><h2>Дата, час і контакти автора</h2><article class="lesson-card"><h3><code>&lt;time&gt;</code> — дата і час</h3><pre class="code-panel">&lt;p&gt;
+Зустріч відбудеться
+&lt;time datetime="2026-10-15"&gt;15 жовтня 2026 року&lt;/time&gt;.
+&lt;/p&gt;</pre><p><code>&lt;time&gt;</code> позначає дату або час. Між тегами розміщується текст для людини. Атрибут <code>datetime</code> містить стандартизоване значення для програм. Для дати використовуємо формат <strong>рік-місяць-день</strong>.</p><pre class="code-panel">&lt;time datetime="16:00"&gt;о 16:00&lt;/time&gt;</pre></article>
+<article class="lesson-card exercise-card" id="exercise-7"><h3>Вправа 7 — «Розбери елемент»</h3><pre class="code-panel">&lt;time datetime="2026-12-20"&gt;20 грудня 2026 року&lt;/time&gt;</pre><div id="time-parts"></div></article>
+<article class="lesson-card exercise-card code-task" id="exercise-8" data-kind="time"><h3>Вправа 8 — «Доповни атрибут»</h3><p>Заміни пропуск атрибутом із правильним значенням дати.</p><textarea class="code-editor" rows="5" data-reset-feedback>&lt;p&gt;
+Канікули розпочнуться
+&lt;time ____________&gt;26 грудня 2026 року&lt;/time&gt;.
+&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 8"></iframe><ul class="check-list"></ul><p class="feedback"></p></article>
+<article class="lesson-card"><h3><code>&lt;address&gt;</code> — контакти автора</h3><p><code>&lt;address&gt;</code> позначає контактну інформацію автора або власника сторінки чи матеріалу. Це не елемент для будь-якої адреси, згаданої в тексті.</p><pre class="code-panel">&lt;h2&gt;Контакти&lt;/h2&gt;
+&lt;address&gt;
+Автор: Анна Коваль&lt;br&gt;
+Email: anna@example.com
+&lt;/address&gt;</pre><p><code>&lt;br&gt;</code> створює перенос рядка й не має закривального тега.</p></article>
+<article class="lesson-card exercise-card" id="exercise-9"><h3>Вправа 9 — «Де доречний address?»</h3><fieldset class="question-card" data-interactive data-answer="b"><legend>Обери ситуацію.</legend><label><input type="radio" name="address-choice" value="a" data-reset-feedback> А. Музей розташований на Центральній вулиці.</label><label><input type="radio" name="address-choice" value="b" data-reset-feedback> Б. Автор сайту: Максим Петренко. Email: max@example.com.</label><label><input type="radio" name="address-choice" value="c" data-reset-feedback> В. Автобус їде вулицею Шкільною.</label><button class="check-choice">Перевірити</button><p class="feedback"></p></fieldset></article></section>
+
+<section id="entities" class="lesson-section"><h2>Символьні підстановки</h2><article class="lesson-card"><p>Потрібно показати: <strong>Тег &lt;p&gt; створює абзац.</strong> Якщо вставити <code>&lt;p&gt;</code> як розмітку, браузер сприйме його як тег.</p><pre class="code-panel">&lt;p&gt;Тег &amp;lt;p&amp;gt; створює абзац.&lt;/p&gt;</pre><table><thead><tr><th>Запис</th><th>Результат</th></tr></thead><tbody><tr><td><code>&amp;lt;</code></td><td>&lt;</td></tr><tr><td><code>&amp;gt;</code></td><td>&gt;</td></tr><tr><td><code>&amp;amp;</code></td><td>&amp;</td></tr><tr><td><code>&amp;nbsp;</code></td><td>нерозривний пробіл</td></tr><tr><td><code>&amp;copy;</code></td><td>©</td></tr></tbody></table><p>Нерозривний пробіл не дозволяє розділити пов’язані частини тексту переносом рядка. Не використовуй його для створення відступів.</p><pre class="code-panel">&lt;p&gt;Ціна — 100&amp;nbsp;грн.&lt;/p&gt;
+&lt;p&gt;HTML &amp;amp; CSS&lt;/p&gt;
+&lt;p&gt;&amp;copy; 2026 Навчальний проєкт&lt;/p&gt;</pre></article>
+<article class="lesson-card exercise-card code-task" id="exercise-10" data-kind="entity"><h3>Вправа 10 — «Покажи тег як текст»</h3><p>Покажи назву тега h1 разом із кутовими дужками. Використай символьні підстановки.</p><textarea class="code-editor" rows="3" data-reset-feedback>&lt;p&gt;Для головного заголовка використовують h1.&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 10"></iframe><ul class="check-list"></ul><p class="feedback"></p></article></section>
+
+<section id="combined" class="lesson-section"><h2>Комбіновані вправи</h2><article class="lesson-card exercise-card code-task" id="exercise-11" data-kind="four"><h3>Вправа 11 — «Знайди чотири проблеми»</h3><p>Виправ одиницю площі, хімічну формулу, позначення дати для програм і показ назви HTML-тега. Збережи заголовки та абзаци.</p><textarea class="code-editor" rows="14" data-reset-feedback>&lt;h1&gt;Корисні факти&lt;/h1&gt;
+
+&lt;h2&gt;Математика&lt;/h2&gt;
+&lt;p&gt;Площа квадрата — 25 см2.&lt;/p&gt;
+&lt;h2&gt;Хімія&lt;/h2&gt;
+&lt;p&gt;Формула води — H2O.&lt;/p&gt;
+&lt;h2&gt;Подія&lt;/h2&gt;
+&lt;p&gt;Зустріч відбудеться &lt;time&gt;18 жовтня 2026 року&lt;/time&gt;.&lt;/p&gt;
+&lt;h2&gt;HTML&lt;/h2&gt;
+&lt;p&gt;Абзац створює тег &lt;p&gt;.&lt;/p&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 11"></iframe><ul class="check-list"></ul><p class="feedback"></p></article>
+<article class="lesson-card exercise-card" id="exercise-12"><h3>Вправа 12 — «Збери правильний код»</h3><p>Склади кожен фрагмент. Натискай блоки або перетягуй їх у поле складання. Кожен фрагмент перевіряється окремо.</p><div id="builders"></div></article>
+<article class="lesson-card exercise-card code-task" id="exercise-13" data-kind="page"><h3>Вправа 13 — «Удоскональ сторінку»</h3><ol><li>Правильно оформи одиницю площі.</li><li>Правильно запиши формулу води.</li><li>Познач дату та додай машинозчитуване значення.</li><li>Покажи назву HTML-тега разом із кутовими дужками.</li><li>Познач контакти автора відповідним семантичним елементом.</li><li>Збережи структуру документа та всі заголовки.</li></ol><textarea class="code-editor" rows="27" data-reset-feedback>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя сторінка&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Мій маленький довідник&lt;/h1&gt;
+    &lt;h2&gt;Математика&lt;/h2&gt;
+    &lt;p&gt;Площа квадрата — 36 см2.&lt;/p&gt;
+    &lt;h2&gt;Хімія&lt;/h2&gt;
+    &lt;p&gt;Формула води — H2O.&lt;/p&gt;
+    &lt;h2&gt;Моя подія&lt;/h2&gt;
+    &lt;p&gt;Наступне заняття — 8 жовтня 2026 року.&lt;/p&gt;
+    &lt;h2&gt;HTML-підказка&lt;/h2&gt;
+    &lt;p&gt;Головний заголовок створює тег h1.&lt;/p&gt;
+    &lt;h2&gt;Контакти&lt;/h2&gt;
+    &lt;p&gt;Автор: Марія&lt;br&gt;Email: maria@example.com&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea><div class="button-row"><button class="check-code">Перевірити</button><button class="reset-code secondary">Почати знову</button></div><iframe class="preview-frame" sandbox title="Попередній перегляд вправи 13"></iframe><ul class="check-list"></ul><p class="feedback"></p></article></section>
+
+<section id="project" class="lesson-section"><h2>🚀 Продовжуємо проєкт про Вінницю</h2><article class="lesson-card project-card"><p>Відкрий у VS Code папку <code>moie-misto-vinnytsia</code> і файл <code>index.html</code>. Це продовження документа з попередніх тем — нічого створеного не видаляй.</p><ol><li>У наявному записі площі міста оформи цифру 2 верхнім індексом. Не змінюй саме число площі.</li><li>Наприкінці сторінки додай абзац: «Сторінку оновлено 1 жовтня 2026 року.» Познач дату через <code>time</code> зі значенням <code>datetime="2026-10-01"</code>.</li><li>Після дати, у самому кінці сторінки, додай контакти навчального автора через <code>address</code>. Використай вигаданий email <code>student@example.com</code> і <code>br</code> для переносу рядка. Надалі, коли додаватимеш новий основний вміст, залишай дату й контакти останніми.</li></ol><p class="rule-callout">Не додавай <code>sub</code>, <code>pre</code> та <code>span</code> лише заради використання всіх тегів. HTML-засіб потрібний лише тоді, коли цього потребує зміст.</p><h3>Очікуваний результат у браузері</h3><p><strong>Збережи <code>index.html</code>, відкрий або онови сторінку у браузері та порівняй змінений фрагмент із прикладом.</strong></p><p class="muted">Трикрапка замінює вже записане у твоєму файлі число площі — не змінюй його. Перевір насамперед верхній індекс, дату та перенесення контактів на новий рядок.</p><div class="browser-mock" aria-label="Очікуваний вигляд зміненого фрагмента проєкту у браузері"><div class="browser-tab">Моє місто — Вінниця</div><div class="browser-page"><p>Площа міста — … км<sup>2</sup>.</p><p>Сторінку оновлено <time datetime="2026-10-01">1 жовтня 2026 року</time>.</p><address>Автор навчального проєкту<br>Email: student@example.com</address></div></div></article></section>
+
+<section id="summary" class="lesson-section"><h2>Вправа 15 — «Обери засіб за змістом»</h2><article class="lesson-card exercise-card"><div id="summary-choices"></div><p class="rule-callout">Тепер ти вмієш обирати спеціальні елементи за змістом, правильно оформлювати індекси, позначати дату й контакти автора, зберігати відступи та показувати спеціальні символи. Поєднуй ці можливості з уже відомими заголовками, абзацами й структурою документа.</p></article></section>
+<div class="lesson-actions"><a class="bottom-link" href="topic-04.html">← Тема 4</a><a class="bottom-link" href="../index.html">Усі теми →</a></div></div></main><script src="../assets/trainer.js"></script><script src="topic-05.js"></script></body></html>
+

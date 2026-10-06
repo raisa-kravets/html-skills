@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HTML Skills — навчальний тренажер з HTML для гуртківців 8–9 класів.">
+  <title>HTML Skills — навчальний тренажер</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/shared.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="project-mark">
+        <div class="laptop" aria-hidden="true"><i data-lucide="laptop"></i></div>
+        <div>
+          <p class="project-name">Web-дизайн ВМПДЮ</p>
+          <p class="project-author">Навчальний проєкт Раїси Кравець</p>
+        </div>
+      </div>
+      <div class="course-heading">
+        <h1><span>HTML</span> <strong>Skills</strong></h1>
+        <p>Мова розмітки гіпертексту HTML</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="topics" aria-label="Теми курсу HTML">
+      <a class="topic-card tone-pink" href="topics/topic-01.html">
+        <span class="topic-number">1</span><i class="topic-icon" data-lucide="code-xml" aria-hidden="true"></i>
+        <h2>Теги та атрибути HTML</h2>
+        <p>HTML-елемент, тег, парні й одинарні теги, атрибути, специфікація HTML.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-blue" href="topics/topic-02.html">
+        <span class="topic-number">2</span><i class="topic-icon" data-lucide="file-code-2" aria-hidden="true"></i>
+        <h2>Структура HTML-документа</h2>
+        <p><code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;title&gt;</code>, метадані, <code>lang</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-cream" href="topics/topic-03.html">
+        <span class="topic-number">3</span><i class="topic-icon" data-lucide="heading" aria-hidden="true"></i>
+        <h2>Заголовки та абзаци</h2>
+        <p><code>&lt;h1&gt;–&lt;h6&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>. Ієрархія заголовків та організація тексту.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-mint" href="topics/topic-04.html">
+        <span class="topic-number">4</span><i class="topic-icon" data-lucide="quote" aria-hidden="true"></i>
+        <h2>Смислове виділення, зміни та цитати</h2>
+        <p><code>&lt;strong&gt;</code>, <code>&lt;b&gt;</code>, <code>&lt;em&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;del&gt;</code>, <code>&lt;ins&gt;</code>, <code>&lt;q&gt;</code>, <code>&lt;blockquote&gt;</code>, <code>&lt;cite&gt;</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-lilac" href="topics/topic-05.html">
+        <span class="topic-number">5</span><i class="topic-icon" data-lucide="superscript" aria-hidden="true"></i>
+        <h2>Спеціальні елементи тексту</h2>
+        <p><code>&lt;span&gt;</code>, <code>&lt;pre&gt;</code>, <code>&lt;sup&gt;</code>, <code>&lt;sub&gt;</code>, <code>&lt;time&gt;</code>, <code>&lt;address&gt;</code>, символьні підстановки.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-blue" href="topics/topic-06.html">
+        <span class="topic-number">6</span><i class="topic-icon" data-lucide="link-2" aria-hidden="true"></i>
+        <h2>Гіперпосилання</h2>
+        <p><code>&lt;a&gt;</code>, <code>href</code>, <code>target</code>, URL, шляхи, якорі, <code>id</code>, <code>download</code>, <code>mailto:</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-pink" href="topics/topic-07.html">
+        <span class="topic-number">7</span><i class="topic-icon" data-lucide="list" aria-hidden="true"></i>
+        <h2>Списки</h2>
+        <p><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>, вкладені списки, <code>&lt;dl&gt;</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-cream" href="topics/topic-08.html">
+        <span class="topic-number">8</span><i class="topic-icon" data-lucide="image" aria-hidden="true"></i>
+        <h2>Зображення в HTML</h2>
+        <p><code>&lt;img&gt;</code>, <code>src</code>, <code>alt</code>, шляхи до файлів, графічні формати.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-mint" href="topics/topic-09.html">
+        <span class="topic-number">9</span><i class="topic-icon" data-lucide="images" aria-hidden="true"></i>
+        <h2>Зображення як частина вебсторінки</h2>
+        <p>Зображення-посилання, підписи, оптимізація, прогресивний JPEG.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-lilac" href="topics/topic-10.html">
+        <span class="topic-number">10</span><i class="topic-icon" data-lucide="layout-template" aria-hidden="true"></i>
+        <h2>Структурна та семантична розмітка</h2>
+        <p><code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;div&gt;</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-pink" href="topics/topic-11.html">
+        <span class="topic-number">11</span><i class="topic-icon" data-lucide="wrench" aria-hidden="true"></i>
+        <h2>DevTools, валідація та оформлення коду</h2>
+        <p>DevTools, аналіз HTML, оформлення коду, валідація, виправлення помилок.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-blue" href="topics/topic-12.html">
+        <span class="topic-number">12</span><i class="topic-icon" data-lucide="circle-play" aria-hidden="true"></i>
+        <h2>Відео та аудіо</h2>
+        <p><code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, джерела медіа, атрибути, формати.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-cream" href="topics/topic-13.html">
+        <span class="topic-number">13</span><i class="topic-icon" data-lucide="text-cursor-input" aria-hidden="true"></i>
+        <h2>Форми в HTML</h2>
+        <p><code>&lt;form&gt;</code>, <code>&lt;label&gt;</code>, <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, <code>&lt;select&gt;</code>, <code>&lt;option&gt;</code>, <code>&lt;button&gt;</code>.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-mint" href="topics/topic-14.html">
+        <span class="topic-number">14</span><i class="topic-icon" data-lucide="rows-3" aria-hidden="true"></i>
+        <h2>Потік документа. Блочні та рядкові елементи</h2>
+        <p>Потік документа, block/inline, поведінка HTML-елементів.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-lilac" href="topics/topic-15.html">
+        <span class="topic-number">15</span><i class="topic-icon" data-lucide="table-2" aria-hidden="true"></i>
+        <h2>Таблиці в HTML</h2>
+        <p><code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;caption&gt;</code>, секції таблиці, групування клітинок.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+      <a class="topic-card tone-pink" href="topics/topic-16.html">
+        <span class="topic-number">16</span><i class="topic-icon" data-lucide="badge-check" aria-hidden="true"></i>
+        <h2>Завершення вебпроєкту</h2>
+        <p>Перевірка структури, навігації, шляхів, семантики, доступності та валідності.</p>
+        <span class="go" aria-hidden="true">→</span>
+      </a>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

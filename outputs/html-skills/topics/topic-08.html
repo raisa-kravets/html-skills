@@ -9,7 +9,7 @@
 <body>
 <header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">8</span>Тема 8. Зображення в HTML</h1><div class="lesson-brand">HTML <span>Skills</span></div></header>
 <main class="lesson-layout">
-  <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#img-tag">Тег img</a><a href="#attributes">src, alt і width</a><a href="#paths">Шляхи до файлів</a><a href="#formats">Графічні формати</a><a href="#practice">Інтерактивні вправи</a><a href="#mistakes">Типові помилки</a><a href="#test">Перевір себе</a></nav>
+  <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#img-tag">Тег img</a><a href="#attributes">src, alt і width</a><a href="#paths">Шляхи до файлів</a><a href="#formats">Графічні формати</a><a href="#practice">Інтерактивні вправи</a><a href="#mistakes">Типові помилки</a><a href="#test">Перевір себе</a><a href="#project">Наскрізний проєкт</a></nav>
   <div class="lesson-content">
     <section id="intro" class="lesson-section">
       <article class="lesson-intro"><h2>Навчимося додавати зображення на вебсторінку</h2><p><code>&lt;img&gt;</code>, <code>src</code>, <code>alt</code>, шляхи до файлів і графічні формати.</p><p>Після теми ти зможеш самостійно написати правильний тег зображення та знайти типові помилки в ньому.</p></article>
@@ -118,7 +118,27 @@
       <div class="task-row" data-test="error" data-answer="src" data-interactive><p><strong>5. Знайди помилку: <code>&lt;img scr="images/city.jpg" alt="Вінниця"&gt;</code></strong></p><input class="code-editor" aria-label="Правильна назва атрибута" data-reset-feedback><button type="button" class="check-final-text">Перевірити</button><p class="feedback"></p></div>
       <p class="score" aria-live="polite"></p>
     </article></section>
-    <div class="lesson-actions"><a href="topic-07.html">← Тема 7. Списки</a><a href="../index.html">Усі теми →</a></div>
+    <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2>
+      <div class="project-layout-links"><strong>Макети для цього завдання:</strong><div class="layout-targets"><a href="../project-layouts.html#home">Головна</a><a href="../project-layouts.html#about">Про Вінницю</a></div><a href="../project-layouts.html">Усі макети проєкту</a></div>
+      <article class="lesson-card project-card"><h3>Додаємо зображення до готових сторінок</h3>
+        <div class="project-file-focus"><strong>📁 Сьогодні працюємо з файлами</strong><div class="project-file-list"><code>index.html</code><code>about.html</code></div><p><strong>Основний:</strong> <code>index.html</code>. <strong>Додатково:</strong> <code>about.html</code>.</p></div>
+        <p>Текст, заголовки, списки та посилання вже створені. Не починай сторінки заново — додай зображення до наявної HTML-структури.</p>
+        <div class="project-step"><h3>1. Підготуй папку images</h3><p>У папці проєкту створи <code>images</code>. Додай файли з короткими латинськими назвами без пробілів, наприклад <code>city.jpg</code>, <code>tower.jpg</code> і <code>history.jpg</code>.</p><pre class="tree">moie-misto-vinnytsia
+├── index.html
+├── about.html
+├── tower.html
+├── europe.html
+├── pyrogov.html
+└── images
+    ├── city.jpg
+    ├── tower.jpg
+    └── history.jpg</pre></div>
+        <div class="project-step"><h3>2. Додай зображення на index.html</h3><p>Додай головне зображення міста та зображення до карток тих місць, для яких уже маєш файли. Для кожного <code>img</code> самостійно вкажи правильний відносний шлях у <code>src</code> і змістовний опис у <code>alt</code>.</p></div>
+        <div class="project-step"><h3>3. Додай зображення на about.html</h3><p>У розділ «Витоки міста» додай історичну ілюстрацію. Шлях має починатися з <code>images/</code>, якщо файл лежить у папці <code>images</code>. Напиши <code>alt</code>, який пояснює зміст, а не повторює слово «картинка».</p></div>
+        <div class="project-step"><h3>4. Перевір шляхи й результат</h3><div class="task-checklist"><label><input type="checkbox"> Зображення додані до вже створених сторінок.</label><label><input type="checkbox"> Усі файли зображень лежать у зазначеній папці.</label><label><input type="checkbox"> Регістр і розширення в <code>src</code> збігаються з назвами файлів.</label><label><input type="checkbox"> Кожне зображення має змістовний <code>alt</code>.</label><label><input type="checkbox"> Меню, якорі та списки попередніх тем працюють.</label></div></div>
+        <p class="rule-callout">Сторінки <code>tower.html</code>, <code>europe.html</code> і <code>pyrogov.html</code> доповниш зображеннями в наступній практичній роботі. Сьогодні не потрібно механічно редагувати всі п’ять файлів.</p>
+      </article>
+    </section>    <div class="lesson-actions"><a href="topic-07.html">← Тема 7. Списки</a><a href="../index.html">Усі теми →</a></div>
   </div>
 </main>
 <script src="../assets/trainer.js?v=20261006"></script>

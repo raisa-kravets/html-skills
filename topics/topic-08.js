@@ -32,4 +32,8 @@
 
   document.addEventListener('change',event=>{const card=event.target.closest('[data-interactive]');if(card&&card.dataset.test){completed.delete(card.dataset.test);score.textContent=completed.size?'Виконано правильно: '+completed.size+' / 5':''}});
   document.addEventListener('input',event=>{const card=event.target.closest('[data-interactive]');if(card&&card.dataset.test){completed.delete(card.dataset.test);score.textContent=completed.size?'Виконано правильно: '+completed.size+' / 5':''}});
+  const bindProjectChoice=(selector,success,error)=>bind(selector,event=>{const field=event.currentTarget.closest('fieldset'),result=T.checkRadio(field),card=field.closest('.project-step');if(!result.answered)return feedback(card,'Спочатку обери відповідь.',false);feedback(card,result.ok?success:error,result.ok)});
+  bindProjectChoice('.check-project-src','Правильно: відносний шлях містить папку images та точне ім’я файла.','Прочитай шлях від HTML-файла: спочатку папка images, потім tower.jpg.');
+  bindProjectChoice('.check-project-alt','Правильно: alt коротко й конкретно описує важливий зміст зображення.','Обери конкретний опис об’єкта, а не загальні слова «Фото» чи «Картинка».');
+  bindProjectChoice('.check-project-img-error','Правильно: шлях до зображення задає атрибут src.','Для файла зображення потрібен src; href використовується у посиланнях.');
 })();

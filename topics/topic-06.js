@@ -37,7 +37,7 @@
     if(!result.answered)return T.feedback(feedback,'Спочатку обери відповідь.',false);
     T.feedback(feedback,result.ok?success:error,result.ok);
   });
-  bindProjectChoice('.check-project-href','Правильно: файли лежать в одній папці, тому достатньо відносної адреси tower.html.','Укажи точне ім’я файла разом із розширенням .html.');
-  bindProjectChoice('.check-project-error','Правильно: адреса має містити точне ім’я tower.html.','Перевір значення href: воно має збігатися з повним іменем файла.');
+  bindProjectChoice('.check-project-href','Правильно: файли лежать в одній папці, тому достатньо відносної адреси about.html.','Укажи точне ім’я файла разом із розширенням .html.');
+  bindProjectChoice('.check-project-error','Правильно: адреса має містити точне ім’я about.html.','Перевір значення href: воно має збігатися з повним іменем файла.');
   bindProjectChoice('.check-project-anchor','Правильно: у href перед значенням id ставимо символ #.','Значення href має точно повторювати id і починатися із символу #.');
 })();

@@ -25,5 +25,142 @@
 </section>
 <section id="summary" class="lesson-section"><h2>Шпаргалка</h2><article class="lesson-card"><table><thead><tr><th>Запис</th><th>Призначення</th></tr></thead><tbody><tr><td><code>&lt;a href="адреса"&gt;Текст&lt;/a&gt;</code></td><td>звичайне посилання</td></tr><tr><td><code>https://example.com</code></td><td>абсолютна адреса</td></tr><tr><td><code>about.html</code></td><td>інша сторінка в тій самій папці</td></tr><tr><td><code>#history</code></td><td>місце на поточній сторінці</td></tr><tr><td><code>about.html#history</code></td><td>місце на іншій сторінці</td></tr><tr><td><code>target="_blank" rel="noopener"</code></td><td>безпечне відкриття в новій вкладці</td></tr><tr><td><code>mailto:student@example.com</code></td><td>створення електронного листа</td></tr><tr><td><code>download</code></td><td>пропозиція завантажити файл</td></tr></tbody></table></article></section>
 
-<section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><div class="project-layout-links"><strong>Макети для цього завдання:</strong><div class="layout-targets"><a href="../project-layouts.html#home">Головна</a><a href="../project-layouts.html#about">Про Вінницю</a><a href="../project-layouts.html#tower">Вежа Артинова</a><a href="../project-layouts.html#square">Європейська площа</a><a href="../project-layouts.html#museum">Музей Пирогова</a></div><a href="../project-layouts.html">Переглянути всі макети сторінок</a></div><article class="lesson-card project-card"><h3>Створюємо навігацію сайту</h3><div class="project-file-focus"><strong>📁 Сьогодні працюємо з усіма сторінками сайту</strong><div class="project-file-list"><code>index.html</code><code>about.html</code><code>tower.html</code><code>europe.html</code><code>pyrogov.html</code></div></div><p>Сьогодні вперше внеси однакову навігацію в усі сторінки, щоб п’ять окремих HTML-файлів стали одним сайтом. Тексти й структуру сторінок не переписуй.</p><p class="rule-callout">Порівняй макети: меню повторюється на всіх сторінках, тому його HTML-код теж має бути однаковим. У цій темі важлива робота посилань, а не CSS-оформлення.</p><div class="project-step"><h3>Міні-вправа 1. Що записати в href?</h3><fieldset class="question-card project-href-task" data-interactive data-answer="tower.html"><legend>Файл сторінки Вежі називається <code>tower.html</code>. Яке значення потрібне в <code>href</code>?</legend><label><input type="radio" name="project-href" value="tower" data-reset-feedback> <code>tower</code></label><label><input type="radio" name="project-href" value="/tower" data-reset-feedback> <code>/tower</code></label><label><input type="radio" name="project-href" value="tower.html" data-reset-feedback> <code>tower.html</code></label><label><input type="radio" name="project-href" value="C:\tower.html" data-reset-feedback> <code>C:\tower.html</code></label><button type="button" class="check-project-href">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset></div><div class="project-step"><h3>Міні-вправа 2. Знайди помилку</h3><pre class="code-panel">&lt;a href="tower"&gt;Вежа Артинова&lt;/a&gt;</pre><fieldset class="question-card project-error-task" data-interactive data-answer="extension"><legend>Чому посилання може не працювати?</legend><label><input type="radio" name="project-error" value="text" data-reset-feedback> Неправильний текст посилання</label><label><input type="radio" name="project-error" value="extension" data-reset-feedback> В адресі пропущено розширення <code>.html</code></label><label><input type="radio" name="project-error" value="tag" data-reset-feedback> Тег <code>a</code> не можна використовувати</label><button type="button" class="check-project-error">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset></div><div class="project-step"><h3>🔗 Завдання 1. Створи спільне меню</h3><p>Усі файли лежать в одній папці, тому в <code>href</code> достатньо імені файла. Відносний шлях працюватиме й після перенесення або публікації сайту. Не використовуй <code>C:\...</code>, <code>file:///...</code> чи інші повні локальні шляхи.</p><div class="structure-panel"><h4>Пункт меню → HTML-файл</h4><p><strong>Головна</strong> → <code>index.html</code><br><strong>Про Вінницю</strong> → <code>about.html</code><br><strong>Вежа Артинова</strong> → <code>tower.html</code><br><strong>Європейська площа</strong> → <code>europe.html</code><br><strong>Музей Пирогова</strong> → <code>pyrogov.html</code></p></div><ol><li>Відкрий <code>index.html</code> і створи перше посилання за прикладом: <code>&lt;a href="about.html"&gt;Про Вінницю&lt;/a&gt;</code>.</li><li>Самостійно додай інші чотири пункти в указаному порядку.</li><li>Перевір кожен <code>href</code> на головній сторінці.</li><li>Скопіюй той самий блок у решту чотирьох файлів. Поточна сторінка також може залишатися посиланням.</li></ol><p class="rule-callout">Меню поки складається лише з посилань <code>a</code>. Не використовуй <code>nav</code>, <code>ul</code>, <code>li</code> або зображення.</p></div><div class="project-step"><h3>🌐 Завдання 2. Додай одне зовнішнє посилання</h3><p>У <code>about.html</code> знайди джерело «Вінницька міська рада — історія міста» й зроби його посиланням на <code>https://www.vmr.gov.ua/</code>. Воно має відкриватися в новій вкладці, тому використай вивчені <code>target="_blank"</code> і <code>rel="noopener"</code>.</p></div><div class="project-step"><h3>⚓ Завдання 3. Якірна навігація на about.html</h3><p>Якорі додаємо лише на довгу сторінку «Про Вінницю». Використовуй значення <code>id</code> точно так, як подано нижче, і не вигадуй власних.</p><div class="structure-panel"><h4>Якорі цієї сторінки</h4><p><strong>Витоки міста</strong> → <code>origins</code><br><strong>Походження назви</strong> → <code>name-origin</code><br><strong>Як змінювалася Вінниця</strong> → <code>city-history</code><br><strong>Основні історичні події</strong> → <code>timeline</code><br><strong>Джерела</strong> → <code>sources</code></p></div><p><strong>Один готовий приклад:</strong></p><pre class="code-panel">&lt;h2 id="origins"&gt;Витоки міста&lt;/h2&gt;&#10;&lt;a href="#origins"&gt;Перейти до витоків міста&lt;/a&gt;</pre><p><code>href="#origins"</code> → <code>id="origins"</code>. Для решти розділів сам додай задані <code>id</code> до заголовків і створи посилання з відповідними <code>href="#..."</code>.</p><fieldset class="question-card project-anchor-task" data-interactive data-answer="#city-history"><legend>Заголовок має <code>id="city-history"</code>. Яке значення <code>href</code> приведе до нього?</legend><label><input type="radio" name="project-anchor" value="city-history" data-reset-feedback> <code>city-history</code></label><label><input type="radio" name="project-anchor" value="#city-history" data-reset-feedback> <code>#city-history</code></label><label><input type="radio" name="project-anchor" value="/city-history" data-reset-feedback> <code>/city-history</code></label><label><input type="radio" name="project-anchor" value="id-city-history" data-reset-feedback> <code>id-city-history</code></label><button type="button" class="check-project-anchor">Перевірити</button><p class="feedback" aria-live="polite"></p></fieldset></div><div class="project-step"><h3>🔎 Перевір навігацію</h3><p>Пройди маршрут: Головна → Про Вінницю → Вежа Артинова → Європейська площа → Музей Пирогова → Головна. Перевір також усі якорі в <code>about.html</code> та зовнішнє джерело.</p></div><div class="project-step"><h3>Перевір себе</h3><ul class="checklist"><li>У мене є всі п’ять файлів і на кожній сторінці однакове меню.</li><li>Кожен пункт містить <code>a</code>, а <code>href</code> — правильне відносне ім’я файла.</li><li>У шляхах немає <code>C:\...</code> або <code>file:///...</code>.</li><li>Для якорів використані лише задані <code>id</code>; у <code>href="#..."</code> є <code>#</code> і назви збігаються.</li><li>Я не використав <code>nav</code>, списки чи зображення завчасно.</li><li>Усі внутрішні, якірні й зовнішнє посилання працюють у браузері.</li></ul></div><div class="project-result"><strong>Що змінилося:</strong><p>Було: п’ять окремих HTML-сторінок. → Стало: один багатосторінковий сайт зі спільною навігацією.</p></div></article></section>
+<section id="project" class="lesson-section">
+<h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2>
+
+<div class="project-layout-links">
+  <strong>Макети для цього завдання:</strong>
+  <div class="layout-targets">
+    <a href="../project-layouts.html#home">Головна</a>
+    <a href="../project-layouts.html#about">Про Вінницю</a>
+  </div>
+  <a href="../project-layouts.html">Переглянути всі макети сторінок</a>
+</div>
+
+<article class="lesson-card project-card">
+  <h3>Пов’язуємо сторінки сайту</h3>
+
+  <div class="project-file-focus">
+    <strong>📁 Сьогодні працюємо з двома сторінками</strong>
+    <div class="project-file-list">
+      <code>index.html</code>
+      <code>about.html</code>
+    </div>
+  </div>
+
+  <p>На цьому етапі потрібно зв’язати між собою головну сторінку та сторінку «Про Вінницю». Орієнтуйся на макет шапки сайту: у меню є пункти <strong>«Головна»</strong>, <strong>«Про місто»</strong> і <strong>«Місця»</strong>.</p>
+
+  <p class="rule-callout"><strong>Важливо:</strong> у цій темі посиланнями робимо лише пункти <strong>«Головна»</strong> і <strong>«Про місто»</strong>. Пункт <strong>«Місця»</strong> поки залишаємо звичайним текстом — посилання на Вежу Артинова, Європейську площу та Музей Пирогова додамо пізніше.</p>
+
+  <div class="project-step">
+    <h3>Міні-вправа 1. Що записати в href?</h3>
+    <fieldset class="question-card project-href-task" data-interactive data-answer="about.html">
+      <legend>Файл сторінки «Про Вінницю» називається <code>about.html</code>. Яке значення потрібне в <code>href</code>?</legend>
+      <label><input type="radio" name="project-href" value="about" data-reset-feedback> <code>about</code></label>
+      <label><input type="radio" name="project-href" value="/about" data-reset-feedback> <code>/about</code></label>
+      <label><input type="radio" name="project-href" value="about.html" data-reset-feedback> <code>about.html</code></label>
+      <label><input type="radio" name="project-href" value="C:bout.html" data-reset-feedback> <code>C:bout.html</code></label>
+      <button type="button" class="check-project-href">Перевірити</button>
+      <p class="feedback" aria-live="polite"></p>
+    </fieldset>
+  </div>
+
+  <div class="project-step">
+    <h3>Міні-вправа 2. Знайди помилку</h3>
+    <pre class="code-panel">&lt;a href="about"&gt;Про місто&lt;/a&gt;</pre>
+    <fieldset class="question-card project-error-task" data-interactive data-answer="extension">
+      <legend>Чому посилання може не працювати?</legend>
+      <label><input type="radio" name="project-error" value="text" data-reset-feedback> Неправильний текст посилання</label>
+      <label><input type="radio" name="project-error" value="extension" data-reset-feedback> В адресі пропущено розширення <code>.html</code></label>
+      <label><input type="radio" name="project-error" value="tag" data-reset-feedback> Тег <code>a</code> не можна використовувати</label>
+      <button type="button" class="check-project-error">Перевірити</button>
+      <p class="feedback" aria-live="polite"></p>
+    </fieldset>
+  </div>
+
+  <div class="project-step">
+    <h3>🔗 Завдання 1. Додай посилання в меню</h3>
+    <p>Відкрий <code>index.html</code> і <code>about.html</code>. У шапці обох сторінок меню має виглядати однаково.</p>
+
+    <div class="structure-panel">
+      <h4>Пункт меню → що робимо зараз</h4>
+      <p>
+        <strong>Головна</strong> → посилання на <code>index.html</code><br>
+        <strong>Про місто</strong> → посилання на <code>about.html</code><br>
+        <strong>Місця</strong> → поки звичайний текст без посилання
+      </p>
+    </div>
+
+    <ol>
+      <li>Для пункту <strong>«Головна»</strong> створи посилання на <code>index.html</code>.</li>
+      <li>Для пункту <strong>«Про місто»</strong> створи посилання на <code>about.html</code>.</li>
+      <li>Пункт <strong>«Місця»</strong> не перетворюй на посилання і не додавай до нього сторінки пам’яток.</li>
+      <li>Зроби однаковий блок меню в <code>index.html</code> і <code>about.html</code>.</li>
+      <li>Перевір переходи в браузері: <strong>Головна → Про місто → Головна</strong>.</li>
+    </ol>
+
+    <p class="rule-callout">У цій темі працюємо саме з гіперпосиланнями. Не створюй випадаюче меню для пункту «Місця» — його реалізація буде пізніше.</p>
+  </div>
+
+  <div class="project-step">
+    <h3>🌐 Завдання 2. Додай одне зовнішнє посилання</h3>
+    <p>У <code>about.html</code> знайди джерело «Вінницька міська рада — історія міста» й зроби його посиланням на <code>https://www.vmr.gov.ua/</code>. Воно має відкриватися в новій вкладці, тому використай <code>target="_blank"</code> і <code>rel="noopener"</code>.</p>
+  </div>
+
+  <div class="project-step">
+    <h3>⚓ Завдання 3. Якірна навігація на about.html</h3>
+    <p>На довгій сторінці «Про Вінницю» додай якірні переходи до потрібних розділів. Використовуй значення <code>id</code> точно так, як подано нижче.</p>
+
+    <div class="structure-panel">
+      <h4>Якорі цієї сторінки</h4>
+      <p>
+        <strong>Витоки міста</strong> → <code>origins</code><br>
+        <strong>Походження назви</strong> → <code>name-origin</code><br>
+        <strong>Як змінювалася Вінниця</strong> → <code>city-history</code><br>
+        <strong>Основні історичні події</strong> → <code>timeline</code><br>
+        <strong>Джерела</strong> → <code>sources</code>
+      </p>
+    </div>
+
+    <p><strong>Один готовий приклад:</strong></p>
+    <pre class="code-panel">&lt;h2 id="origins"&gt;Витоки міста&lt;/h2&gt;
+&lt;a href="#origins"&gt;Перейти до витоків міста&lt;/a&gt;</pre>
+
+    <p><code>href="#origins"</code> → <code>id="origins"</code>. Для решти розділів сам додай задані <code>id</code> до заголовків і створи відповідні якірні посилання.</p>
+
+    <fieldset class="question-card project-anchor-task" data-interactive data-answer="#city-history">
+      <legend>Заголовок має <code>id="city-history"</code>. Яке значення <code>href</code> приведе до нього?</legend>
+      <label><input type="radio" name="project-anchor" value="city-history" data-reset-feedback> <code>city-history</code></label>
+      <label><input type="radio" name="project-anchor" value="#city-history" data-reset-feedback> <code>#city-history</code></label>
+      <label><input type="radio" name="project-anchor" value="/city-history" data-reset-feedback> <code>/city-history</code></label>
+      <label><input type="radio" name="project-anchor" value="id-city-history" data-reset-feedback> <code>id-city-history</code></label>
+      <button type="button" class="check-project-anchor">Перевірити</button>
+      <p class="feedback" aria-live="polite"></p>
+    </fieldset>
+  </div>
+
+  <div class="project-step">
+    <h3>🔎 Перевір навігацію</h3>
+    <p>Перевір маршрут <strong>Головна → Про місто → Головна</strong>. Потім перевір якірні переходи в <code>about.html</code> та зовнішнє посилання на джерело.</p>
+  </div>
+
+  <div class="project-step">
+    <h3>Перевір себе</h3>
+    <ul class="checklist">
+      <li>У <code>index.html</code> і <code>about.html</code> однакове меню.</li>
+      <li>«Головна» веде на <code>index.html</code>.</li>
+      <li>«Про місто» веде на <code>about.html</code>.</li>
+      <li>«Місця» поки не містить посилань на сторінки пам’яток.</li>
+      <li>У шляхах немає <code>C:\...</code> або <code>file:///...</code>.</li>
+      <li>Для якорів значення <code>href="#..."</code> і відповідного <code>id</code> збігаються.</li>
+      <li>Зовнішнє посилання відкривається в новій вкладці.</li>
+    </ul>
+  </div>
+
+  <div class="project-result">
+    <strong>Результат:</strong>
+    <p>Головна сторінка і сторінка «Про місто» пов’язані між собою посиланнями. На обох сторінках меню відповідає макету: «Головна» і «Про місто» працюють як посилання, а «Місця» поки залишається без переходів на окремі сторінки.</p>
+  </div>
+</article>
+</section>
 <div class="lesson-actions"><a class="bottom-link" href="topic-05.html">← Тема 5</a><a class="bottom-link" href="topic-07.html">Тема 7 →</a></div></div></main><script src="../assets/trainer.js?v=20261005"></script><script src="topic-06.js?v=20261005"></script></body></html>

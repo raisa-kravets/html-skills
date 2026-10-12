@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тема 10 — Структурна та семантична розмітка — HTML Skills</title>
+  <link rel="stylesheet" href="../assets/shared.css">
+</head>
+<body>
+<header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">10</span>Тема 10. Структурна та семантична розмітка</h1><strong class="lesson-brand">HTML <span>Skills</span></strong></header>
+<main class="lesson-layout">
+  <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#semantics">Семантична розмітка</a><a href="#tags">Структурні теги</a><a href="#section-article">section чи article</a><a href="#semantic-div">Семантика чи div</a><a href="#scheme">Навчальна схема</a><a href="#exercises">Практика</a><a href="#code-work">Комплексна робота</a><a href="#self-check">Перевір себе</a><a href="#memo">Пам’ятка</a><a href="#project">Наскрізний проєкт</a></nav>
+  <div class="lesson-content">
+    <section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Вебсторінка складається з логічних блоків</h2><p>Шапка знайомить із сайтом, основний вміст містить інформацію, а підвал завершує сторінку.</p><pre class="tree">СТОРІНКА
+│
+├── шапка
+├── основний вміст
+│   ├── розділ
+│   ├── розділ
+│   └── окремий матеріал
+└── підвал</pre><p class="rule-callout">Семантичний тег не просто створює блок, а пояснює його роль.</p></article></section>
+
+    <section id="semantics" class="lesson-section"><h2>Що таке семантична розмітка</h2><article class="lesson-card"><div class="comparison"><div><h3>Звичайні блоки</h3><pre class="code-panel">&lt;div&gt;
+  &lt;h1&gt;Мій сайт&lt;/h1&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;h2&gt;Про мене&lt;/h2&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+  &lt;p&gt;Автор...&lt;/p&gt;
+&lt;/div&gt;</pre></div><div><h3>Семантичні блоки</h3><pre class="code-panel">&lt;header&gt;
+  &lt;h1&gt;Мій сайт&lt;/h1&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;section&gt;
+    &lt;h2&gt;Про мене&lt;/h2&gt;
+    &lt;p&gt;...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;
+  &lt;p&gt;Автор...&lt;/p&gt;
+&lt;/footer&gt;</pre></div></div><p><strong>Зовнішній вигляд сторінки може не змінитися, але код стає зрозумілішим.</strong></p></article></section>
+
+    <section id="tags" class="lesson-section"><h2>Що робить кожен тег</h2><div class="touch-grid">
+      <article class="lesson-card"><h3><code>&lt;header&gt;</code></h3><p>Шапка або вступна частина. Може містити назву сайту, логотип і меню.</p><pre class="code-panel">&lt;header&gt;
+  &lt;h1&gt;Шкільна газета&lt;/h1&gt;
+&lt;/header&gt;</pre></article>
+      <article class="lesson-card"><h3><code>&lt;main&gt;</code></h3><p>Основний зміст сторінки. На сторінці один основний <code>main</code>; головний <code>header</code> і <code>footer</code> розташовані поза ним.</p><pre class="code-panel">&lt;main&gt;
+  &lt;h1&gt;Мої проєкти&lt;/h1&gt;
+&lt;/main&gt;</pre></article>
+      <article class="lesson-card"><h3><code>&lt;footer&gt;</code></h3><p>Завершальна частина: автор, контакти або додаткова інформація.</p><pre class="code-panel">&lt;footer&gt;
+  &lt;p&gt;Автор: Олена&lt;/p&gt;
+&lt;/footer&gt;</pre></article>
+      <article class="lesson-card"><h3><code>&lt;section&gt;</code></h3><p>Тематичний розділ сторінки. Зазвичай має власний заголовок.</p><pre class="code-panel">&lt;section&gt;
+  &lt;h2&gt;Мої захоплення&lt;/h2&gt;
+&lt;/section&gt;</pre></article>
+      <article class="lesson-card"><h3><code>&lt;article&gt;</code></h3><p>Окремий завершений матеріал: новина, допис або стаття.</p><pre class="code-panel">&lt;article&gt;
+  &lt;h2&gt;Новина дня&lt;/h2&gt;
+&lt;/article&gt;</pre></article>
+      <article class="lesson-card"><h3><code>&lt;div&gt;</code></h3><p>Універсальний контейнер без власного смислового значення. Потрібний для нейтрального групування.</p><pre class="code-panel">&lt;div&gt;
+  &lt;p&gt;Картка учасника&lt;/p&gt;
+&lt;/div&gt;</pre></article>
+    </div></section>
+
+    <section id="section-article" class="lesson-section"><h2>section чи article</h2><article class="lesson-card"><p class="rule-callout"><code>section</code> = розділ сторінки. <code>article</code> = окремий завершений матеріал.</p><div class="comparison"><div><pre class="code-panel">&lt;section&gt;
+  &lt;h2&gt;Мої захоплення&lt;/h2&gt;
+  ...
+&lt;/section&gt;</pre></div><div><pre class="code-panel">&lt;article&gt;
+  &lt;h2&gt;Новина про конкурс&lt;/h2&gt;
+  ...
+&lt;/article&gt;</pre></div></div></article></section>
+
+    <section id="semantic-div" class="lesson-section"><h2>Семантичний тег чи div</h2><article class="lesson-card"><p class="rule-callout">Якщо HTML має тег, який точно описує роль блоку — використовуй його. <code>div</code> залишай для нейтрального групування елементів.</p><div class="comparison"><div><h3>Не пояснює роль</h3><pre class="code-panel">&lt;div&gt;
+  &lt;h1&gt;Мій сайт&lt;/h1&gt;
+&lt;/div&gt;</pre></div><div><h3>Пояснює роль</h3><pre class="code-panel">&lt;header&gt;
+  &lt;h1&gt;Мій сайт&lt;/h1&gt;
+&lt;/header&gt;</pre></div></div></article></section>
+
+    <section id="scheme" class="lesson-section"><h2>Навчальна схема</h2><article class="lesson-card"><pre class="code-panel">&lt;body&gt;
+  &lt;header&gt;Шапка сайту&lt;/header&gt;
+  &lt;main&gt;
+    &lt;section&gt;Розділ сторінки&lt;/section&gt;
+    &lt;section&gt;
+      &lt;article&gt;Окремий матеріал&lt;/article&gt;
+      &lt;article&gt;Окремий матеріал&lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;Підвал сайту&lt;/footer&gt;
+&lt;/body&gt;</pre><ul><li><code>header</code> — шапка</li><li><code>main</code> — основний вміст</li><li><code>section</code> — тематичний розділ</li><li><code>article</code> — окремий матеріал</li><li><code>footer</code> — завершальна частина</li><li><code>div</code> — універсальний контейнер</li></ul></article><article class="lesson-card"><h3>Інфографіка теми 10</h3><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про структурну та семантичну розмітку"><img class="responsive-image" src="../assets/html-semantic-structure-infographic.png" alt="Інфографіка про теги header, main, footer, section, article і div та структуру HTML-сторінки"></button><figcaption>Коротка схема ролей структурних тегів. Натисни на зображення, щоб розглянути його детальніше.</figcaption></figure></article></section>
+
+    <section id="exercises" class="lesson-section"><h2>Інтерактивні вправи</h2>
+      <article class="lesson-card exercise-card matching-task" data-interactive><h3>1. Хто де живе?</h3><p>Добери тег до кожної частини умовної сторінки.</p><div class="touch-grid"><label class="choice-card"><strong>Логотип і назва сайту</strong><select data-answer="header" data-reset-feedback><option value="">Обери тег</option><option value="header">&lt;header&gt;</option><option value="main">&lt;main&gt;</option><option value="article">&lt;article&gt;</option><option value="footer">&lt;footer&gt;</option></select></label><label class="choice-card"><strong>Основний вміст</strong><select data-answer="main" data-reset-feedback><option value="">Обери тег</option><option value="header">&lt;header&gt;</option><option value="main">&lt;main&gt;</option><option value="article">&lt;article&gt;</option><option value="footer">&lt;footer&gt;</option></select></label><label class="choice-card"><strong>Окрема новина</strong><select data-answer="article" data-reset-feedback><option value="">Обери тег</option><option value="header">&lt;header&gt;</option><option value="main">&lt;main&gt;</option><option value="article">&lt;article&gt;</option><option value="footer">&lt;footer&gt;</option></select></label><label class="choice-card"><strong>Інформація про автора</strong><select data-answer="footer" data-reset-feedback><option value="">Обери тег</option><option value="header">&lt;header&gt;</option><option value="main">&lt;main&gt;</option><option value="article">&lt;article&gt;</option><option value="footer">&lt;footer&gt;</option></select></label></div><button type="button" class="check-matching">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card section-article-task" data-interactive><h3>2. Section чи Article?</h3><div class="touch-grid"><label class="choice-card"><strong>«Мої захоплення»</strong><select data-answer="section" data-reset-feedback><option value="">Обери</option><option value="section">&lt;section&gt;</option><option value="article">&lt;article&gt;</option></select></label><label class="choice-card"><strong>Окрема новина про спортивні змагання</strong><select data-answer="article" data-reset-feedback><option value="">Обери</option><option value="section">&lt;section&gt;</option><option value="article">&lt;article&gt;</option></select></label><label class="choice-card"><strong>«Контакти»</strong><select data-answer="section" data-reset-feedback><option value="">Обери</option><option value="section">&lt;section&gt;</option><option value="article">&lt;article&gt;</option></select></label><label class="choice-card"><strong>Окремий допис у блозі</strong><select data-answer="article" data-reset-feedback><option value="">Обери</option><option value="section">&lt;section&gt;</option><option value="article">&lt;article&gt;</option></select></label><label class="choice-card"><strong>«Цікаві факти»</strong><select data-answer="section" data-reset-feedback><option value="">Обери</option><option value="section">&lt;section&gt;</option><option value="article">&lt;article&gt;</option></select></label></div><button type="button" class="check-section-article">Перевірити</button><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card replace-div-task" data-interactive><h3>3. Знайди зайвий div</h3><p>Заміни <code>div</code> семантичними тегами там, де це доречно.</p><textarea class="code-editor" rows="16" data-reset-feedback>&lt;div&gt;
+    &lt;h1&gt;Мій фотоблог&lt;/h1&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;h2&gt;Мої подорожі&lt;/h2&gt;
+    &lt;div&gt;
+        &lt;h3&gt;Карпати&lt;/h3&gt;
+        &lt;p&gt;Цього літа я побував у Карпатах.&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;p&gt;Автор: Максим&lt;/p&gt;
+&lt;/div&gt;</textarea><button type="button" class="check-replace-div">Перевірити</button><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article>
+      <article class="lesson-card exercise-card build-task" data-interactive><h3>4. Збери структуру</h3><h4>Рівень 1</h4><p>Натискай теги у правильному порядку.</p><div class="piece-bank level-one"><button type="button" data-piece="&lt;/footer&gt;">&lt;/footer&gt;</button><button type="button" data-piece="&lt;main&gt;">&lt;main&gt;</button><button type="button" data-piece="&lt;header&gt;">&lt;header&gt;</button><button type="button" data-piece="&lt;/main&gt;">&lt;/main&gt;</button><button type="button" data-piece="&lt;footer&gt;">&lt;footer&gt;</button><button type="button" data-piece="&lt;/header&gt;">&lt;/header&gt;</button></div><pre class="assembly-zone level-one-zone"></pre><div class="button-row"><button type="button" class="check-level-one">Перевірити</button><button type="button" class="secondary reset-level-one">Почати знову</button></div><p class="feedback level-one-feedback" aria-live="polite"></p><h4>Рівень 2</h4><div class="piece-bank level-two"><button type="button" data-piece="&lt;/article&gt;">&lt;/article&gt;</button><button type="button" data-piece="&lt;section&gt;">&lt;section&gt;</button><button type="button" data-piece="&lt;main&gt;">&lt;main&gt;</button><button type="button" data-piece="&lt;/section&gt;">&lt;/section&gt;</button><button type="button" data-piece="&lt;article&gt;">&lt;article&gt;</button><button type="button" data-piece="&lt;/main&gt;">&lt;/main&gt;</button></div><pre class="assembly-zone level-two-zone"></pre><div class="button-row"><button type="button" class="check-level-two">Перевірити</button><button type="button" class="secondary reset-level-two">Почати знову</button></div><p class="feedback level-two-feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="code-work" class="lesson-section"><h2>Комплексна робота з кодом</h2><article class="lesson-card exercise-card complex-task" data-interactive><h3>Моє цифрове життя</h3><p>Створи HTML-сторінку. Використай <code>header</code>, <code>main</code>, два <code>section</code>, один <code>article</code>, один <code>div</code>, <code>footer</code>, а також уже вивчені теги.</p><textarea class="code-editor" rows="22" data-reset-feedback>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моє цифрове життя&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</textarea><button type="button" class="check-complex">Перевірити</button><iframe class="preview-frame" sandbox title="Попередній перегляд сторінки «Моє цифрове життя»"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article></section>
+
+    <section id="self-check" class="lesson-section"><h2>Перевір себе</h2><article class="lesson-card" id="final-test">
+      <div class="task-row" data-answer="main" data-test="1" data-interactive><fieldset><legend>1. Який тег містить основний вміст сторінки?</legend><label><input type="radio" name="final-1" value="header" data-reset-feedback> &lt;header&gt;</label><label><input type="radio" name="final-1" value="main" data-reset-feedback> &lt;main&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="article" data-test="2" data-interactive><fieldset><legend>2. Який тег використовують для окремої новини?</legend><label><input type="radio" name="final-2" value="section" data-reset-feedback> &lt;section&gt;</label><label><input type="radio" name="final-2" value="article" data-reset-feedback> &lt;article&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="section" data-test="3" data-interactive><fieldset><legend>3. Для чого використовують &lt;section&gt;?</legend><label><input type="radio" name="final-3" value="section" data-reset-feedback> Для тематичного розділу сторінки.</label><label><input type="radio" name="final-3" value="footer" data-reset-feedback> Для завершальної частини.</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="div" data-test="4" data-interactive><fieldset><legend>4. Який тег не має власного семантичного значення?</legend><label><input type="radio" name="final-4" value="div" data-reset-feedback> &lt;div&gt;</label><label><input type="radio" name="final-4" value="article" data-reset-feedback> &lt;article&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="after" data-test="5" data-interactive><fieldset><legend>5. Де зазвичай розташовується footer сторінки?</legend><label><input type="radio" name="final-5" value="before" data-reset-feedback> Перед основним вмістом.</label><label><input type="radio" name="final-5" value="after" data-reset-feedback> Після основного вмісту.</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="correct" data-test="6" data-interactive><fieldset><legend>6. Яка структура правильна?</legend><label><input type="radio" name="final-6" value="correct" data-reset-feedback> <code>&lt;header&gt;&lt;/header&gt; &lt;main&gt;&lt;/main&gt; &lt;footer&gt;&lt;/footer&gt;</code></label><label><input type="radio" name="final-6" value="wrong" data-reset-feedback> <code>&lt;main&gt;&lt;header&gt;&lt;footer&gt;&lt;/main&gt;</code></label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div><p class="score" aria-live="polite"></p>
+    </article></section>
+
+    <section id="memo" class="lesson-section"><h2>Пам’ятка</h2><article class="lesson-card"><table><thead><tr><th>Тег</th><th>Роль</th></tr></thead><tbody><tr><td><code>&lt;header&gt;</code></td><td>шапка або вступна частина</td></tr><tr><td><code>&lt;main&gt;</code></td><td>основний вміст</td></tr><tr><td><code>&lt;section&gt;</code></td><td>тематичний розділ</td></tr><tr><td><code>&lt;article&gt;</code></td><td>окремий завершений матеріал</td></tr><tr><td><code>&lt;footer&gt;</code></td><td>завершальна частина</td></tr><tr><td><code>&lt;div&gt;</code></td><td>універсальний контейнер</td></tr></tbody></table><p class="rule-callout">Якщо є тег, який точно описує роль блоку — використовуй його. <code>div</code> використовуй для нейтрального групування елементів.</p></article></section>
+
+    <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Додаємо семантичну структуру до сторінок проєкту</h3><div class="project-file-focus"><strong>📁 Працюємо з файлами</strong><div class="project-file-list"><code>index.html</code><code>about.html</code><code>tower.html</code><code>europe-square.html</code><code>pirogov-museum.html</code></div></div><p class="rule-callout"><strong>Не змінюй</strong> тексти, заголовки, зображення, списки, посилання та назви файлів. У цій темі потрібно лише додати структурні семантичні теги.</p><p>Не додавай CSS, не змінюй меню, не створюй нових сторінок і таблиць, не змінюй <code>src</code>, <code>href</code> та <code>id</code>.</p>
+      <div class="project-step"><h3>Загальна структура для всіх сторінок</h3><ol><li>Верхнє меню <code>nav</code> обгорни в <code>header</code>.</li><li>Після <code>&lt;/header&gt;</code> відкрий <code>main</code>.</li><li>Увесь основний вміст помісти в <code>main</code>.</li><li>Перед нижньою інформацією закрий <code>main</code>.</li><li>Нижню частину сторінки обгорни в <code>footer</code>.</li></ol><p><strong>У цьому завданні <code>article</code> додавати не потрібно.</strong> Його використання ми відпрацювали в окремих вправах теми. Не перетворюй картки пам’яток, історичні підрозділи чи блоки з <code>h3</code> на <code>article</code>. Не додавай <code>div</code> штучно; наявні технічні контейнери можна залишити.</p></div>
+      <div class="project-step"><h3>1. index.html — 8 section</h3><p>Безпосередньо в <code>main</code> залиш вступ: «Знайомство з містом», <code>h1</code>, вступні абзаци, «Обрати маршрут», головне фото й підпис. Не обгортай його в <code>section</code>.</p><ol><li>«Коротко про Вінницю» разом із «Розташування», «Кілька фактів», текстами й списком.</li><li>«Місто, яке варто побачити» і вміст до наступного <code>h2</code>.</li><li><code>h2 id="places"</code> «Що варто побачити у Вінниці» з чотирма картками, зображеннями, описами й посиланнями. Картки не перетворюй на <code>article</code>.</li><li><code>h2 id="route"</code> «Маршрут прогулянки містом».</li><li>«Цікаві місця» з двома підрозділами і списками.</li><li>«План зупинок».</li><li>«Побачити й почути місто».</li><li>«Моя прогулянка Вінницею».</li></ol><p>У <code>footer</code> помісти <code>address</code> та дату оновлення.</p></div>
+      <div class="project-step"><h3>2. about.html — 5 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="origins"</code> «Витоки міста» — два абзаци, зображення і підпис.</li><li><code>id="name"</code> «Походження назви» — весь блок.</li><li><code>id="changes"</code> «Як змінювалася Вінниця» — три <code>h3</code> і тексти.</li><li><code>id="chronology"</code> «Основні історичні події» — увесь наявний вміст, без нової таблиці.</li><li><code>id="sources"</code> «Джерела» — усі посилання.</li></ol><p>Посилання «← Повернутися на головну» і «На початок ↑» перемісти у <code>footer</code>.</p></div>
+      <div class="project-step"><h3>3. tower.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="about"</code> «Про пам’ятку» — абзаци, фото і підпис.</li><li><code>id="history"</code> «Історія» — три підрозділи й тексти.</li><li><code>id="facts"</code> «Цікаві факти» — список.</li><li><code>id="location"</code> «Де знаходиться» — весь блок.</li><li><code>id="details"</code> «Основні відомості» — текст «Цей блок буде доповнено під час вивчення таблиць.». Таблицю не додавай.</li><li><code>id="sources"</code> «Джерела» — усі посилання.</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
+      <div class="project-step"><h3>4. pirogov-museum.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="about"</code> «Про музей» — абзаци, фото і підпис.</li><li><code>id="history"</code> «Історія» — три підрозділи, тексти, зображення і підписи.</li><li><code>id="facts"</code> «Цікаві факти».</li><li><code>id="location"</code> «Де знаходиться».</li><li><code>id="details"</code> «Основні відомості» — лише текст-заготовка, без таблиці.</li><li><code>id="sources"</code> «Джерела».</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
+      <div class="project-step"><h3>5. europe-square.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="modern"</code> «Сучасна площа» — текст, фото і підпис.</li><li><code>id="chronology"</code> «Історична хронологія» — п’ять підрозділів і тексти.</li><li><code>id="memorial"</code> «Радянський меморіальний період» — «Що було на площі?», текст, список, фото і підпис.</li><li><code>id="reburial"</code> «Перенесення поховань».</li><li><code>id="public-space"</code> «Сучасний громадський простір» — «Що поруч?», тексти й списки.</li><li><code>id="sources"</code> «Джерела».</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
+      <div class="project-result"><h3>Результат, якого має досягти учень</h3><pre class="code-panel">&lt;body&gt;
+  &lt;header&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Назва сторінки&lt;/h1&gt;
+    &lt;p&gt;Вступний текст...&lt;/p&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Перший розділ&lt;/h2&gt;
+      ...
+    &lt;/section&gt;
+    &lt;section&gt;
+      &lt;h2&gt;Другий розділ&lt;/h2&gt;
+      ...
+    &lt;/section&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</pre><p><strong>Після виконання завдання:</strong></p><ul><li>усі 5 сторінок мають <code>header</code>, <code>main</code>, <code>footer</code>;</li><li>основний зміст поділений на конкретні <code>section</code>;</li><li>кожен <code>section</code> починається відповідним <code>h2</code>;</li><li><code>h3</code> залишаються всередині своїх <code>section</code>;</li><li>тексти, зображення, списки й посилання не змінені;</li><li><code>article</code> не використовується;</li><li>таблиці й CSS не додаються.</li></ul></div>
+    </article></section>
+    <div class="lesson-actions"><a href="topic-09.html">← Тема 9. Зображення як частина вебсторінки</a><a href="../index.html">Усі теми →</a></div>
+  </div>
+</main>
+<script src="../assets/trainer.js?v=20261009b"></script>
+<script src="topic-10.js"></script>
+</body>
+</html>

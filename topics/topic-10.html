@@ -122,41 +122,153 @@
 &lt;/html&gt;</textarea><button type="button" class="check-complex">Перевірити</button><iframe class="preview-frame" sandbox title="Попередній перегляд сторінки «Моє цифрове життя»"></iframe><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article></section>
 
     <section id="self-check" class="lesson-section"><h2>Перевір себе</h2><article class="lesson-card" id="final-test">
-      <div class="task-row" data-answer="main" data-test="1" data-interactive><fieldset><legend>1. Який тег містить основний вміст сторінки?</legend><label><input type="radio" name="final-1" value="header" data-reset-feedback> &lt;header&gt;</label><label><input type="radio" name="final-1" value="main" data-reset-feedback> &lt;main&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
-      <div class="task-row" data-answer="article" data-test="2" data-interactive><fieldset><legend>2. Який тег використовують для окремої новини?</legend><label><input type="radio" name="final-2" value="section" data-reset-feedback> &lt;section&gt;</label><label><input type="radio" name="final-2" value="article" data-reset-feedback> &lt;article&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
-      <div class="task-row" data-answer="section" data-test="3" data-interactive><fieldset><legend>3. Для чого використовують &lt;section&gt;?</legend><label><input type="radio" name="final-3" value="section" data-reset-feedback> Для тематичного розділу сторінки.</label><label><input type="radio" name="final-3" value="footer" data-reset-feedback> Для завершальної частини.</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
-      <div class="task-row" data-answer="div" data-test="4" data-interactive><fieldset><legend>4. Який тег не має власного семантичного значення?</legend><label><input type="radio" name="final-4" value="div" data-reset-feedback> &lt;div&gt;</label><label><input type="radio" name="final-4" value="article" data-reset-feedback> &lt;article&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
-      <div class="task-row" data-answer="after" data-test="5" data-interactive><fieldset><legend>5. Де зазвичай розташовується footer сторінки?</legend><label><input type="radio" name="final-5" value="before" data-reset-feedback> Перед основним вмістом.</label><label><input type="radio" name="final-5" value="after" data-reset-feedback> Після основного вмісту.</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
-      <div class="task-row" data-answer="correct" data-test="6" data-interactive><fieldset><legend>6. Яка структура правильна?</legend><label><input type="radio" name="final-6" value="correct" data-reset-feedback> <code>&lt;header&gt;&lt;/header&gt; &lt;main&gt;&lt;/main&gt; &lt;footer&gt;&lt;/footer&gt;</code></label><label><input type="radio" name="final-6" value="wrong" data-reset-feedback> <code>&lt;main&gt;&lt;header&gt;&lt;footer&gt;&lt;/main&gt;</code></label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div><p class="score" aria-live="polite"></p>
+      <div class="task-row" data-answer="main" data-test="1" data-interactive><p><strong>1. Який тег містить основний вміст сторінки?</strong></p><fieldset aria-label="Варіанти відповіді на питання 1"><label><input type="radio" name="final-1" value="header" data-reset-feedback> &lt;header&gt;</label><label><input type="radio" name="final-1" value="main" data-reset-feedback> &lt;main&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="article" data-test="2" data-interactive><p><strong>2. Який тег краще використати для окремої новини або самостійного матеріалу?</strong></p><fieldset aria-label="Варіанти відповіді на питання 2"><label><input type="radio" name="final-2" value="section" data-reset-feedback> &lt;section&gt;</label><label><input type="radio" name="final-2" value="article" data-reset-feedback> &lt;article&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="section" data-test="3" data-interactive><p><strong>3. Який тег використовують для тематичного розділу сторінки?</strong></p><fieldset aria-label="Варіанти відповіді на питання 3"><label><input type="radio" name="final-3" value="section" data-reset-feedback> &lt;section&gt;</label><label><input type="radio" name="final-3" value="div" data-reset-feedback> &lt;div&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="div" data-test="4" data-interactive><p><strong>4. Який тег не має власного семантичного значення?</strong></p><fieldset aria-label="Варіанти відповіді на питання 4"><label><input type="radio" name="final-4" value="article" data-reset-feedback> &lt;article&gt;</label><label><input type="radio" name="final-4" value="div" data-reset-feedback> &lt;div&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="footer" data-test="5" data-interactive><p><strong>5. Який тег використовують для завершальної частини сторінки?</strong></p><fieldset aria-label="Варіанти відповіді на питання 5"><label><input type="radio" name="final-5" value="main" data-reset-feedback> &lt;main&gt;</label><label><input type="radio" name="final-5" value="footer" data-reset-feedback> &lt;footer&gt;</label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div>
+      <div class="task-row" data-answer="correct" data-test="6" data-interactive><p><strong>6. Яка структура сторінки правильна?</strong></p><fieldset aria-label="Варіанти відповіді на питання 6"><label><input type="radio" name="final-6" value="correct" data-reset-feedback> Варіант А:<br><code>&lt;header&gt;&lt;/header&gt;<br>&lt;main&gt;&lt;/main&gt;<br>&lt;footer&gt;&lt;/footer&gt;</code></label><label><input type="radio" name="final-6" value="wrong" data-reset-feedback> Варіант Б:<br><code>&lt;main&gt;<br>&nbsp;&nbsp;&lt;header&gt;&lt;/header&gt;<br>&nbsp;&nbsp;&lt;footer&gt;&lt;/footer&gt;<br>&lt;/main&gt;</code></label></fieldset><button type="button" class="check-final">Перевірити</button><p class="feedback"></p></div><p class="score" aria-live="polite"></p>
     </article></section>
 
     <section id="memo" class="lesson-section"><h2>Пам’ятка</h2><article class="lesson-card"><table><thead><tr><th>Тег</th><th>Роль</th></tr></thead><tbody><tr><td><code>&lt;header&gt;</code></td><td>шапка або вступна частина</td></tr><tr><td><code>&lt;main&gt;</code></td><td>основний вміст</td></tr><tr><td><code>&lt;section&gt;</code></td><td>тематичний розділ</td></tr><tr><td><code>&lt;article&gt;</code></td><td>окремий завершений матеріал</td></tr><tr><td><code>&lt;footer&gt;</code></td><td>завершальна частина</td></tr><tr><td><code>&lt;div&gt;</code></td><td>універсальний контейнер</td></tr></tbody></table><p class="rule-callout">Якщо є тег, який точно описує роль блоку — використовуй його. <code>div</code> використовуй для нейтрального групування елементів.</p></article></section>
 
-    <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Додаємо семантичну структуру до сторінок проєкту</h3><div class="project-file-focus"><strong>📁 Працюємо з файлами</strong><div class="project-file-list"><code>index.html</code><code>about.html</code><code>tower.html</code><code>europe-square.html</code><code>pirogov-museum.html</code></div></div><p class="rule-callout"><strong>Не змінюй</strong> тексти, заголовки, зображення, списки, посилання та назви файлів. У цій темі потрібно лише додати структурні семантичні теги.</p><p>Не додавай CSS, не змінюй меню, не створюй нових сторінок і таблиць, не змінюй <code>src</code>, <code>href</code> та <code>id</code>.</p>
-      <div class="project-step"><h3>Загальна структура для всіх сторінок</h3><ol><li>Верхнє меню <code>nav</code> обгорни в <code>header</code>.</li><li>Після <code>&lt;/header&gt;</code> відкрий <code>main</code>.</li><li>Увесь основний вміст помісти в <code>main</code>.</li><li>Перед нижньою інформацією закрий <code>main</code>.</li><li>Нижню частину сторінки обгорни в <code>footer</code>.</li></ol><p><strong>У цьому завданні <code>article</code> додавати не потрібно.</strong> Його використання ми відпрацювали в окремих вправах теми. Не перетворюй картки пам’яток, історичні підрозділи чи блоки з <code>h3</code> на <code>article</code>. Не додавай <code>div</code> штучно; наявні технічні контейнери можна залишити.</p></div>
-      <div class="project-step"><h3>1. index.html — 8 section</h3><p>Безпосередньо в <code>main</code> залиш вступ: «Знайомство з містом», <code>h1</code>, вступні абзаци, «Обрати маршрут», головне фото й підпис. Не обгортай його в <code>section</code>.</p><ol><li>«Коротко про Вінницю» разом із «Розташування», «Кілька фактів», текстами й списком.</li><li>«Місто, яке варто побачити» і вміст до наступного <code>h2</code>.</li><li><code>h2 id="places"</code> «Що варто побачити у Вінниці» з чотирма картками, зображеннями, описами й посиланнями. Картки не перетворюй на <code>article</code>.</li><li><code>h2 id="route"</code> «Маршрут прогулянки містом».</li><li>«Цікаві місця» з двома підрозділами і списками.</li><li>«План зупинок».</li><li>«Побачити й почути місто».</li><li>«Моя прогулянка Вінницею».</li></ol><p>У <code>footer</code> помісти <code>address</code> та дату оновлення.</p></div>
-      <div class="project-step"><h3>2. about.html — 5 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="origins"</code> «Витоки міста» — два абзаци, зображення і підпис.</li><li><code>id="name"</code> «Походження назви» — весь блок.</li><li><code>id="changes"</code> «Як змінювалася Вінниця» — три <code>h3</code> і тексти.</li><li><code>id="chronology"</code> «Основні історичні події» — увесь наявний вміст, без нової таблиці.</li><li><code>id="sources"</code> «Джерела» — усі посилання.</li></ol><p>Посилання «← Повернутися на головну» і «На початок ↑» перемісти у <code>footer</code>.</p></div>
-      <div class="project-step"><h3>3. tower.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="about"</code> «Про пам’ятку» — абзаци, фото і підпис.</li><li><code>id="history"</code> «Історія» — три підрозділи й тексти.</li><li><code>id="facts"</code> «Цікаві факти» — список.</li><li><code>id="location"</code> «Де знаходиться» — весь блок.</li><li><code>id="details"</code> «Основні відомості» — текст «Цей блок буде доповнено під час вивчення таблиць.». Таблицю не додавай.</li><li><code>id="sources"</code> «Джерела» — усі посилання.</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
-      <div class="project-step"><h3>4. pirogov-museum.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="about"</code> «Про музей» — абзаци, фото і підпис.</li><li><code>id="history"</code> «Історія» — три підрозділи, тексти, зображення і підписи.</li><li><code>id="facts"</code> «Цікаві факти».</li><li><code>id="location"</code> «Де знаходиться».</li><li><code>id="details"</code> «Основні відомості» — лише текст-заготовка, без таблиці.</li><li><code>id="sources"</code> «Джерела».</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
-      <div class="project-step"><h3>5. europe-square.html — 6 section</h3><p>У <code>main</code> поза секціями залиш хлібні крихти, <code>h1</code>, вступ і навігацію сторінкою.</p><ol><li><code>id="modern"</code> «Сучасна площа» — текст, фото і підпис.</li><li><code>id="chronology"</code> «Історична хронологія» — п’ять підрозділів і тексти.</li><li><code>id="memorial"</code> «Радянський меморіальний період» — «Що було на площі?», текст, список, фото і підпис.</li><li><code>id="reburial"</code> «Перенесення поховань».</li><li><code>id="public-space"</code> «Сучасний громадський простір» — «Що поруч?», тексти й списки.</li><li><code>id="sources"</code> «Джерела».</li></ol><p>Нижні посилання перенеси у <code>footer</code>.</p></div>
-      <div class="project-result"><h3>Результат, якого має досягти учень</h3><pre class="code-panel">&lt;body&gt;
-  &lt;header&gt;
-    &lt;nav&gt;...&lt;/nav&gt;
-  &lt;/header&gt;
-  &lt;main&gt;
-    &lt;h1&gt;Назва сторінки&lt;/h1&gt;
-    &lt;p&gt;Вступний текст...&lt;/p&gt;
-    &lt;section&gt;
-      &lt;h2&gt;Перший розділ&lt;/h2&gt;
-      ...
-    &lt;/section&gt;
-    &lt;section&gt;
-      &lt;h2&gt;Другий розділ&lt;/h2&gt;
-      ...
-    &lt;/section&gt;
-  &lt;/main&gt;
-  &lt;footer&gt;...&lt;/footer&gt;
-&lt;/body&gt;</pre><p><strong>Після виконання завдання:</strong></p><ul><li>усі 5 сторінок мають <code>header</code>, <code>main</code>, <code>footer</code>;</li><li>основний зміст поділений на конкретні <code>section</code>;</li><li>кожен <code>section</code> починається відповідним <code>h2</code>;</li><li><code>h3</code> залишаються всередині своїх <code>section</code>;</li><li>тексти, зображення, списки й посилання не змінені;</li><li><code>article</code> не використовується;</li><li>таблиці й CSS не додаються.</li></ul></div>
+    <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Додаємо семантичну структуру до готових сторінок</h3><p>Сторінки сайту вже містять тексти, заголовки, зображення, списки та посилання. У цій темі ти не створюєш новий вміст, а впорядковуєш готовий HTML-код за допомогою семантичних тегів.</p><p class="rule-callout">У цьому завданні працюємо лише з <strong><code>&lt;nav&gt;</code></strong>, <strong><code>&lt;header&gt;</code></strong>, <strong><code>&lt;main&gt;</code></strong>, <strong><code>&lt;section&gt;</code></strong> і <strong><code>&lt;footer&gt;</code></strong>. Тег <strong><code>&lt;article&gt;</code></strong> та нові <strong><code>&lt;div&gt;</code></strong> додавати не потрібно.</p><div class="project-file-focus"><strong>📁 Працюємо з файлами</strong><div class="project-file-list"><code>index.html</code><code>about.html</code><code>tower.html</code><code>pirogov-museum.html</code><code>europe-square.html</code></div></div><div class="project-step"><h3>Не змінюй</h3><ul class="checklist"><li>тексти й заголовки;</li><li>списки та зображення;</li><li><code>src</code>, <code>href</code> та <code>id</code>;</li><li>назви HTML-файлів;</li><li>меню;</li><li>порядок уже наявного контенту.</li></ul><h4>Не додавай</h4><ul><li>CSS і таблиці;</li><li>нові сторінки;</li><li><strong><code>&lt;article&gt;</code></strong>;</li><li>нові <strong><code>&lt;div&gt;</code></strong>-контейнери.</li></ul><p><strong>Важливо:</strong> не вирізай і не переставляй наявний код, якщо це не зазначено окремо. У більшості випадків потрібно лише додати відкривальні та закривальні структурні теги у вказаних місцях.</p></div>
+      <div class="project-step"><h3>Спочатку зроби це на кожній сторінці</h3><ol><li><strong>Крок 1. Створи</strong> <strong><code>&lt;nav&gt;</code></strong>. Знайди у верхній частині сторінки готове головне меню з посиланнями «Головна», «Про місто», «Місця», «Маршрут». Не змінюй посилання та їх порядок. Перед першим елементом меню постав <strong><code>&lt;nav&gt;</code></strong>, а після останнього — <strong><code>&lt;/nav&gt;</code></strong>. Тег <strong><code>&lt;nav&gt;</code></strong> позначає головну навігацію сайту. Окремі посилання всередині тексту в <strong><code>&lt;nav&gt;</code></strong> не обгортай.</li><li><strong>Крок 2. Створи</strong> <strong><code>&lt;header&gt;</code></strong>. Перед <strong><code>&lt;nav&gt;</code></strong> постав <strong><code>&lt;header&gt;</code></strong>, а після <strong><code>&lt;/nav&gt;</code></strong> — <strong><code>&lt;/header&gt;</code></strong>.</li><li><strong>Крок 3. Відкрий</strong> <strong><code>&lt;main&gt;</code></strong>. Одразу після <strong><code>&lt;/header&gt;</code></strong> постав <strong><code>&lt;main&gt;</code></strong>. У <strong><code>&lt;main&gt;</code></strong> буде весь основний вміст сторінки.</li><li><strong>Крок 4. Додай</strong> <strong><code>&lt;section&gt;</code></strong>. Далі для кожного файла буде точно вказано, який <strong><code>&lt;h2&gt;</code></strong> знайти, де поставити <strong><code>&lt;section&gt;</code></strong> і де поставити <strong><code>&lt;/section&gt;</code></strong>.</li><li><strong>Крок 5. Закрий</strong> <strong><code>&lt;main&gt;</code></strong>. Після останнього розділу сторінки постав <strong><code>&lt;/main&gt;</code></strong>. Точне місце буде вказано для кожного файла окремо.</li><li><strong>Крок 6. Обгорни готовий підвал у</strong> <strong><code>&lt;footer&gt;</code></strong>. Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй. Нижні посилання «Повернутися...» та «На початок» залиш на їхньому місці в основному вмісті.</li></ol><pre class="code-panel">&lt;nav&gt;
+    ...готове головне меню...
+&lt;/nav&gt;</pre><pre class="code-panel">&lt;body&gt;
+
+    &lt;header&gt;
+        &lt;nav&gt;
+            ...
+        &lt;/nav&gt;
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        ...
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        ...
+    &lt;/footer&gt;
+
+&lt;/body&gt;</pre></div>
+      <div class="project-step"><h3>1. tower.html — виконай за кроками</h3><p>Після створення <strong><code>&lt;header&gt;</code></strong> і <strong><code>&lt;main&gt;</code></strong> безпосередньо в <strong><code>&lt;main&gt;</code></strong> залиш рядок посилань «Головна / Місця / Вежа Артинова», <strong><code>&lt;h1&gt;Вежа Артинова&lt;/h1&gt;</code></strong>, вступний абзац і рядок посилань на розділи сторінки. Не обгортай ці елементи в <strong><code>&lt;section&gt;</code></strong>.</p><h4>SECTION 1 — «Про пам’ятку»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="about"&gt;Про пам’ятку&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, два абзаци про Вежу, зображення та підпис. Постав <strong><code>&lt;/section&gt;</code></strong> безпосередньо перед <strong><code>&lt;h2 id="history"&gt;Історія&lt;/h2&gt;</code></strong>.</p><h4>SECTION 2 — «Історія»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="history"&gt;Історія&lt;/h2&gt;</code></strong>. Усередині залиш цей заголовок, <strong><code>&lt;h3&gt;Спорудження&lt;/h3&gt;</code></strong> і його абзац, <strong><code>&lt;h3&gt;Нове призначення&lt;/h3&gt;</code></strong> і його абзац, <strong><code>&lt;h3&gt;Символ міста&lt;/h3&gt;</code></strong> і його абзац. Постав <strong><code>&lt;/section&gt;</code></strong> перед <strong><code>&lt;h2 id="facts"&gt;Цікаві факти&lt;/h2&gt;</code></strong>.</p><h4>SECTION 3 — «Цікаві факти»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="facts"&gt;Цікаві факти&lt;/h2&gt;</code></strong>. Усередині залиш заголовок і список фактів. Постав <strong><code>&lt;/section&gt;</code></strong> перед <strong><code>&lt;h2 id="location"&gt;Де знаходиться&lt;/h2&gt;</code></strong>.</p><h4>SECTION 4 — «Де знаходиться»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="location"&gt;Де знаходиться&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, абзац і список з адресою, місцями поруч та інформацією «Що ще побачити». Постав <strong><code>&lt;/section&gt;</code></strong> перед <strong><code>&lt;h2 id="details"&gt;Основні відомості&lt;/h2&gt;</code></strong>.</p><h4>SECTION 5 — «Основні відомості»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="details"&gt;Основні відомості&lt;/h2&gt;</code></strong>. Усередині залиш заголовок і текст «Цей блок буде доповнено під час вивчення таблиць.». Таблицю не додавай. Постав <strong><code>&lt;/section&gt;</code></strong> перед <strong><code>&lt;h2 id="sources"&gt;Джерела&lt;/h2&gt;</code></strong>.</p><h4>SECTION 6 — «Джерела»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2 id="sources"&gt;Джерела&lt;/h2&gt;</code></strong>. Усередині залиш заголовок і список посилань на джерела. Після списку постав <strong><code>&lt;/section&gt;</code></strong>, а після останньої секції — <strong><code>&lt;/main&gt;</code></strong>.</p><p>Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй.</p></div>
+      <div class="project-step"><h3>2. index.html</h3><p>Після <strong><code>&lt;header&gt;</code></strong> відкрий <strong><code>&lt;main&gt;</code></strong>. Безпосередньо в <strong><code>&lt;main&gt;</code></strong>, без <strong><code>&lt;section&gt;</code></strong>, залиш «Знайомство з містом», <strong><code>&lt;h1&gt;Моє місто — Вінниця&lt;/h1&gt;</code></strong>, два вступні абзаци, посилання «Обрати маршрут», головне зображення Вінниці та підпис.</p><h4>SECTION 1 — «Коротко про Вінницю»</h4><p>Постав <strong><code>&lt;section&gt;</code></strong> перед <strong><code>&lt;h2&gt;Коротко про Вінницю&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, абзац, <strong><code>&lt;h3&gt;Розташування&lt;/h3&gt;</code></strong> з абзацом і <strong><code>&lt;h3&gt;Кілька фактів&lt;/h3&gt;</code></strong> зі списком. Закрий секцію перед <strong><code>&lt;h2&gt;Місто, яке варто побачити&lt;/h2&gt;</code></strong>.</p><h4>SECTION 2 — «Місто, яке варто побачити»</h4><p>Відкрий секцію перед цим <strong><code>&lt;h2&gt;</code></strong>, залиш усередині заголовок та обидва абзаци, а закрий перед <strong><code>&lt;h2 id="places"&gt;Що варто побачити у Вінниці&lt;/h2&gt;</code></strong>.</p><h4>SECTION 3 — «Що варто побачити у Вінниці»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="places"&gt;</code></strong>. Усередині залиш чотири блоки: «Вежа Артинова», «Європейська площа», «Національний музей-садиба М. І. Пирогова» і «Вінницькі мури» з наявними зображеннями, описами та посиланнями. <strong><code>&lt;article&gt;</code></strong> не додавай. Закрий секцію перед <strong><code>&lt;h2 id="route"&gt;Маршрут прогулянки містом&lt;/h2&gt;</code></strong>.</p><h4>SECTION 4 — «Маршрут прогулянки містом»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="route"&gt;</code></strong>, залиш у ній заголовок і нумерований список маршруту, закрий перед <strong><code>&lt;h2&gt;Цікаві місця&lt;/h2&gt;</code></strong>.</p><h4>SECTION 5 — «Цікаві місця»</h4><p>Відкрий секцію перед <strong><code>&lt;h2&gt;Цікаві місця&lt;/h2&gt;</code></strong>. Усередині залиш <strong><code>&lt;h3&gt;У центрі міста&lt;/h3&gt;</code></strong> зі списком і <strong><code>&lt;h3&gt;Музеї&lt;/h3&gt;</code></strong> зі списком. Закрий перед <strong><code>&lt;h2&gt;План зупинок&lt;/h2&gt;</code></strong>.</p><h4>SECTION 6 — «План зупинок»</h4><p>Відкрий секцію перед <strong><code>&lt;h2&gt;План зупинок&lt;/h2&gt;</code></strong>, залиш заголовок і текст-заготовку, закрий перед <strong><code>&lt;h2&gt;Побачити й почути місто&lt;/h2&gt;</code></strong>.</p><h4>SECTION 7 — «Побачити й почути місто»</h4><p>Відкрий секцію перед цим <strong><code>&lt;h2&gt;</code></strong>, залиш заголовок і два абзаци-заготовки, закрий перед <strong><code>&lt;h2&gt;Моя прогулянка Вінницею&lt;/h2&gt;</code></strong>.</p><h4>SECTION 8 — «Моя прогулянка Вінницею»</h4><p>Відкрий секцію перед цим <strong><code>&lt;h2&gt;</code></strong>, залиш усередині заголовок і текст-заготовку, після блоку постав <strong><code>&lt;/section&gt;</code></strong>, а потім <strong><code>&lt;/main&gt;</code></strong>. Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй.</p></div>
+      <div class="project-step"><h3>3. about.html</h3><p>Безпосередньо в <strong><code>&lt;main&gt;</code></strong> залиш рядок посилань, який показує шлях до сторінки, <strong><code>&lt;h1&gt;Вінниця: сторінки історії&lt;/h1&gt;</code></strong>, вступний абзац і рядок посилань на розділи сторінки.</p><h4>SECTION 1 — «Витоки міста»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="origins"&gt;Витоки міста&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, два абзаци, зображення і підпис. Закрий перед <strong><code>&lt;h2 id="name"&gt;Походження назви&lt;/h2&gt;</code></strong>.</p><h4>SECTION 2 — «Походження назви»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="name"&gt;</code></strong>. Усередині залиш заголовок, текст, список і пояснювальний абзац. Закрий перед <strong><code>&lt;h2 id="changes"&gt;Як змінювалася Вінниця&lt;/h2&gt;</code></strong>.</p><h4>SECTION 3 — «Як змінювалася Вінниця»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="changes"&gt;</code></strong>. Усередині залиш заголовок, підрозділи «Місто зростає», «Нові можливості», «Вінниця у XX столітті» та їхні тексти. Закрий перед <strong><code>&lt;h2 id="chronology"&gt;Основні історичні події&lt;/h2&gt;</code></strong>.</p><h4>SECTION 4 — «Основні історичні події»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="chronology"&gt;</code></strong>, залиш заголовок і текст-заготовку, закрий перед <strong><code>&lt;h2 id="sources"&gt;Джерела&lt;/h2&gt;</code></strong>. Таблицю не додавай.</p><h4>SECTION 5 — «Джерела»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="sources"&gt;</code></strong>, залиш заголовок і список джерел, після списку постав <strong><code>&lt;/section&gt;</code></strong>, а потім <strong><code>&lt;/main&gt;</code></strong>. Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй.</p></div>
+      <div class="project-step"><h3>4. pirogov-museum.html</h3><p>Безпосередньо в <strong><code>&lt;main&gt;</code></strong> залиш рядок посилань, який показує шлях до сторінки, <strong><code>&lt;h1&gt;Музей Пирогова&lt;/h1&gt;</code></strong>, вступний текст і рядок посилань на розділи сторінки.</p><h4>SECTION 1 — «Про музей»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="about"&gt;Про музей&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, два абзаци, фото музею і підпис. Закрий перед <strong><code>&lt;h2 id="history"&gt;Історія&lt;/h2&gt;</code></strong>.</p><h4>SECTION 2 — «Історія»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="history"&gt;</code></strong>. Усередині залиш заголовок, портрет Пирогова і підпис, <strong><code>&lt;h3&gt;</code></strong> «Останні роки життя» з текстом, історичне зображення і підпис, <strong><code>&lt;h3&gt;</code></strong> «Створення музею» з текстом, фото інтер’єру і підпис, <strong><code>&lt;h3&gt;</code></strong> «Унікальний комплекс» з текстом. Закрий перед <strong><code>&lt;h2 id="facts"&gt;Цікаві факти&lt;/h2&gt;</code></strong>.</p><h4>SECTION 3 — «Цікаві факти»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="facts"&gt;</code></strong>, залиш заголовок і список фактів, закрий перед <strong><code>&lt;h2 id="location"&gt;Де знаходиться&lt;/h2&gt;</code></strong>.</p><h4>SECTION 4 — «Де знаходиться»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="location"&gt;</code></strong>, залиш заголовок, абзац і список, закрий перед <strong><code>&lt;h2 id="details"&gt;Основні відомості&lt;/h2&gt;</code></strong>.</p><h4>SECTION 5 — «Основні відомості»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="details"&gt;</code></strong>, залиш заголовок і текст-заготовку, закрий перед <strong><code>&lt;h2 id="sources"&gt;Джерела&lt;/h2&gt;</code></strong>. Таблицю не додавай.</p><h4>SECTION 6 — «Джерела»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="sources"&gt;</code></strong>, залиш заголовок і список джерел, після списку постав <strong><code>&lt;/section&gt;</code></strong>, а потім <strong><code>&lt;/main&gt;</code></strong>. Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй.</p></div>
+      <div class="project-step"><h3>5. europe-square.html</h3><p>Безпосередньо в <strong><code>&lt;main&gt;</code></strong> залиш рядок посилань, який показує шлях до сторінки, <strong><code>&lt;h1&gt;Європейська площа&lt;/h1&gt;</code></strong>, вступний текст і рядок посилань на розділи сторінки.</p><h4>SECTION 1 — «Сучасна площа»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="modern"&gt;Сучасна площа&lt;/h2&gt;</code></strong>. Усередині залиш заголовок, два абзаци, фото і підпис. Закрий перед <strong><code>&lt;h2 id="chronology"&gt;Історична хронологія&lt;/h2&gt;</code></strong>.</p><h4>SECTION 2 — «Історична хронологія»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="chronology"&gt;</code></strong>. Усередині залиш заголовок та підрозділи «XIX ст.», «1920-ті», «1958», «2022–2023», «Сьогодні» з їхніми текстами. Закрий перед <strong><code>&lt;h2 id="memorial"&gt;Радянський меморіальний період&lt;/h2&gt;</code></strong>.</p><h4>SECTION 3 — «Радянський меморіальний період»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="memorial"&gt;</code></strong>. Усередині залиш заголовок, основний абзац, <strong><code>&lt;h3&gt;Що було на площі?&lt;/h3&gt;</code></strong>, список, фото і підпис. Закрий перед <strong><code>&lt;h2 id="reburial"&gt;Перенесення поховань&lt;/h2&gt;</code></strong>.</p><h4>SECTION 4 — «Перенесення поховань»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="reburial"&gt;</code></strong>, залиш заголовок і два абзаци, закрий перед <strong><code>&lt;h2 id="public-space"&gt;Сучасний громадський простір&lt;/h2&gt;</code></strong>.</p><h4>SECTION 5 — «Сучасний громадський простір»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="public-space"&gt;</code></strong>. Усередині залиш заголовок, основний текст, список «Площа є популярним місцем для...», <strong><code>&lt;h3&gt;Що поруч?&lt;/h3&gt;</code></strong> і список місць. Закрий перед <strong><code>&lt;h2 id="sources"&gt;Джерела&lt;/h2&gt;</code></strong>.</p><h4>SECTION 6 — «Джерела»</h4><p>Відкрий секцію перед <strong><code>&lt;h2 id="sources"&gt;</code></strong>, залиш заголовок і список джерел, після списку постав <strong><code>&lt;/section&gt;</code></strong>, а потім <strong><code>&lt;/main&gt;</code></strong>. Знайди готовий підвал сторінки з <strong><code>&lt;address&gt;</code></strong> і датою оновлення. Перед <strong><code>&lt;address&gt;</code></strong> постав <strong><code>&lt;footer&gt;</code></strong>. Після рядка з <strong><code>&lt;time&gt;</code></strong> постав <strong><code>&lt;/footer&gt;</code></strong>. Вміст підвалу не змінюй.</p></div>
+      <div class="project-result"><h3>Перевір свою роботу</h3><p>Після виконання порівняй структуру своїх сторінок зі схемами нижче.</p>
+        <div class="comparison"><div class="choice-card"><h4><code>tower.html</code></h4><pre class="tree">HEADER
+└── NAV — головне меню
+
+MAIN
+├── рядок посилань «Головна / Місця / Вежа Артинова»
+├── Вежа Артинова
+├── вступний текст
+├── посилання на розділи сторінки
+├── SECTION «Про пам’ятку»
+├── SECTION «Історія»
+│   ├── Спорудження
+│   ├── Нове призначення
+│   └── Символ міста
+├── SECTION «Цікаві факти»
+├── SECTION «Де знаходиться»
+├── SECTION «Основні відомості»
+└── SECTION «Джерела»
+
+FOOTER
+├── автор / контактна інформація
+└── дата оновлення сторінки</pre></div><div class="choice-card"><h4><code>index.html</code></h4><pre class="tree">HEADER
+└── NAV — головне меню
+
+MAIN
+├── вступ сторінки
+├── SECTION «Коротко про Вінницю»
+│   ├── Розташування
+│   └── Кілька фактів
+├── SECTION «Місто, яке варто побачити»
+├── SECTION «Що варто побачити у Вінниці»
+│   ├── Вежа Артинова
+│   ├── Європейська площа
+│   ├── Музей Пирогова
+│   └── Вінницькі мури
+├── SECTION «Маршрут прогулянки містом»
+├── SECTION «Цікаві місця»
+│   ├── У центрі міста
+│   └── Музеї
+├── SECTION «План зупинок»
+├── SECTION «Побачити й почути місто»
+└── SECTION «Моя прогулянка Вінницею»
+
+FOOTER
+├── автор / контактна інформація
+└── дата оновлення сторінки</pre></div></div>
+        <div class="comparison"><div class="choice-card"><h4><code>about.html</code></h4><pre class="tree">HEADER
+└── NAV — головне меню
+
+MAIN
+├── рядок посилань до поточної сторінки
+├── заголовок сторінки
+├── вступ
+├── посилання на розділи сторінки
+├── SECTION «Витоки міста»
+├── SECTION «Походження назви»
+├── SECTION «Як змінювалася Вінниця»
+│   ├── Місто зростає
+│   ├── Нові можливості
+│   └── Вінниця у XX столітті
+├── SECTION «Основні історичні події»
+└── SECTION «Джерела»
+
+FOOTER
+├── автор / контактна інформація
+└── дата оновлення сторінки</pre></div><div class="choice-card"><h4><code>pirogov-museum.html</code></h4><pre class="tree">HEADER
+└── NAV — головне меню
+
+MAIN
+├── рядок посилань до поточної сторінки
+├── заголовок сторінки
+├── вступ
+├── посилання на розділи сторінки
+├── SECTION «Про музей»
+├── SECTION «Історія»
+│   ├── Останні роки життя
+│   ├── Створення музею
+│   └── Унікальний комплекс
+├── SECTION «Цікаві факти»
+├── SECTION «Де знаходиться»
+├── SECTION «Основні відомості»
+└── SECTION «Джерела»
+
+FOOTER
+├── автор / контактна інформація
+└── дата оновлення сторінки</pre></div></div>
+        <div class="comparison"><div class="choice-card"><h4><code>europe-square.html</code></h4><pre class="tree">HEADER
+└── NAV — головне меню
+
+MAIN
+├── рядок посилань до поточної сторінки
+├── заголовок сторінки
+├── вступ
+├── посилання на розділи сторінки
+├── SECTION «Сучасна площа»
+├── SECTION «Історична хронологія»
+│   ├── XIX ст.
+│   ├── 1920-ті
+│   ├── 1958
+│   ├── 2022–2023
+│   └── Сьогодні
+├── SECTION «Радянський меморіальний період»
+│   └── Що було на площі?
+├── SECTION «Перенесення поховань»
+├── SECTION «Сучасний громадський простір»
+│   └── Що поруч?
+└── SECTION «Джерела»
+
+FOOTER
+├── автор / контактна інформація
+└── дата оновлення сторінки</pre></div></div>
+        <h4>Перед завершенням перевір</h4><ul class="checklist"><li>головне меню обгорнуте в <strong><code>&lt;nav&gt;</code></strong>;</li><li><strong><code>&lt;nav&gt;</code></strong> знаходиться всередині <strong><code>&lt;header&gt;</code></strong>;</li><li>основний вміст знаходиться в <strong><code>&lt;main&gt;</code></strong>;</li><li>потрібні розділи знаходяться у <strong><code>&lt;section&gt;</code></strong>;</li><li><strong><code>&lt;h3&gt;</code></strong> залишаються всередині відповідних <strong><code>&lt;section&gt;</code></strong>;</li><li>після останньої секції закрито <strong><code>&lt;/main&gt;</code></strong>;</li><li>готовий підвал з <strong><code>&lt;address&gt;</code></strong> і датою оновлення обгорнуто в <strong><code>&lt;footer&gt;</code></strong>;</li><li>посилання «Повернутися...» та «На початок» не перенесено до <strong><code>&lt;footer&gt;</code></strong>;</li><li><strong><code>&lt;article&gt;</code></strong> не додано;</li><li>нові <strong><code>&lt;div&gt;</code></strong> не додано;</li><li>таблиці не додано;</li><li>CSS не змінено;</li><li>тексти, <code>href</code>, <code>src</code> та <code>id</code> не змінено.</li></ul></div>
     </article></section>
     <div class="lesson-actions"><a href="topic-09.html">← Тема 9. Зображення як частина вебсторінки</a><a href="../index.html">Усі теми →</a></div>
   </div>

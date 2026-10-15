@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Тема 11 — DevTools, валідація та оформлення коду — HTML Skills</title>
+  <link rel="stylesheet" href="../assets/shared.css">
+</head>
+<body>
+<header class="lesson-header"><a href="../index.html">← Усі теми</a><h1><span class="lesson-number">11</span>Тема 11. DevTools, валідація та оформлення коду</h1><strong class="lesson-brand">HTML <span>Skills</span></strong></header>
+<main class="lesson-layout">
+  <nav class="lesson-nav" aria-label="Зміст теми"><a href="#intro">Вступ</a><a href="#devtools">DevTools</a><a href="#elements">Elements</a><a href="#errors">Типові помилки</a><a href="#validation">Валідація</a><a href="#formatting">Оформлення коду</a><a href="#exercises">Практика</a><a href="#complex">Комплексне завдання</a><a href="#self-check">Самоперевірка</a><a href="#project">Наскрізний проєкт</a></nav>
+  <div class="lesson-content">
+    <section id="intro" class="lesson-section"><article class="lesson-intro"><h2>Знаходь, перевіряй і виправляй</h2><p>Навчись знаходити помилки, перевіряти HTML і робити код зрозумілим та охайним.</p><h3>Що ти навчишся робити</h3><ul><li>відкривати DevTools і знаходити HTML-елементи;</li><li>користуватися вкладкою Elements;</li><li>тимчасово редагувати HTML у браузері;</li><li>знаходити типові помилки;</li><li>перевіряти HTML через W3C Validator;</li><li>розуміти Error і Warning;</li><li>виправляти помилки поетапно;</li><li>оформлювати код відступами;</li><li>перевіряти власну HTML-сторінку перед завершенням роботи.</li></ul></article></section>
+
+    <section id="devtools" class="lesson-section"><h2>Що таке DevTools</h2><article class="lesson-card"><p>DevTools — Developer Tools — це інструменти розробника, вбудовані у браузер.</p><ul><li>переглядати HTML-структуру;</li><li>знаходити потрібний елемент;</li><li>бачити вкладеність;</li><li>тимчасово змінювати HTML;</li><li>аналізувати сторінку.</li></ul><h3>Як відкрити DevTools</h3><div class="touch-grid"><div class="choice-card"><strong>F12</strong></div><div class="choice-card"><strong>Ctrl + Shift + I</strong></div><div class="choice-card"><strong>Права кнопка миші → Перевірити / Inspect</strong></div></div><p class="rule-callout">Зміни, зроблені у DevTools, не змінюють HTML-файл. Після оновлення сторінки вони зникнуть.</p></article></section>
+
+    <section id="elements" class="lesson-section"><h2>Панель Elements</h2><article class="lesson-card"><p>Для цієї теми головною буде вкладка Elements. Елементи можна розгортати, бачити їх вкладеність, а при наведенні браузер підсвічує відповідну частину сторінки.</p><pre class="code-panel">&lt;body&gt;
+    &lt;header&gt;...&lt;/header&gt;
+    &lt;main&gt;...&lt;/main&gt;
+    &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</pre><h3>Інструмент вибору елемента</h3><p>Увімкни інструмент вибору, клацни на елемент сторінки й одразу знайди відповідний HTML-код.</p><div class="comparison"><div><h4>На сторінці</h4><p>Моє місто — Вінниця</p></div><div><h4>У DevTools</h4><pre class="code-panel">&lt;h1&gt;Моє місто — Вінниця&lt;/h1&gt;</pre></div></div><h3>Тимчасове редагування HTML</h3><div class="comparison"><div><h4>Було</h4><pre class="code-panel">&lt;h1&gt;Моє місто — Вінниця&lt;/h1&gt;</pre></div><div><h4>Змінили у DevTools</h4><pre class="code-panel">&lt;h1&gt;Вінниця — моє місто&lt;/h1&gt;</pre></div></div><p>Текст у браузері зміниться, але HTML-файл — ні. Після F5 повернеться початковий текст.</p></article><article class="lesson-card"><h3>Інфографіка теми 11</h3><figure class="zoomable-figure"><button class="zoomable-image-button" type="button" data-zoomable-image aria-label="Збільшити інфографіку про DevTools, валідацію та оформлення коду"><img class="responsive-image" src="../assets/html-devtools-validation-infographic.png" alt="Інфографіка про DevTools, вкладку Elements, W3C Validator і правила охайного HTML-коду"></button><figcaption>Коротка схема роботи з DevTools і валідатором. Натисни на зображення, щоб розглянути його детальніше.</figcaption></figure></article></section>
+
+    <section id="exercises" class="lesson-section"><h2>Інтерактивна практика</h2><article class="lesson-card exercise-card radio-task" data-interactive data-answer="display"><h3>1. Зміни, але не зламай</h3><p><strong>Чому зміна тексту <code>&lt;h1&gt;</code> у DevTools зникла після оновлення сторінки?</strong></p><fieldset><label><input type="radio" name="devtools-change" value="delete" data-reset-feedback> Браузер видалив HTML.</label><label><input type="radio" name="devtools-change" value="display" data-reset-feedback> DevTools змінює лише поточне відображення сторінки.</label><label><input type="radio" name="devtools-change" value="locked" data-reset-feedback> Тег <code>&lt;h1&gt;</code> не можна редагувати.</label></fieldset><button type="button" class="check-radio">Перевірити</button><p class="feedback" aria-live="polite"></p></article></section>
+
+    <section id="errors" class="lesson-section"><h2>Чому браузер може показувати сторінку навіть із помилкою</h2><article class="lesson-card"><pre class="code-panel">&lt;h2&gt;Визначні місця Вінниці
+&lt;p&gt;У місті є багато цікавих пам'яток.&lt;/p&gt;</pre><p>Пропущено <code>&lt;/h2&gt;</code>. Браузер намагається показати сторінку, але структура коду вже неправильна.</p><p class="rule-callout"><strong>Сторінка відкрилася — це ще не означає, що HTML-код правильний.</strong></p><h3>Типові HTML-помилки</h3><div class="touch-grid"><div class="choice-card"><h4>Забутий закривальний тег</h4><pre class="code-panel">&lt;p&gt;Вінниця — місто на Поділлі.
+
+Правильно:
+&lt;p&gt;Вінниця — місто на Поділлі.&lt;/p&gt;</pre></div><div class="choice-card"><h4>Порядок закривання</h4><pre class="code-panel">&lt;p&gt;&lt;strong&gt;Важлива інформація&lt;/p&gt;&lt;/strong&gt;
+
+Правильно:
+&lt;p&gt;&lt;strong&gt;Важлива інформація&lt;/strong&gt;&lt;/p&gt;</pre></div><div class="choice-card"><h4>Незакриті лапки</h4><pre class="code-panel">&lt;img src="images/tower.jpg" alt="Вежа Артинова&gt;
+
+Правильно:
+&lt;img src="images/tower.jpg" alt="Вежа Артинова"&gt;</pre></div><div class="choice-card"><h4>Посилання</h4><pre class="code-panel">&lt;a href="about.html&gt;Про місто&lt;/a&gt;
+
+Правильно:
+&lt;a href="about.html"&gt;Про місто&lt;/a&gt;</pre></div><div class="choice-card"><h4>Закривання section</h4><pre class="code-panel">&lt;section&gt;
+  &lt;h2&gt;Історія&lt;/h2&gt;
+&lt;section&gt;
+
+Правильно: &lt;/section&gt;</pre></div></div><p>Елемент, який відкрили останнім, закривається першим.</p></article>
+      <article class="lesson-card exercise-card detective-task" data-interactive><h3>2. HTML-детектив</h3><p>Натискай проблемні рядки й обирай правильне виправлення.</p><div class="detective-lines line-order"><button type="button" class="choice-card detective-line" data-correct="&lt;p&gt;У Вінниці є багато цікавих місць.&lt;/p&gt;"><code>&lt;p&gt;У Вінниці є багато цікавих місць.&lt;p&gt;</code></button><button type="button" class="choice-card detective-line" data-correct="&lt;img src=&quot;images/tower.jpg&quot; alt=&quot;Вежа Артинова&quot;&gt;"><code>&lt;img src="images/tower.jpg" alt="Вежа Артинова&gt;</code></button><button type="button" class="choice-card detective-line" data-correct="&lt;p&gt;&lt;strong&gt;Вежа Артинова&lt;/strong&gt;&lt;/p&gt;"><code>&lt;p&gt;&lt;strong&gt;Вежа Артинова&lt;/p&gt;&lt;/strong&gt;</code></button></div><div class="detective-options" hidden><p><strong>Обери правильний рядок:</strong></p><div class="button-row"></div></div><p class="feedback" aria-live="polite"></p></article>
+    </section>
+
+    <section id="validation" class="lesson-section"><h2>Валідація HTML</h2><article class="lesson-card"><p>Валідація HTML — це перевірка коду на відповідність правилам HTML. Браузер може показати сторінку навіть із помилками, а валідатор перевіряє сам код.</p><div class="rule-callout"><h3>Де перевірити HTML-код?</h3><p>Використовуй офіційний W3C Markup Validation Service.</p><p><a class="button-link" href="https://validator.w3.org/#validate_by_input" target="_blank" rel="noopener noreferrer">Перевірити HTML-код у W3C Validator</a></p></div><h3>Як працювати з W3C Validator</h3><ol><li>Відкрий посилання на валідатор.</li><li>Обери Validate by Direct Input.</li><li>Встав HTML-код у поле.</li><li>Натисни Check.</li><li>Переглянь повідомлення.</li><li>Почни з першої помилки.</li><li>Виправ її у своєму HTML-файлі.</li><li>Збережи файл: Ctrl + S.</li><li>Знову встав оновлений код.</li><li>Натисни Check повторно.</li></ol><div class="comparison"><div><h3>Error</h3><p>Помилка, яку потрібно виправити.</p></div><div><h3>Warning</h3><p>Попередження: код працює, але є потенційна проблема.</p></div></div><p class="rule-callout">Спочатку виправ першу помилку. Одна помилка може спричинити кілька наступних повідомлень.</p><h3>Приклад</h3><pre class="code-panel">&lt;section&gt;
+  &lt;h2&gt;Про місто&lt;h2&gt;
+  &lt;p&gt;Вінниця — сучасне українське місто.&lt;/p&gt;
+&lt;/section&gt;
+
+Правильно: &lt;h2&gt;Про місто&lt;/h2&gt;</pre><h3>Алгоритм пошуку помилки</h3><ol><li>Не переписуй весь код.</li><li>Знайди місце, де почалася проблема.</li><li>Через DevTools знайди відповідний елемент.</li><li>Перевір тег, вкладеність, лапки, <code>href</code> і <code>src</code>.</li><li>Виправ одну помилку.</li><li>Збережи Ctrl + S.</li><li>Онови F5.</li><li>Перевір результат.</li><li>Перевір код у W3C Validator.</li><li>За потреби повтори.</li></ol></article></section>
+
+    <section id="formatting" class="lesson-section"><h2>Оформлення HTML-коду</h2><article class="lesson-card"><div class="comparison"><div><h3>Погано для читання</h3><pre class="code-panel">&lt;header&gt;&lt;nav&gt;&lt;a href="index.html"&gt;Головна&lt;/a&gt;&lt;a href="about.html"&gt;Про місто&lt;/a&gt;&lt;/nav&gt;&lt;/header&gt;</pre></div><div><h3>Зручно для читання</h3><pre class="code-panel">&lt;header&gt;
+    &lt;nav&gt;
+        &lt;a href="index.html"&gt;Головна&lt;/a&gt;
+        &lt;a href="about.html"&gt;Про місто&lt;/a&gt;
+    &lt;/nav&gt;
+&lt;/header&gt;</pre></div></div><p>Охайний код легше читати, перевіряти, виправляти й доповнювати.</p><h3>Відступи та вкладеність</h3><div class="comparison"><pre class="code-panel">&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Про Вінницю&lt;/h2&gt;
+        &lt;p&gt;Вінниця розташована на берегах Південного Бугу.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</pre><pre class="tree">main
+└── section
+    ├── h2
+    └── p</pre></div></article>
+      <article class="lesson-card exercise-card classify-task" data-interactive><h3>3. Помилка чи неохайний код?</h3><div class="touch-grid"><div class="choice-card classify-item" data-answer="error"><pre>&lt;h2&gt;Про місто&lt;h2&gt;</pre><button type="button" data-value="error">Помилка</button><button type="button" data-value="messy">Код працює, але оформлений неохайно</button><p class="feedback"></p></div><div class="choice-card classify-item" data-answer="messy"><pre>&lt;section&gt;&lt;h2&gt;Історія&lt;/h2&gt;&lt;p&gt;Текст&lt;/p&gt;&lt;/section&gt;</pre><button type="button" data-value="error">Помилка</button><button type="button" data-value="messy">Код працює, але оформлений неохайно</button><p class="feedback"></p></div><div class="choice-card classify-item" data-answer="error" data-correction="&lt;img src=&quot;tower.jpg&quot; alt=&quot;Вежа Артинова&quot;&gt;"><pre>&lt;img src="tower.jpg" alt="Вежа Артинова&gt;</pre><button type="button" data-value="error">Помилка</button><button type="button" data-value="messy">Код працює, але оформлений неохайно</button><p class="feedback"></p></div><div class="choice-card classify-item" data-answer="messy"><pre>&lt;section&gt;
+&lt;h2&gt;Історія&lt;/h2&gt;
+&lt;p&gt;Текст&lt;/p&gt;
+&lt;/section&gt;</pre><button type="button" data-value="error">Помилка</button><button type="button" data-value="messy">Код працює, але оформлений неохайно</button><p class="feedback"></p></div></div><p class="score" aria-live="polite"></p></article>
+      <article class="lesson-card"><h3>Правила охайного HTML</h3><ol><li>Вкладені елементи мають відступ.</li><li>Елементи одного рівня мають однаковий відступ.</li><li>Відкривальні та закривальні теги легко читати.</li><li>Між великими блоками можна залишати порожній рядок.</li><li>Значення атрибутів записуємо в лапках.</li><li>Не залишаємо випадкових зайвих пробілів.</li><li>Назви файлів і шляхи записуємо уважно.</li><li>Перед завершенням перевіряємо HTML через W3C Validator.</li></ol></article>
+    </section>
+
+    <section id="complex" class="lesson-section"><h2>Комплексне завдання</h2><article class="lesson-card exercise-card rescue-task" data-interactive><h3>Врятуй HTML-сторінку</h3><textarea class="code-editor" rows="25" data-reset-feedback>&lt;!DOCTYPE html&gt;
+&lt;html lang="uk"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Моя вебсторінка&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;header&gt;&lt;h1&gt;Моя вебсторінка&lt;/h1&gt;&lt;/header&gt;
+&lt;main&gt;
+&lt;section&gt;
+&lt;h2&gt;Про мене&lt;h2&gt;
+&lt;p&gt;Я вивчаю HTML.&lt;/p&gt;
+&lt;img src="images/web.jpg" alt="Вебдизайн&gt;
+&lt;p&gt;&lt;strong&gt;Мені подобається створювати сайти.&lt;/p&gt;&lt;/strong&gt;
+&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer&gt;&lt;p&gt;Навчальний проєкт&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea><ol><li>Виправ <code>&lt;h2&gt;</code>, <code>alt</code> і вкладеність <code>&lt;strong&gt;</code>.</li><li>Наведи порядок у відступах.</li><li>Перевір сторінку через DevTools і W3C Validator.</li></ol><div class="button-row"><button type="button" class="check-rescue">Перевірити</button><button type="button" class="secondary show-solution">Показати еталон</button></div><pre class="code-panel solution" hidden></pre><ul class="check-list"></ul><p class="feedback" aria-live="polite"></p></article></section>
+
+    <section id="self-check" class="lesson-section"><h2>Самоперевірка</h2><article class="lesson-card"><ul class="checklist"><li>структура HTML правильна;</li><li>є <code>&lt;!DOCTYPE html&gt;</code>;</li><li><code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code> записані правильно;</li><li>теги закриваються, вкладеність правильна;</li><li>лапки атрибутів закриті;</li><li><code>href</code> і <code>src</code> перевірені;</li><li><code>&lt;img&gt;</code> має <code>alt</code>;</li><li>код має відступи;</li><li>HTML перевірено через W3C Validator.</li></ul></article></section>
+
+    <section id="project" class="lesson-section"><h2>🚀 Наскрізний проєкт «Моє місто — Вінниця»</h2><article class="lesson-card project-card"><h3>Перевіряємо готовий сайт</h3><p>У цій темі не створюй нові сторінки, розділи, тексти чи зображення. Не змінюй дизайн, меню та не додавай CSS.</p><div class="project-file-focus"><strong>📁 Перевір усі файли</strong><ul><li><code>index.html</code></li><li><code>about.html</code></li><li><code>tower.html</code></li><li><code>pirogov-museum.html</code></li><li><code>europe-square.html</code></li></ul></div>
+      <div class="project-step"><h3>1. Перевір структуру документа</h3><p>У кожному файлі знайди <strong><code>&lt;!DOCTYPE html&gt;</code></strong>, <strong><code>&lt;html lang="uk"&gt;</code></strong>, <strong><code>&lt;head&gt;</code></strong> і <strong><code>&lt;body&gt;</code></strong>. Перевір, чи всі основні частини HTML-документа розміщені правильно.</p></div>
+      <div class="project-step"><h3>2. Перевір структурні елементи й заголовки</h3><p>Знайди <strong><code>&lt;header&gt;</code></strong>, <strong><code>&lt;main&gt;</code></strong> і <strong><code>&lt;footer&gt;</code></strong>. Усередині <strong><code>&lt;main&gt;</code></strong> перевір, чи правильно розміщені та закриті використані <strong><code>&lt;section&gt;</code></strong>.</p><ul><li>на кожній сторінці має бути один <strong><code>&lt;h1&gt;</code></strong>;</li><li>основні розділи мають заголовки <strong><code>&lt;h2&gt;</code></strong>;</li><li>усі відкривальні та закривальні теги відповідають один одному.</li></ul></div>
+      <div class="project-step"><h3>3. Перевір посилання та зображення</h3><p>Для кожного <strong><code>&lt;a&gt;</code></strong> перевір <strong><code>href</code></strong>. Для кожного <strong><code>&lt;img&gt;</code></strong> перевір:</p><ul><li><strong><code>src</code></strong>;</li><li><strong><code>alt</code></strong>;</li><li>правильність шляху;</li><li>закриті лапки в атрибутах.</li></ul><p>Клацни створені посилання та переконайся, що вони відкривають потрібні сторінки. Не створюй нове меню і не додавай нових посилань.</p></div>
+      <div class="project-step"><h3>4. Перевір сторінки через DevTools</h3><ol><li>Відкрий сторінку у браузері.</li><li>Натисни <strong>F12</strong>.</li><li>Відкрий вкладку <strong>Elements</strong>.</li><li>Знайди <strong><code>&lt;header&gt;</code></strong>, <strong><code>&lt;main&gt;</code></strong>, один <strong><code>&lt;section&gt;</code></strong> та <strong><code>&lt;footer&gt;</code></strong>.</li><li>Наведи курсор на елементи.</li><li>Перевір, яку частину сторінки підсвічує браузер.</li></ol></div>
+      <div class="project-step"><h3>5. Перевір відступи та вкладеність</h3><pre class="code-panel"><code>&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Заголовок розділу&lt;/h2&gt;
+        &lt;p&gt;Текст розділу.&lt;/p&gt;
+    &lt;/section&gt;
+&lt;/main&gt;</code></pre><p>Особливо перевір <strong><code>&lt;header&gt;</code></strong>, <strong><code>&lt;nav&gt;</code></strong>, <strong><code>&lt;main&gt;</code></strong>, <strong><code>&lt;section&gt;</code></strong>, <strong><code>&lt;article&gt;</code></strong>, <strong><code>&lt;div&gt;</code></strong> і <strong><code>&lt;footer&gt;</code></strong>. Кожен відкритий парний тег повинен мати відповідний закривальний тег.</p></div>
+      <div class="project-step"><h3>6. Перевір усі файли через W3C Validator</h3><p><a href="https://validator.w3.org/#validate_by_input" target="_blank" rel="noopener noreferrer"><strong>Перевірити HTML-код у W3C Validator</strong></a></p><ol><li>Натисни <strong>«Перевірити HTML-код у W3C Validator»</strong>.</li><li>Відкриється режим <strong>Validate by Direct Input</strong>.</li><li>Встав HTML-код у поле.</li><li>Натисни <strong>Check</strong>.</li><li>Знайди першу помилку.</li><li>Виправ її у своєму HTML-файлі.</li><li>Збережи файл.</li><li>Встав оновлений код.</li><li>Натисни <strong>Check</strong> ще раз.</li><li>Повторюй, доки помилки HTML не будуть виправлені.</li></ol></div>
+      <div class="project-result"><h3>Що має вийти</h3><p>Після виконання цього завдання зовнішній вигляд сайту майже не зміниться. Головний результат — правильно структуровані, перевірені й охайно оформлені HTML-файли.</p><ul class="checklist"><li>5 робочих HTML-сторінок;</li><li>правильна структура документів;</li><li>правильна вкладеність елементів;</li><li>справні посилання;</li><li>правильні шляхи до зображень;</li><li>заповнені <strong><code>alt</code></strong>;</li><li>охайні відступи;</li><li>HTML, перевірений через W3C Validator;</li><li>виправлені помилки валідації.</li></ul></div>
+    </article></section>
+    <div class="lesson-actions"><a href="topic-10.html">← Тема 10. Структурна та семантична розмітка</a><a href="../index.html">Усі теми →</a></div>
+  </div>
+</main>
+<script src="../assets/trainer.js"></script>
+<script src="topic-11.js"></script>
+</body>
+</html>

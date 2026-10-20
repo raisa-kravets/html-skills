@@ -18,7 +18,7 @@
   margin: 0 auto;
   padding: 2px var(--page-padding);
   display: grid;
-  grid-template-columns: minmax(400px, 0.72fr) 1.28fr;
+  grid-template-columns: minmax(400px, 0.72fr) minmax(330px, 1fr) auto;
   align-items: center;
   gap: 20px;
 }
@@ -51,6 +51,30 @@
 
 .course-heading h1 strong { color: var(--accent); }
 .course-heading p { margin-top: 5px; color: var(--text-muted); font-size: 18px; font-weight: 500; line-height: 1.3; }
+
+.reference-link {
+  min-height: 42px;
+  padding: 10px 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #17346e;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(23, 52, 110, 0.16);
+  border-radius: 11px;
+  box-shadow: 0 5px 16px rgba(16, 42, 86, 0.08);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reference-link svg { width: 18px; height: 18px; stroke-width: 2; }
+.reference-link:hover { transform: translateY(-2px); border-color: rgba(22, 119, 242, 0.35); box-shadow: 0 7px 20px rgba(16, 42, 86, 0.12); }
+.reference-link:focus-visible { outline: 3px solid rgba(22, 119, 242, 0.32); outline-offset: 3px; }
 
 .topics {
   width: min(100%, var(--content-width));
@@ -149,7 +173,8 @@
 .topic-card:hover .go { transform: translateX(2px); }
 
 @media (max-width: 1199px) {
-  .header-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .header-inner { grid-template-columns: 1fr 1fr; gap: 18px 28px; padding-top: 14px; padding-bottom: 14px; }
+  .reference-link { grid-column: 1 / -1; justify-self: end; }
   .course-heading h1 { font-size: 48px; }
   .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .topic-card { height: 150px; }
@@ -165,6 +190,7 @@
   .project-author { font-size: 14px; }
   .course-heading h1 { font-size: 38px; letter-spacing: -1px; }
   .course-heading p { margin-top: 6px; font-size: 16px; }
+  .reference-link { grid-column: auto; justify-self: start; white-space: normal; }
   .topics { padding-top: 16px; grid-template-columns: 1fr; }
   .topic-card { height: auto; min-height: 150px; padding: 14px 18px; }
   .topic-card h2 { font-size: 16px; }
@@ -172,5 +198,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .topic-card, .go { transition: none; }
+  .topic-card, .go, .reference-link { transition: none; }
 }

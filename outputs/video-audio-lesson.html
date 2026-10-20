@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Автономна інтерактивна вправа про вставку відео й аудіо в HTML для учнів 13–16 років.">
+  <title>Медіаплеєр у HTML: відео й аудіо</title>
+  <style>
+    :root {
+      --ink: #14213d;
+      --muted: #40516f;
+      --paper: #fffdf6;
+      --card: #ffffff;
+      --blue: #155eef;
+      --blue-dark: #0b3ea8;
+      --yellow: #ffd166;
+      --green: #16784a;
+      --red: #b42318;
+      --line: #b9c4d6;
+      --shadow: 0 8px 24px rgba(20, 33, 61, .12);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 90% 4%, rgba(255, 209, 102, .35), transparent 22rem),
+        linear-gradient(180deg, #edf4ff 0, var(--paper) 24rem);
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      font-size: clamp(18px, 1.7vw, 22px);
+      line-height: 1.55;
+    }
+
+    button, select { font: inherit; }
+
+    button, summary, select { min-height: 48px; }
+
+    button:focus-visible, select:focus-visible, summary:focus-visible, input:focus-visible {
+      outline: 4px solid var(--yellow);
+      outline-offset: 3px;
+    }
+
+    .wrap { width: min(1120px, calc(100% - 32px)); margin-inline: auto; }
+
+    header { padding: 52px 0 30px; }
+
+    .eyebrow {
+      display: inline-block;
+      margin: 0 0 12px;
+      padding: 7px 13px;
+      border-radius: 999px;
+      color: #fff;
+      background: var(--blue-dark);
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      font-size: .78em;
+    }
+
+    h1, h2, h3 { line-height: 1.16; }
+    h1 { margin: 0; max-width: 900px; font-size: clamp(2.15rem, 6vw, 4.5rem); letter-spacing: -.04em; }
+    h2 { margin-top: 0; font-size: clamp(1.55rem, 3.6vw, 2.45rem); }
+    h3 { font-size: 1.15em; }
+    .lead { max-width: 850px; color: var(--muted); font-size: 1.12em; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(20, 33, 61, .96);
+      box-shadow: 0 4px 18px rgba(0,0,0,.18);
+    }
+
+    nav .wrap { display: flex; gap: 10px; overflow-x: auto; padding-block: 10px; }
+    nav a { flex: 0 0 auto; color: #fff; padding: 10px 14px; border-radius: 9px; text-decoration: none; font-weight: 750; }
+    nav a:hover { background: rgba(255,255,255,.16); }
+
+    main { padding: 28px 0 60px; }
+
+    section {
+      margin: 26px 0;
+      padding: clamp(22px, 4vw, 42px);
+      border: 2px solid var(--line);
+      border-radius: 22px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .mini-card, .question, .role, .tip {
+      padding: 20px;
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      background: #f8fbff;
+    }
+
+    .analogy { border-left: 10px solid var(--yellow); background: #fff9df; }
+    .analogy strong { color: var(--blue-dark); }
+
+    code, pre { font-family: Consolas, "Courier New", monospace; }
+    code { background: #e9effa; padding: .08em .3em; border-radius: 6px; }
+    pre {
+      margin: 14px 0 0;
+      padding: 18px;
+      overflow-x: auto;
+      border-radius: 14px;
+      color: #f7fbff;
+      background: #101828;
+      font-size: .88em;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    .tag { color: #80caff; }
+    .attr { color: #ffd166; }
+    .value { color: #9fe3b8; }
+
+    .callout { padding: 18px; border-radius: 14px; background: #eaf2ff; }
+    .warning { background: #fff0ed; border-left: 8px solid var(--red); }
+    .success { background: #eaf8f0; border-left: 8px solid var(--green); }
+
+    .timeline { display: grid; gap: 12px; padding: 0; list-style: none; counter-reset: step; }
+    .timeline li { display: grid; grid-template-columns: 54px 1fr; gap: 14px; align-items: start; }
+    .timeline li::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; color: white; background: var(--blue); font-weight: 900; }
+
+    .role h3, .mini-card h3 { margin-top: 0; }
+    .role-badge { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--yellow); font-weight: 850; }
+
+    .question { margin: 18px 0; background: #fff; }
+    .question h3 { margin: 0 0 12px; }
+    .options { display: grid; gap: 10px; }
+    .option { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 2px solid var(--line); border-radius: 12px; cursor: pointer; }
+    .option:hover { border-color: var(--blue); background: #f1f6ff; }
+    .option input { width: 24px; height: 24px; flex: 0 0 auto; accent-color: var(--blue); }
+
+    select { width: 100%; padding: 8px 12px; border: 2px solid var(--line); border-radius: 10px; background: white; color: var(--ink); }
+
+    .builder { display: grid; gap: 12px; }
+    .builder-row { display: grid; grid-template-columns: minmax(170px, .8fr) 1.4fr; gap: 14px; align-items: center; }
+
+    .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+    button { padding: 12px 20px; border: 0; border-radius: 12px; font-weight: 850; cursor: pointer; }
+    .primary { color: #fff; background: var(--blue); }
+    .primary:hover { background: var(--blue-dark); }
+    .secondary { color: var(--ink); background: var(--yellow); }
+    .secondary:hover { filter: brightness(.94); }
+
+    #result { min-height: 90px; margin-top: 20px; padding: 18px; border-radius: 14px; background: #eef2f7; }
+    #result.good { background: #eaf8f0; border: 3px solid var(--green); }
+    #result.keep-going { background: #fff8e1; border: 3px solid #b7791f; }
+    .feedback-list { margin-bottom: 0; }
+
+    details { margin-top: 18px; border: 2px solid var(--blue-dark); border-radius: 16px; overflow: hidden; }
+    summary { padding: 15px 18px; color: #fff; background: var(--blue-dark); cursor: pointer; font-weight: 850; }
+    .teacher-key { padding: 20px; background: #f4f7fc; }
+    .teacher-key li { margin-bottom: 10px; }
+
+    .checklist li { margin-bottom: 8px; }
+
+    footer { padding: 28px 0 50px; color: var(--muted); text-align: center; }
+
+    @media (max-width: 780px) {
+      .grid, .three { grid-template-columns: 1fr; }
+      .builder-row { grid-template-columns: 1fr; }
+      section { border-radius: 16px; }
+    }
+
+    @media print {
+      nav, .actions { display: none; }
+      body { background: white; font-size: 14pt; }
+      section { box-shadow: none; break-inside: avoid; }
+      details:not([open]) .teacher-key { display: none; }
+    }
+  </style>
+
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="256x256" href="../favicon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+</head>
+<body>
+  <header class="wrap">
+    <p class="eyebrow">Web-дизайн · 90 хвилин</p>
+    <h1>Відео й аудіо на вебсторінці</h1>
+    <p class="lead">Сьогодні ми навчимо HTML показувати відео та відтворювати звук. Працюємо в парах. Наприкінці кожна пара створить правильний фрагмент коду й перевірить себе.</p>
+  </header>
+
+  <nav aria-label="Навігація заняттям">
+    <div class="wrap">
+      <a href="#start">Аналогія</a>
+      <a href="#learn">Теги</a>
+      <a href="#practice">Практика</a>
+      <a href="#quiz">Перевірка</a>
+      <a href="#teacher">Педагогу</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="start">
+      <h2>1. Уявіть медіаплеєр як рамку</h2>
+      <div class="mini-card analogy">
+        <p><strong><code>&lt;video&gt;</code> або <code>&lt;audio&gt;</code> — це рамка-плеєр.</strong></p>
+        <p><code>src</code> — адреса файлу, ніби напис на коробці: «бери запис звідси».</p>
+        <p><code>controls</code> — кнопки плеєра: старт, пауза, гучність.</p>
+        <p><code>&lt;source&gt;</code> — запасні ключі. Браузер пробує джерела по черзі й бере формат, який розуміє.</p>
+      </div>
+      <p class="callout"><strong>Головна думка:</strong> HTML не створює відео чи звук. Він підказує браузеру, де лежить файл і як його показати.</p>
+    </section>
+
+    <section id="learn">
+      <h2>2. Теги й атрибути</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>Відео</h3>
+          <pre aria-label="Приклад коду відео"><span class="tag">&lt;video</span> <span class="attr">controls width</span>=<span class="value">"640"</span> <span class="attr">poster</span>=<span class="value">"images/cover.jpg"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"media/lesson.mp4"</span>
+          <span class="attr">type</span>=<span class="value">"video/mp4"</span><span class="tag">&gt;</span>
+  Ваш браузер не підтримує відео.
+<span class="tag">&lt;/video&gt;</span></pre>
+          <ul>
+            <li><code>controls</code> додає кнопки керування.</li>
+            <li><code>width</code> задає ширину в пікселях.</li>
+            <li><code>poster</code> показує обкладинку до запуску.</li>
+          </ul>
+        </article>
+
+        <article class="mini-card">
+          <h3>Аудіо</h3>
+          <pre aria-label="Приклад коду аудіо"><span class="tag">&lt;audio</span> <span class="attr">controls</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;source</span> <span class="attr">src</span>=<span class="value">"media/podcast.mp3"</span>
+          <span class="attr">type</span>=<span class="value">"audio/mpeg"</span><span class="tag">&gt;</span>
+  Ваш браузер не підтримує аудіо.
+<span class="tag">&lt;/audio&gt;</span></pre>
+          <ul>
+            <li><code>&lt;audio&gt;</code> не має зображення.</li>
+            <li><code>controls</code> потрібен, щоб учень міг запустити запис.</li>
+            <li>Текст усередині — запасне повідомлення.</li>
+          </ul>
+        </article>
+      </div>
+
+      <h3>Корисні атрибути</h3>
+      <div class="grid three">
+        <div class="tip"><strong>controls</strong><br>Показує панель керування. Значення не потрібне.</div>
+        <div class="tip"><strong>autoplay</strong><br>Пробує запустити медіа одразу. Браузер часто блокує звук.</div>
+        <div class="tip"><strong>muted</strong><br>Вимикає звук. Часто потрібен разом з <code>autoplay</code>.</div>
+        <div class="tip"><strong>loop</strong><br>Повторює запис після завершення.</div>
+        <div class="tip"><strong>preload</strong><br>Підказує, що завантажувати наперед: <code>none</code>, <code>metadata</code> або <code>auto</code>.</div>
+        <div class="tip"><strong>type</strong><br>Описує формат файлу. Наприклад, <code>video/mp4</code>.</div>
+      </div>
+
+      <p class="callout warning"><strong>Важливо:</strong> не вмикайте звук автоматично. Це заважає користувачам. Для навчальної сторінки краще дати кнопку запуску через <code>controls</code>.</p>
+    </section>
+
+    <section id="practice">
+      <h2>3. Практична робота в парах</h2>
+      <div class="grid">
+        <div class="role">
+          <span class="role-badge">Роль 1</span>
+          <h3>Верстальник</h3>
+          <p>Набирає код у VS Code. Стежить за тегами, лапками й шляхами.</p>
+        </div>
+        <div class="role">
+          <span class="role-badge">Роль 2</span>
+          <h3>Тестувальник</h3>
+          <p>Відкриває HTML у Chrome. Перевіряє кнопки, звук, відео та повідомляє про помилки.</p>
+        </div>
+      </div>
+      <p><strong>Через 12 хвилин поміняйтеся ролями.</strong> Якщо за комп’ютером троє, третя роль — «консультант»: читає завдання та звіряє код зі зразком.</p>
+
+      <ol class="timeline">
+        <li><div><strong>Створіть папки.</strong> Поруч із вашим HTML-файлом зробіть папку <code>media</code>. Покладіть туди надані педагогом файли <code>lesson.mp4</code> і <code>podcast.mp3</code>.</div></li>
+        <li><div><strong>Додайте відео.</strong> Використайте приклад вище. Не змінюйте меню, CSS або інші частини свого проєкту.</div></li>
+        <li><div><strong>Додайте аудіо.</strong> Розмістіть його після відео. Додайте запасне повідомлення для браузера.</div></li>
+        <li><div><strong>Перевірте в Chrome.</strong> Чи є кнопки? Чи запускаються обидва файли? Чи працює пауза?</div></li>
+        <li><div><strong>Перевірте HTML.</strong> Усі відкриті теги мають бути закриті. Шляхи й назви файлів мають збігатися точно.</div></li>
+      </ol>
+
+      <p class="callout"><strong>Якщо медіафайлів немає:</strong> педагог має заздалегідь надати локальні файли. Без них можна перевірити код і вигляд плеєра, але не саме відтворення.</p>
+    </section>
+
+    <section id="quiz">
+      <h2>4. Інтерактивна перевірка</h2>
+      <p>Виконайте 6 завдань. Правильні відповіді наперед не показані.</p>
+
+      <form id="quizForm" novalidate>
+        <fieldset class="question" data-question="q1">
+          <legend><strong>1. Який тег вставляє відеоплеєр?</strong></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="img"> <code>&lt;img&gt;</code></label>
+            <label class="option"><input type="radio" name="q1" value="video"> <code>&lt;video&gt;</code></label>
+            <label class="option"><input type="radio" name="q1" value="media"> <code>&lt;media&gt;</code></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question" data-question="q2">
+          <legend><strong>2. Який атрибут показує кнопки старту, паузи й гучності?</strong></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="controls"> <code>controls</code></label>
+            <label class="option"><input type="radio" name="q2" value="poster"> <code>poster</code></label>
+            <label class="option"><input type="radio" name="q2" value="width"> <code>width</code></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question" data-question="q3">
+          <legend><strong>3. Оберіть правильний тип для MP3-файлу.</strong></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="audio/mp3"> <code>audio/mp3</code></label>
+            <label class="option"><input type="radio" name="q3" value="audio/mpeg"> <code>audio/mpeg</code></label>
+            <label class="option"><input type="radio" name="q3" value="sound/mp3"> <code>sound/mp3</code></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question" data-question="q4">
+          <legend><strong>4. Відновіть рядок із джерелом відео.</strong></legend>
+          <div class="builder">
+            <div class="builder-row">
+              <label for="q4tag">Тег</label>
+              <select id="q4tag" name="q4tag">
+                <option value="">Оберіть…</option>
+                <option value="track">&lt;track&gt;</option>
+                <option value="source">&lt;source&gt;</option>
+                <option value="link">&lt;link&gt;</option>
+              </select>
+            </div>
+            <div class="builder-row">
+              <label for="q4src">Шлях</label>
+              <select id="q4src" name="q4src">
+                <option value="">Оберіть…</option>
+                <option value="lesson.mp4">lesson.mp4</option>
+                <option value="media/lesson.mp4">media/lesson.mp4</option>
+                <option value="media.lesson.mp4">media.lesson.mp4</option>
+              </select>
+            </div>
+            <div class="builder-row">
+              <label for="q4type">Тип</label>
+              <select id="q4type" name="q4type">
+                <option value="">Оберіть…</option>
+                <option value="video/mp4">video/mp4</option>
+                <option value="audio/mpeg">audio/mpeg</option>
+                <option value="movie/mp4">movie/mp4</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="question" data-question="q5">
+          <legend><strong>5. Що найімовірніше сталося, якщо плеєр є, але файл не запускається?</strong></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="css"> Потрібно змінити CSS.</label>
+            <label class="option"><input type="radio" name="q5" value="path"> Помилка у шляху або назві файлу.</label>
+            <label class="option"><input type="radio" name="q5" value="heading"> Не вистачає заголовка <code>&lt;h1&gt;</code>.</label>
+          </div>
+        </fieldset>
+
+        <fieldset class="question" data-question="q6">
+          <legend><strong>6. Який варіант найкращий для навчальної сторінки?</strong></legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="autoplay"> Гучний звук запускається автоматично.</label>
+            <label class="option"><input type="radio" name="q6" value="controls"> Є <code>controls</code>, а користувач сам запускає запис.</label>
+            <label class="option"><input type="radio" name="q6" value="hidden"> Плеєр прихований, але звук грає.</label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button class="primary" type="submit">Перевірити</button>
+          <button class="secondary" type="button" id="restart">Почати знову</button>
+        </div>
+      </form>
+
+      <div id="result" role="status" aria-live="polite">Оберіть відповіді й натисніть «Перевірити».</div>
+    </section>
+
+    <section id="mistakes">
+      <h2>5. Типові помилки</h2>
+      <div class="grid">
+        <article class="mini-card">
+          <h3>Плеєр є, файл не грає</h3>
+          <p><strong>Причина:</strong> неправильний шлях або регістр літер.</p>
+          <p><strong>Виправлення:</strong> звірте <code>media/lesson.mp4</code> з реальною папкою та назвою.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Немає кнопок</h3>
+          <p><strong>Причина:</strong> пропущено <code>controls</code>.</p>
+          <p><strong>Виправлення:</strong> додайте атрибут у відкривальний тег.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Код після плеєра «ламається»</h3>
+          <p><strong>Причина:</strong> немає <code>&lt;/video&gt;</code> або <code>&lt;/audio&gt;</code>.</p>
+          <p><strong>Виправлення:</strong> закрийте тег і перевірте вкладеність.</p>
+        </article>
+        <article class="mini-card">
+          <h3>Файл працює лише на одному ПК</h3>
+          <p><strong>Причина:</strong> абсолютний шлях на кшталт <code>C:\Videos\...</code>.</p>
+          <p><strong>Виправлення:</strong> використайте відносний шлях <code>media/...</code>.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="teacher">
+      <h2>6. Організація заняття для педагога</h2>
+      <div class="grid">
+        <div>
+          <h3>План на 90 хвилин</h3>
+          <ul class="checklist">
+            <li>0–10 хв: мета й аналогія.</li>
+            <li>10–30 хв: показ тегів та атрибутів.</li>
+            <li>30–35 хв: розподіл ролей.</li>
+            <li>35–65 хв: практична робота, зміна ролей після 12 хв.</li>
+            <li>65–78 хв: інтерактивна перевірка.</li>
+            <li>78–88 хв: виправлення типових помилок.</li>
+            <li>88–90 хв: короткий підсумок.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Підготовка</h3>
+          <ul class="checklist">
+            <li>Відкрити цей файл у Chrome.</li>
+            <li>Підготувати VS Code.</li>
+            <li>За можливості дати локальні файли MP4 і MP3 з безпечним навчальним змістом.</li>
+            <li>Не покладатися на інтернет.</li>
+            <li>Не просити учнів змінювати CSS, меню чи структуру їхнього проєкту.</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="callout success"><strong>Очікуваний результат:</strong> учень пояснює призначення <code>&lt;video&gt;</code>, <code>&lt;audio&gt;</code>, <code>&lt;source&gt;</code>, <code>src</code>, <code>type</code> і <code>controls</code>; додає локальні MP4 та MP3; знаходить помилку у шляху; перевіряє роботу сторінки в Chrome.</p>
+
+      <details>
+        <summary>Ключ для педагога — відкрити після виконання</summary>
+        <div class="teacher-key">
+          <ol>
+            <li><code>&lt;video&gt;</code>.</li>
+            <li><code>controls</code>.</li>
+            <li><code>audio/mpeg</code>.</li>
+            <li><code>&lt;source&gt;</code>, шлях <code>media/lesson.mp4</code>, тип <code>video/mp4</code>.</li>
+            <li>Помилка у шляху або назві файлу.</li>
+            <li>Є <code>controls</code>, користувач запускає запис сам.</li>
+          </ol>
+          <p><strong>Критерій успіху:</strong> 5–6 балів — тему засвоєно; 3–4 — виправити помилки за підказками; 0–2 — ще раз пройти приклади разом із партнером.</p>
+          <p><strong>Що перевірити додатково:</strong> реальне відтворення залежить від наявності локальних файлів і підтримки їх кодування у Chrome. Без вихідних медіафайлів це підтвердити неможливо.</p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap">Автономний навчальний матеріал · Працює без мережі</footer>
+
+  <script>
+    (() => {
+      'use strict';
+
+      const form = document.getElementById('quizForm');
+      const result = document.getElementById('result');
+      const restartButton = document.getElementById('restart');
+
+      const answers = {
+        q1: 'video',
+        q2: 'controls',
+        q3: 'audio/mpeg',
+        q5: 'path',
+        q6: 'controls'
+      };
+
+      const hints = {
+        q1: 'Завдання 1: пригадайте назву тега для відеоплеєра.',
+        q2: 'Завдання 2: знайдіть атрибут, що додає панель керування.',
+        q3: 'Завдання 3: MP3 у HTML зазвичай має MIME-тип audio/mpeg.',
+        q4: 'Завдання 4: перевірте тег source, папку media і тип video/mp4.',
+        q5: 'Завдання 5: спочатку звірте шлях, папку та назву файлу.',
+        q6: 'Завдання 6: користувач має сам керувати запуском звуку.'
+      };
+
+      function selectedValue(name) {
+        const selected = form.querySelector(`input[name="${name}"]:checked`);
+        return selected ? selected.value : '';
+      }
+
+      function markQuestion(id, isCorrect) {
+        const box = form.querySelector(`[data-question="${id}"]`);
+        box.style.borderColor = isCorrect ? '#16784a' : '#b42318';
+        box.setAttribute('data-correct', String(isCorrect));
+      }
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        let score = 0;
+        const incorrect = [];
+
+        Object.entries(answers).forEach(([id, expected]) => {
+          const correct = selectedValue(id) === expected;
+          if (correct) score += 1;
+          else incorrect.push(id);
+          markQuestion(id, correct);
+        });
+
+        const q4Correct =
+          form.elements.q4tag.value === 'source' &&
+          form.elements.q4src.value === 'media/lesson.mp4' &&
+          form.elements.q4type.value === 'video/mp4';
+
+        if (q4Correct) score += 1;
+        else incorrect.push('q4');
+        markQuestion('q4', q4Correct);
+
+        result.className = score >= 5 ? 'good' : 'keep-going';
+        const heading = score === 6
+          ? 'Чудово! Усі відповіді правильні.'
+          : score >= 5
+            ? 'Дуже добре! Перевірте лише одну відповідь.'
+            : 'Є над чим попрацювати. Скористайтеся підказками.';
+
+        const feedback = incorrect.length
+          ? `<ul class="feedback-list">${incorrect.map(id => `<li>${hints[id]}</li>`).join('')}</ul>`
+          : '<p>Можете переходити до власного HTML-файлу.</p>';
+
+        result.innerHTML = `<strong>${heading}</strong><p>Ваш результат: ${score} із 6.</p>${feedback}`;
+        result.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+
+      restartButton.addEventListener('click', () => {
+        form.reset();
+        form.querySelectorAll('.question').forEach(box => {
+          box.style.borderColor = '';
+          box.removeAttribute('data-correct');
+        });
+        result.className = '';
+        result.textContent = 'Оберіть відповіді й натисніть «Перевірити».';
+        form.querySelector('input').focus();
+      });
+    })();
+  </script>
+</body>
+</html>

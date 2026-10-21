@@ -16,13 +16,20 @@ const status = document.querySelector('#status');
 const noResults = document.querySelector('#no-results');
 const header = document.querySelector('body > header');
 const homeLink = document.querySelector('.home');
+const layoutsLink = document.createElement('a');
+const headerActions = document.createElement('div');
 const navigationLinks = [...document.querySelectorAll('aside a')];
 const topButton = document.querySelector('.top');
 
 header.className = 'site-header';
 header.innerHTML = `<div class="header-inner"><div class="project-mark"><div class="laptop" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="18" height="12" x="3" y="4" rx="2"/><path d="M2 20h20M8 16v4m8-4v4"/></svg></div><div><p class="project-name">Web-дизайн ВМПДЮ</p><p class="project-author">Навчальний проєкт Раїси Кравець</p></div></div><div class="course-heading"><h1><span>HTML</span> <strong>Skills</strong></h1><p>Мова розмітки гіпертексту HTML</p></div></div>`;
 homeLink.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m3 11 9-8 9 8"/><path d="M5 10v10h14V10M9 20v-6h6v6"/></svg><span>На головну</span>';
-header.querySelector('.header-inner').append(homeLink);
+layoutsLink.className = 'home';
+layoutsLink.href = 'project-layouts.html';
+layoutsLink.textContent = 'Макети сторінок';
+headerActions.style.cssText = 'display:flex;flex-wrap:wrap;justify-content:flex-end;gap:8px';
+headerActions.append(homeLink, layoutsLink);
+header.querySelector('.header-inner').append(headerActions);
 header.insertAdjacentHTML('afterend', '<section class="page-intro" aria-labelledby="reference-title"><h2 id="reference-title">Довідник HTML-тегів</h2><p>Теги, їх призначення, атрибути та приклади використання</p></section>');
 topButton.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m18 15-6-6-6 6"/></svg><span>Нагору</span>';
 

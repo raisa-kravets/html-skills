@@ -75,6 +75,7 @@
 .reference-link svg { width: 18px; height: 18px; stroke-width: 2; }
 .reference-link:hover { transform: translateY(-2px); border-color: rgba(22, 119, 242, 0.35); box-shadow: 0 7px 20px rgba(16, 42, 86, 0.12); }
 .reference-link:focus-visible { outline: 3px solid rgba(22, 119, 242, 0.32); outline-offset: 3px; }
+.header-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 
 .topics {
   width: min(100%, var(--content-width));
@@ -174,7 +175,7 @@
 
 @media (max-width: 1199px) {
   .header-inner { grid-template-columns: 1fr 1fr; gap: 18px 28px; padding-top: 14px; padding-bottom: 14px; }
-  .reference-link { grid-column: 1 / -1; justify-self: end; }
+  .header-actions { grid-column: 1 / -1; justify-self: end; }
   .course-heading h1 { font-size: 48px; }
   .topics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .topic-card { height: 150px; }
@@ -190,7 +191,8 @@
   .project-author { font-size: 14px; }
   .course-heading h1 { font-size: 38px; letter-spacing: -1px; }
   .course-heading p { margin-top: 6px; font-size: 16px; }
-  .reference-link { grid-column: auto; justify-self: start; white-space: normal; }
+  .header-actions { grid-column: auto; justify-self: start; justify-content: flex-start; }
+  .reference-link { white-space: normal; }
   .topics { padding-top: 16px; grid-template-columns: 1fr; }
   .topic-card { height: auto; min-height: 150px; padding: 14px 18px; }
   .topic-card h2 { font-size: 16px; }

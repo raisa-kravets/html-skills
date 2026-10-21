@@ -49,6 +49,11 @@
   };
   api.enableOptionalImages=function(root){(root||document).querySelectorAll('[data-image-path]').forEach(slot=>{if(slot.dataset.imageChecked==='true')return;slot.dataset.imageChecked='true';const image=new Image();image.className='responsive-image';image.alt=slot.dataset.imageAlt||'';image.addEventListener('load',()=>{const figure=document.createElement('figure');figure.className='zoomable-figure';const button=document.createElement('button');button.type='button';button.className='zoomable-image-button';button.dataset.zoomableImage='';button.setAttribute('aria-label','Збільшити навчальну інфографіку');button.append(image);figure.append(button);slot.replaceChildren(figure);api.enableImageZoom()},{once:true});image.src=slot.dataset.imagePath})};
   api.enableTextCopy=function(root){(root||document).querySelectorAll('.copy-text-button').forEach(button=>{if(button.dataset.copyBound==='true')return;button.dataset.copyBound='true';button.addEventListener('click',async()=>{const card=button.closest('details'),source=card&&card.querySelector('.copy-source'),feedback=card&&card.querySelector('.copy-feedback');if(!source)return;const value=source.innerText.trim();try{await navigator.clipboard.writeText(value);if(feedback)feedback.textContent='Текст скопійовано'}catch(error){if(feedback)feedback.textContent='Не вдалося скопіювати текст'}})})};
+  api.enableLayoutAccess=function(root){
+    const scope=root||document,isTopic=/\/topics\/topic-\d+\.html$/i.test(location.pathname),layoutHref=isTopic?'../project-layouts.html':'project-layouts.html';
+    if(isTopic){const header=scope.querySelector('body>header');if(header&&!header.querySelector('.header-layout-link')){const link=document.createElement('a');link.className='header-layout-link';link.href=layoutHref;link.textContent='Макети сторінок';const brand=header.querySelector('.lesson-brand,body>header>strong');brand?header.insertBefore(link,brand):header.append(link)}}
+    const project=scope.querySelector('#project');if(project){project.querySelectorAll(':scope>.project-layout-links').forEach(block=>block.remove());if(!project.querySelector(':scope>.project-layout-reference')){const link=document.createElement('p');link.className='project-layout-reference';link.innerHTML='<a href="'+layoutHref+'" target="_blank" rel="noopener">Переглянути макети сторінок</a>';const heading=project.querySelector(':scope>h2');heading?heading.after(link):project.prepend(link)}}
+  };
   api.enableProjectResultPreviews=function(root){
     const intro='<h1>Моє місто — Вінниця</h1><p>Вінниця — місто в Україні, розташоване на берегах Південного Бугу.</p><p>На цьому сайті я розповім про цікаві місця Вінниці та поділюся маршрутом для знайомства з містом.</p>';
     const homeText=intro+'<h2>Коротко про Вінницю</h2><p>Вінниця — адміністративний центр Вінницької області. Місто має давню історію та поєднує історичну забудову із сучасними громадськими просторами.</p><h3>Розташування</h3><p>Місто розташоване на берегах річки Південний Буг.</p><h2>Місто, яке варто побачити</h2><p>Вінниця — сучасне та комфортне місто з багатою історією, затишними вулицями, парками та цікавими культурними місцями.</p>';
@@ -78,6 +83,6 @@
     });
   };
   window.HTMLSkills=api;
-  const init=()=>{api.enableImageZoom();api.enableOptionalImages(document);api.enableTextCopy(document);api.clearFeedbackOnChange(document);api.enableLivePreviews(document);api.enableProjectResultPreviews(document)};
+  const init=()=>{api.enableLayoutAccess(document);api.enableImageZoom();api.enableOptionalImages(document);api.enableTextCopy(document);api.clearFeedbackOnChange(document);api.enableLivePreviews(document);api.enableProjectResultPreviews(document)};
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init,{once:true});else init();
 })();
